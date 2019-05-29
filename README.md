@@ -74,11 +74,11 @@ For info on installing any of the prerequisite software, refer to the [official]
 
 ## Known issues
 
-Currently, there are no known issues.  If you discover any, please kindly submit a [pull request](CONTRIBUTING.md).
+Currently, there are no known issues.  If you discover any, please kindly submit a [pull request](.github/CONTRIBUTING.md).
 
 ## Contributing
 
-Code and codeless (e.g., documentation) contributions toward improving cookiecutter-project are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to become a contributor.
+Code and codeless (e.g., documentation) contributions toward improving cookiecutter-project are welcome. See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information on how to become a contributor.
 
 ## License
 
