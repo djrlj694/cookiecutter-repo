@@ -3,7 +3,7 @@
 
 __author__ = 'Robert (Bob) L. Jones'
 __coauthor__ = 'N/A'
-__copyright__ = 'Copyright 2019, Cookiecutter-Makefile'
+__copyright__ = 'Copyright 2019, cookiecutter-project'
 __credits__ = ['Robert (Bob) L. Jones']
 __license__ = 'MIT'
 __version__ = '0.0.1'
@@ -11,7 +11,7 @@ __maintainer__ = 'Robert (Bob) L. Jones'
 __email__ = 'djrlj694@gmail.com'
 __status__ = 'Development'
 __created_date__= 'May 27, 2019'
-__modified_date__= 'May 27, 2019'
+__modified_date__= 'May 30, 2019'
 
 ### Libraries ###
 
