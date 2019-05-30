@@ -36,6 +36,7 @@ if {{ cookiecutter.include_makefile }}:
     cookiecutter(
         'gh:djrlj694/Cookiecutter-Makefile',
         extra_context={'project_name': '{{ cookiecutter.project_name }}'},
+        no_input=True,
         output_dir='..',
         overwrite_if_exists=True)
 
