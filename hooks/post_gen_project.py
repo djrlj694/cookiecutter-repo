@@ -30,12 +30,12 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
 ### Main Program ###
 
-#extra_context = 
+extra_context = {'project_name': '{{ cookiecutter.project_name }}'}
 
 if {{ cookiecutter.include_makefile }}:
     cookiecutter(
         'gh:djrlj694/Cookiecutter-Makefile',
-        extra_context={'project_name': '{{ cookiecutter.project_name }}'},
+        extra_context=extra_context,
         no_input=True,
         output_dir='..',
         overwrite_if_exists=True)
