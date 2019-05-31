@@ -3,7 +3,7 @@
 
 __author__ = 'Robert (Bob) L. Jones'
 __coauthor__ = 'N/A'
-__copyright__ = 'Copyright 2019, cookiecutter-project'
+__copyright__ = 'Copyright 2019, Cookiecutter-Project'
 __credits__ = ['Robert (Bob) L. Jones']
 __license__ = 'MIT'
 __version__ = '0.0.1'
@@ -31,6 +31,14 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 ### Main Program ###
 
 extra_context = {'project_name': '{{ cookiecutter.project_name }}'}
+
+if {{ cookiecutter.license }} != 'Not open source':
+    cookiecutter(
+        'gh:djrlj694/cookiecutter-github',
+        extra_context=extra_context,
+        no_input=True,
+        output_dir='..',
+        overwrite_if_exists=True)
 
 if {{ cookiecutter.include_makefile }}:
     cookiecutter(
