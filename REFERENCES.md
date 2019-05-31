@@ -1,6 +1,6 @@
 # References
 
-The following is a list of sources that I found helpful or inspirational when learning new topics, troubleshooting bugs, authoring documentation, etc. while developing or maintaining [cookiecutter-project](https://github.com/djrlj694/cookiecutter-project).
+The following is a list of sources that I found helpful or inspirational when learning new topics, troubleshooting bugs, authoring documentation, etc. while developing or maintaining [Cookiecutter-Project](https://github.com/djrlj694/cookiecutter-project).
 
 ## Cookiecutter
 
