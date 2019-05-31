@@ -46,6 +46,9 @@ if '{{ cookiecutter.license }}' != 'Not open source':
 if {{ cookiecutter.include_makefile }}:
     add('makefile', extra_context)
 
+if '{{ cookiecutter.project_type }}' == 'Xcode':
+    add('xcode', extra_context)
+
 # Create project from the cookiecutter-pypackage.git repo template.
 #cookiecutter(
 #    'gh:djrlj694/Cookiecutter-Xcode',
