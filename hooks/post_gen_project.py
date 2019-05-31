@@ -28,26 +28,23 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
 ### Function Declarations ###
 
+def add(cookiecutter, extra_context):
+    cookiecutter(
+        'gh:djrlj694/%s' % cookiecutter,
+        extra_context=extra_context,
+        no_input=True,
+        output_dir='..',
+        overwrite_if_exists=True)   
+
 ### Main Program ###
 
 extra_context = {'project_name': '{{ cookiecutter.project_name }}'}
 
 if {{ cookiecutter.license }} != 'Not open source':
-    cookiecutter(
-        'gh:djrlj694/cookiecutter-github',
-        extra_context=extra_context,
-        no_input=True,
-        output_dir='..',
-        overwrite_if_exists=True)
+    add_cookiecutter('cookiecutter-github', extra_context)
 
 if {{ cookiecutter.include_makefile }}:
-    cookiecutter(
-        'gh:djrlj694/cookiecutter-makefile',
-        extra_context=extra_context,
-        no_input=True,
-        output_dir='..',
-        overwrite_if_exists=True)
-
+    add_cookiecutter('cookiecutter-makefile', extra_context)
 
 # Create project from the cookiecutter-pypackage.git repo template.
 #cookiecutter(
