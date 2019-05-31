@@ -1,8 +1,8 @@
-# Contributing to cookiecutter-project
+# Contributing to Cookiecutter-Project
 
-Contributions toward improving [cookiecutter-project](https://github.com/djrlj694/cookiecutter-project) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://github.com/djrlj694/cookiecutter-project/pull/new/master) process.  By submitting a pull request, you acknowledge and agree to the following:
+Contributions toward improving [Cookiecutter-Project](https://github.com/djrlj694/cookiecutter-project) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://github.com/djrlj694/cookiecutter-project/pull/new/master) process.  By submitting a pull request, you acknowledge and agree to the following:
 
-1. You have the right to license your contribution to cookiecutter-project's project leader (djrlj694@gmail.com) and the cookiecutter-project community;
+1. You have the right to license your contribution to Cookiecutter-Project's project leader (djrlj694@gmail.com) and the Cookiecutter-Project community;
 2. Your contributions are licensed under the [MIT License](LICENSE.md).
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
