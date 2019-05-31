@@ -3,6 +3,5 @@
     "project_type": ["iOS", "macOS", "Python", "Swift", "tvOS", "watchOS"],
     "license": ["Not open source", "MIT", "BSD-3", "GNU GPL v3.0", "Apache Software License 2.0"],
     "repo_name": "{{ cookiecutter.project_name | replace(' ', '-') | lower }}",
-    "include_readme": [true, false],
     "include_makefile": [true, false]
 }
