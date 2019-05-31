@@ -40,7 +40,7 @@ def add(cookiecutter, extra_context):
 
 extra_context = {'project_name': '{{ cookiecutter.project_name }}'}
 
-if {{ cookiecutter.license }} != 'Not open source':
+if '{{ cookiecutter.license }}' != 'Not open source':
     add_cookiecutter('cookiecutter-github', extra_context)
 
 if {{ cookiecutter.include_makefile }}:
