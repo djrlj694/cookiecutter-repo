@@ -41,10 +41,10 @@ def add(cookiecutter_suffix, extra_context):
 
 extra_context = {'project_name': '{{ cookiecutter.repo_formal_name }}'}
 
-if '{{ cookiecutter.repo_license }}' != 'Not open source':
+if {{ cookiecutter.add_github }}:
     add('github', extra_context)
 
-if {{ cookiecutter.include_makefile }}:
+if {{ cookiecutter.add_make }}:
     add('makefile', extra_context)
 
 if '{{ cookiecutter.repo_project_type }}' in ['iOS', 'macOS', 'Swift', 'tvOS', 'watchOS']:
