@@ -1,7 +1,7 @@
 {
     "repo_formal_name": "REPO_FORMAL_NAME",
     "repo_name": "{{ cookiecutter.repo_formal_name | replace(' ', '-') | replace('_', '-') | lower }}",
-    "repo_license": ["Not open source", "Apache Software License 2.0", "BSD-3, "GNU GPL v3.0, "MIT"],
+    "repo_license": ["Not open source", "Apache Software License 2.0", "BSD-3, "GNU GPL v3.0", "MIT"],
     "repo_project_type": ["Cookiecutter", "GitHub", "iOS", "macOS", "makefile", "Python", "Swift", "tvOS", "watchOS"],
     "include_github": [true, false],
     "include_makefile": [true, false]
