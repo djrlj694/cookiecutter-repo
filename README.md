@@ -68,9 +68,9 @@ Customization options defined in Cookiecutter-Repo's `cookiecutter.json` are as 
 | Key | Description | Value(s) | Default Value |
 | --- | ----------- | ------ | ------------- |
 | `repo_formal_name` | Specifies an as-is name (i.e., permits spaces and mixed-case) for the repository as it would appear in documentation | N/A | `REPO_FORMAL_NAME` |
-| `repo_github_name` | Specifies a root directory name for a repository that conforms to GitHub's naming conventions | N/A | A lower-case, hyphenated version of the value of `repo_formal_name` |
+| `repo_dir_name` | Specifies a root directory name for a repository that conforms to GitHub's naming conventions | N/A | A lower-case, hyphenated version of the value of `repo_formal_name` |
 | `repo_license` | Specifies an open-source software licence or not | `Not open source`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `Not open source` |
-| `repo_type` | Specifies the repo's primary software project focus and its `README.md` boilerplate. | `Cookiecutter`, `GitHub`, `iOS`, `macOS`, `makefile`, `Python`, `Swift`, `tvOS`, `watchOS` | `Cookiecutter` |
+| `repo_project_type` | Specifies the repo's primary software project focus and its `README.md` boilerplate. | `Cookiecutter`, `GitHub`, `iOS`, `macOS`, `makefile`, `Python`, `Swift`, `tvOS`, `watchOS` | `Cookiecutter` |
 
 By default, the user is prompted to assign a value for each key.  This cookiecutter feature may also be silenced.  The subsections that follow show how.
 
