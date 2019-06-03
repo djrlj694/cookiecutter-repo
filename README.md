@@ -4,7 +4,7 @@
 
 The cookiecutter presented here, Cookiecutter-Repo, defines a basic directory structure and boilerplate files for generating [**software repositories**](https://en.wikipedia.org/wiki/Software_repository) &mdash; collections of one or more software projects.  These repositories are rudimentary, containing only a starter set of software project deliverables (e.g., source code) and supporting artifacts (e.g., documentation).
 
-It should be noted that "software repository" and a "software project" are colloquially used interchangeably.  In contrast, Cookiecutter-Repo intentionally treats these terms as technically distinct.  The reasons why are twofold:
+It should be noted that, colloquially speaking, "software repository" and "software project" are interchangeable.  In contrast, Cookiecutter-Repo treats these terms as technically distinct.  The reasons why are twofold:
 
 1. To align with [GitHub's definition](https://help.github.com/en/articles/github-glossary#repository) of its "most basic element" for containing "all of the project files (including documentation)" and storing "each file's revision history";
 help.github.com/en/articles/github-glossary#repository)
