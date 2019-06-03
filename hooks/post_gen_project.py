@@ -49,7 +49,7 @@ if {{ cookiecutter.include_makefile }}:
 
 if '{{ cookiecutter.repo_project_type }}' in ['iOS', 'macOS', 'Swift', 'tvOS', 'watchOS']:
     add('xcode', extra_context)
-if '{{ cookiecutter.repo_project_type }}' == 'Python':
-    add('python', extra_context)
+else:
+    add('{{ cookiecutter.repo_project_type | lower }}', extra_context)
 
 sys.exit(0)
