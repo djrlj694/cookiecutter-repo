@@ -72,7 +72,7 @@ Customization options defined in Cookiecutter-Repo's `cookiecutter.json` are as 
 | `repo_license` | Specifies an open-source software licence or not | `Not open source`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `Not open source` |
 | `repo_project_type` | Specifies the repo's primary software project focus and its `README.md` boilerplate. | `Cookiecutter`, `GitHub`, `iOS`, `macOS`, `makefile`, `Python`, `Swift`, `tvOS`, `watchOS` | `Cookiecutter` |
 | `add_github` | Adds a `.github` directory tree with Markdown files documenting rules on how to contribute | `True`, `False` | `True` |
-| `add_github` | Adds a `.make` directory tree with makefile files specifying software project build rules | `True`, `False` | `True` |
+| `add_makee` | Adds a `.make` directory tree with makefile files specifying build automation rules for software projects | `True`, `False` | `True` |
 
 By default, the user is prompted to assign a value for each key.  This cookiecutter feature may also be silenced.  The subsections that follow show how.
 
