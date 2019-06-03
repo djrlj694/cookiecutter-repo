@@ -2,13 +2,13 @@
 
 [Cookiecutter](https://github.com/audreyr/cookiecutter) is a cross-platform software tool that generates [**boilerplate**](https://en.wikipedia.org/wiki/Boilerplate_code) for [**software projects**](https://en.wikipedia.org/wiki/Software_project_management) from templates.  These templates, called **cookiecutters**, can be used to define a project's directory tree structure, the names of its directories and files, and the boilerplate content of its files.  They can also facilitate, both manually and automatically, the run-time customization of the generated names and boilerplate.
 
-The cookiecutter presented here, Cookiecutter-Repo, defines a basic directory structure and template files for generating boilerplate for [**software repositories**](https://en.wikipedia.org/wiki/Software_repository) &mdash; collections of one or more software projects.  These repositories are rudimentary, containing only a starter set of software project deliverables (e.g., source code) and supporting artifacts (e.g., documentation).
+The cookiecutter presented here, Cookiecutter-Repo, defines a basic directory structure and template files for generating boilerplate for [**software repositories**](https://en.wikipedia.org/wiki/Software_repository) &mdash; collections of one or more software projects.  These repositories are rudimentary, containing only a starter set of files.
 
 It should be noted that, colloquially speaking, "software repository" and "software project" are interchangeable.  In contrast, Cookiecutter-Repo treats these terms as technically distinct.  The reasons why are twofold:
 
 1. To align with [GitHub's definition](https://help.github.com/en/articles/github-glossary#repository) of its "most basic element" for containing "all of the project files (including documentation)" and storing "each file's revision history";
 help.github.com/en/articles/github-glossary#repository)
-2. To reinforce that a single software repository may contain both multiple software projects and supporting artifacts.
+2. To reinforce that a single software repository may contain both deliverables (e.g., source code) and supporting artifacts (e.g., documentation) for multiple software projects.
 
 ## Usage
 
