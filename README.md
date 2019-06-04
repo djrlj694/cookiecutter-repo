@@ -105,7 +105,7 @@ To use Cookiecutter-Repo, the following software must first be installed on your
 
 For info on installing any of the prerequisite software, refer to the [official](https://cookiecutter.readthedocs.io/en/latest/installation.html) installation document.
 
-## Known issues
+## Known Issues
 
 Currently, there are no known issues.  If you discover any, please kindly submit a [pull request](.github/CONTRIBUTING.md).
 
