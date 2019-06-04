@@ -88,7 +88,7 @@ $ cookiecutter --no-input ...
 cookiecutter(..., no_input=True)
 ```
 
-## Requirements
+## System Requirements
 
 Cookiecutter-Repo supports the 3 major operating systems:
 
