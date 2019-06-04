@@ -11,7 +11,7 @@ __maintainer__ = 'Robert (Bob) L. Jones'
 __email__ = 'djrlj694@gmail.com'
 __status__ = 'Development'
 __created_date__= 'May 27, 2019'
-__modified_date__= 'Jun 3, 2019'
+__modified_date__= 'Jun 4, 2019'
 
 ### Libraries ###
 
@@ -47,7 +47,10 @@ if {{ cookiecutter.add_github }}:
 if {{ cookiecutter.add_make }}:
     add('makefile', extra_context)
 
-if '{{ cookiecutter.repo_project_type }}' in ['iOS', 'macOS', 'Swift', 'tvOS', 'watchOS']:
+if '{{ cookiecutter.repo_project_type }}' == 'Swift package':
+    os.system('mkdir Hello; cd Hello; swift package init; cd ..')
+    add('swift', extra_context)
+elif '{{ cookiecutter.repo_project_type }}' == 'Xcode project':
     add('xcode', extra_context)
 else:
     add('{{ cookiecutter.repo_project_type | lower }}', extra_context)
