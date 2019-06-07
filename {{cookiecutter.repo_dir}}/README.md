@@ -1,12 +1,26 @@
 # {{ cookiecutter.repo_name }}
 
+[![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/TravisCIBlog.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }})
+
 ## Usage
+
+{{ cookiecutter.repo_usage }}
 
 ## Options
 
+{{ cookiecutter.repo_options }}
+
 ## System Requirements
 
+{{ cookiecutter.repo_requirements }}
+
 ## Installation
+
+{{ cookiecutter.repo_installation }}
+
+## Documentation
+
+Documentation for the project can be found [here](https://{{ cookiecutter.github_user }}.github.io/{{ cookiecutter.repo_name }}/).
 
 ## Known Issues
 
