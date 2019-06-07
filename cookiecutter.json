@@ -8,5 +8,7 @@
     "repo_requirements": "REPO_REQUIREMENTS",
     "repo_installation": "REPO_INSTALLATION",
     "add_github": [true, false],
-    "add_make": [true, false]
+    "add_make": [true, false],
+    "github_user": "{{ default_context.github_user }}",
+    "travis_user": "{{ default_context.github_user }}"
 }
