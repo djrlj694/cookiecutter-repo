@@ -47,12 +47,13 @@ if {{ cookiecutter.add_github }}:
 if {{ cookiecutter.add_make }}:
     add('makefile', extra_context)
 
-if '{{ cookiecutter.repo_platform }}' == 'Swift package':
+platform = '{{ cookiecutter.repo_platform | lower}}'.split(' ')[0]
+if '{{ cookiecutter.repo_platform }}' == 'swift':
     os.system('mkdir Hello; cd Hello; swift package init; cd ..')
-    add('swift', extra_context)
-elif '{{ cookiecutter.repo_platform }}' == 'Xcode project':
-    add('xcode', extra_context)
+    add(platform, extra_context)
+elif '{{ cookiecutter.repo_platform }}' == 'xcode':
+    add(platform, extra_context)
 else:
-    add('{{ cookiecutter.repo_platform | lower }}', extra_context)
+    add(platform, extra_context)
 
 sys.exit(0)
