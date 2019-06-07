@@ -5,10 +5,11 @@
     "repo_platform": ["Cookiecutter template", "GitHub repo", "iOS app", "iPadOS app", "macOS app", "Makefile project", "Python data science project", "Python package", "Swift package", "Xcode project"],
     "repo_short_description": "REPO_SHORT_DESCRIPTION",
     "repo_usage": "REPO_USAGE",
+    "repo_options": "REPO_OPTIONS",
     "repo_requirements": "REPO_REQUIREMENTS",
     "repo_installation": "REPO_INSTALLATION",
     "add_github": [true, false],
     "add_make": [true, false],
     "github_user": "{{ default_context.github_user }}",
-    "travis_user": "{{ default_context.github_user }}"
+    "travis_user": "{{ default_context.travis_user }}"
 }
