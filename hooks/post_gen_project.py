@@ -48,10 +48,10 @@ if {{ cookiecutter.add_make }}:
     add('makefile', extra_context)
 
 platform = '{{ cookiecutter.repo_platform | lower}}'.split(' ')[0]
-if '{{ cookiecutter.repo_platform }}' == 'swift':
+if platform == 'swift':
     os.system('mkdir Hello; cd Hello; swift package init; cd ..')
     add(platform, extra_context)
-elif '{{ cookiecutter.repo_platform }}' in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
+elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
     add('xcode', extra_context)
 else:
     add(platform, extra_context)
