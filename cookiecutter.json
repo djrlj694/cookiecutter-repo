@@ -2,7 +2,7 @@
     "repo_name": "REPO_NAME",
     "repo_dir": "{{ cookiecutter.repo_name | replace(' ', '-') | replace('_', '-') | lower }}",
     "repo_license": ["Not open source", "Apache Software License 2.0", "BSD-3", "GNU GPL v3.0", "MIT"],
-    "repo_platform": ["Cookiecutter", "GitHub", "makefile", "Python", "Swift package", "Xcode project"],
+    "repo_platform": ["Cookiecutter template", "GitHub repo", "iOS app", "iPadOS app", "macOS app", "Makefile project", "Python data science project", "Python package", "Swift package", "Xcode project"],
     "add_github": [true, false],
     "add_make": [true, false]
 }
