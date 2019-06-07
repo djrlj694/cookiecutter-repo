@@ -51,8 +51,8 @@ platform = '{{ cookiecutter.repo_platform | lower}}'.split(' ')[0]
 if '{{ cookiecutter.repo_platform }}' == 'swift':
     os.system('mkdir Hello; cd Hello; swift package init; cd ..')
     add(platform, extra_context)
-elif '{{ cookiecutter.repo_platform }}' == 'xcode':
-    add(platform, extra_context)
+elif '{{ cookiecutter.repo_platform }}' in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
+    add('xcode', extra_context)
 else:
     add(platform, extra_context)
 
