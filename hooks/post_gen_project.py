@@ -53,7 +53,7 @@ if platform == 'swift':
     add(platform, extra_context)
 elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
     add('xcode', extra_context)
-else:
+elif platform in ['cookiecutter', 'github', 'makefile']:
     add(platform, extra_context)
 
 sys.exit(0)
