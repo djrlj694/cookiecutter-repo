@@ -34,7 +34,7 @@ def add(cookiecutter_suffix, extra_context):
         'gh:djrlj694/cookiecutter-%s' % cookiecutter_suffix,
         extra_context=extra_context,
         no_input=True,
-        output_dir='.',
+        output_dir='..',
         overwrite_if_exists=True)   
 
 ### Main Program ###
