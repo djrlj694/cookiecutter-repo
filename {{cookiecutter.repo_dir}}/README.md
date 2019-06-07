@@ -1,6 +1,6 @@
 # {{ cookiecutter.repo_name }}
 
-[![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/TravisCIBlog.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.project_name }})
+[![Build Status](https://travis-ci.org/{{ cookiecutter.travis_user }}/TravisCIBlog.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.travis_user }}/{{ cookiecutter.repo_name }})
 
 ## Usage
 
