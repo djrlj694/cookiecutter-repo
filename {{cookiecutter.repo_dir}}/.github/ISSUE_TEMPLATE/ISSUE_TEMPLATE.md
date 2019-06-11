@@ -1,0 +1,3 @@
+# ISSUE_TEMPLATE.md
+
+The `ISSUE_TEMPLATE.md` file is another file you can use to pre-populate the body of an issue. For example, if you always need the same types of information for bug reports, include it in the issue template, and every new issue will be opened with your recommended starter text.
