@@ -1,14 +1,24 @@
 # Cookiecutter-Repo
 
-[Cookiecutter](https://github.com/audreyr/cookiecutter) is a cross-platform software tool that generates [**boilerplate**](https://en.wikipedia.org/wiki/Boilerplate_code) for [**software projects**](https://en.wikipedia.org/wiki/Software_project_management) from templates.  These templates, called **cookiecutters**, can be used to define a project's directory tree structure, the names of its directories and files, and the boilerplate content of its files.  They can also facilitate, both manually and automatically, the run-time customization of the generated names and boilerplate.
+[Cookiecutter](https://github.com/audreyr/cookiecutter) is a cross-platform software tool that generates [**boilerplate**](https://en.wikipedia.org/wiki/Boilerplate_code) for [**software projects**](https://en.wikipedia.org/wiki/Software_project_management) from templates.  These templates, called **cookiecutters**, can be used to define:
 
-The cookiecutter presented here, Cookiecutter-Repo, defines a basic directory structure and template files for generating boilerplate for [**software repositories**](https://en.wikipedia.org/wiki/Software_repository) &mdash; collections of one or more software projects.  These repositories are rudimentary, containing only a starter set of files.
+* How a project's directories and files are named and organized;
+* The content of a project's files.
+
+They can also facilitate, both manually and automatically, the run-time customization of the generated names and content.
+
+The cookiecutter presented here, Cookiecutter-Repo, defines a boilerplate template for creating [**software repositories**](https://en.wikipedia.org/wiki/Software_repository) ("repos") &mdash; collections of one or more software projects.  The resulting boilerplate is a basic directory tree and a starter set of files for beginning a new software project targeting a particular software platform (e.g., Python or Swift).  Included in these files are:
+
+* Makefiles defining build automation rules for software projects;
+* Skeletal source code targeting a particular software project platform;
+* Rules for code and codeless contributions;
+* Other supporting artifacts (`README.md`, software license, references, etc.).
 
 It should be noted that, colloquially speaking in the context of software project management, "repository" and "project" are interchangeable.  In contrast, Cookiecutter-Repo treats these terms as technically distinct.  The reasons why are twofold:
 
-1. To align with [GitHub's definition](https://help.github.com/en/articles/github-glossary#repository) of its "most basic element" for containing "all of the project files (including documentation)" and storing "each file's revision history";
+1. To align with [GitHub's definition](https://help.github.com/en/articles/github-glossary#repository) of what a repository is: its "most basic element" for containing "all of the project files (including documentation)" and storing "each file's revision history";
 help.github.com/en/articles/github-glossary#repository)
-2. To reinforce that a single software repository may contain both deliverables (e.g., source code) and supporting artifacts (e.g., documentation) for multiple software projects.
+2. To reinforce that a single repository may contain both deliverables (e.g., source code) and supporting artifacts (e.g., documentation) for multiple software projects.
 
 ## Usage
 
@@ -70,9 +80,14 @@ Customization options defined in Cookiecutter-Repo's `cookiecutter.json` are as 
 | `repo_name` | The repository's name as it would appear in documents (e.g., with spaces and mixed-case) | N/A | `REPO_NAME` |
 | `repo_dir` | The GitHub-conforming name of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `repo_name` |
 | `repo_license` | The repository's optional (but highly recommended) open-source software licence | `Not open source`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `Not open source` |
-| `repo_platform` | The repo's primary software platform | `Cookiecutter template`, `GitHub repo`, `iOS app`, `iPadOS app`, `macOS app`, `Makefile project`, `Python data science project`, `Python package`, `Swift package`, `tvOS app`, `watchOS app`, `Xcode project` | `Cookiecutter template` |
+| `repo_platform` | The repo's primary software platform | `Cookiecutter template`, `Python data science project`, `Python module`, `Python package`, `Swift package`, ``Xcode project` | `Cookiecutter template` |
 | `add_github` | A boolean specifying whether to add a `.github` directory tree with Markdown files documenting rules on how to contribute | `True`, `False` | `True` |
-| `add_make` | A boolean specifying whether to add a `.make` directory tree with makefile files defining build automation rules for software projects | `True`, `False` | `True` |
+| `add_make` | A boolean specifying whether to add a `.make` directory tree with makefile files defining build automation rules for software projects | `True`, `False` | `True` 
+| `lead_name` | The name of the repository's lead author | N/A | `USER@DOMAIN.TLD` |
+| `lead_email` | The email address of the repository's lead author | N/A | `USER@DOMAIN.TLD` |
+| `github_user` | The repository's GitHub account | N/A | `GITHUB_USER` |
+| `travis_user` | The repository's Travis CI account | N/A | `TRAVIS_USER` |
+| `package_name` | The Xcode-conforming name of the project's subdirectory for its primary software package | N/A | A de-hyphenated version of the value of `repo_dir` |
 
 By default, the user is prompted to assign a value for each key.  This cookiecutter feature may also be silenced.  The subsections that follow show how.
 
