@@ -1,8 +1,8 @@
 {
     "repo_name": "REPO_NAME",
-    "repo_dir": "{{ cookiecutter.repo_name | replace(' ', '-') | replace('_', '-') | lower }}",
+    "repo_platform": ["Cookiecutter template", "Python data science project", "Python module", "Python package", "Swift package", "Xcode project"],
+    "repo_dir": "{{ cookiecutter.repo_name | replace(' ', '-') }}",
     "repo_license": ["Not open source", "Apache Software License 2.0", "BSD-3", "GNU GPL v3.0", "MIT"],
-    "repo_platform": ["Cookiecutter template", "GitHub repo", "iOS app", "iPadOS app", "macOS app", "Makefile project", "Python data science project", "Python package", "Swift package", "Xcode project"],
     "repo_short_description": "REPO_SHORT_DESCRIPTION",
     "repo_usage": "REPO_USAGE",
     "repo_options": "REPO_OPTIONS",
@@ -10,6 +10,9 @@
     "repo_installation": "REPO_INSTALLATION",
     "add_github": [true, false],
     "add_make": [true, false],
-    "github_user": "{{ default_context.github_user }}",
-    "travis_user": "{{ default_context.travis_user }}"
+    "lead_name": "{{ default_context.lead_name or 'LEAD_NAME' }}",
+    "lead_email": "{{ default_context.lead_email or 'USER@DOMAIN.TLD' }}",
+    "github_user": "{{ default_context.github_user or 'GITHUB_USER' }}",
+    "travis_user": "{{ default_context.travis_user or 'TRAVIS_USER' }}",
+    "package_name": "{{ cookiecutter.repo_dir | replace('-', '') }}"
 }
