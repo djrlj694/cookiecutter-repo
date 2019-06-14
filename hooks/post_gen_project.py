@@ -11,7 +11,7 @@ __maintainer__ = 'Robert (Bob) L. Jones'
 __email__ = 'djrlj694@gmail.com'
 __status__ = 'Development'
 __created_date__= 'May 27, 2019'
-__modified_date__= 'Jun 05, 2019'
+__modified_date__= 'Jun 14, 2019'
 
 ### Libraries ###
 
@@ -41,19 +41,19 @@ def add(cookiecutter_suffix, extra_context):
 
 extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 
-if {{ cookiecutter.add_github }}:
-    add('github', extra_context)
-
-if {{ cookiecutter.add_make }}:
-    add('makefile', extra_context)
+#if {{ cookiecutter.add_github }}:
+#    add('github', extra_context)
+#
+#if {{ cookiecutter.add_make }}:
+#    add('makefile', extra_context)
 
 platform = '{{ cookiecutter.repo_platform | lower}}'.split(' ')[0]
 if platform == 'swift':
     os.system('mkdir Hello; cd Hello; swift package init; cd ..')
     add(platform, extra_context)
-elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
-    add('xcode', extra_context)
-elif platform in ['cookiecutter', 'github', 'makefile']:
-    add(platform, extra_context)
+#elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
+#    add('xcode', extra_context)
+#elif platform in ['cookiecutter', 'github', 'makefile']:
+#    add(platform, extra_context)
 
 sys.exit(0)
