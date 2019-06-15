@@ -5,7 +5,7 @@
 # COMPANY: djrlj694.dev
 # VERSION: 1.0.0
 # CREATED: 03MAR2019
-# REVISED: 25MAY2019
+# REVISED: 15JUN2019
 #==============================================================================#
 # For more info on terminology, style conventions, or source references, see
 # the file ".make/README.md".
@@ -33,3 +33,26 @@ docs-swift: | $(LOG)
 		>$(LOG) 2>&1; \
 	$(status_result)
 	@rm -rf ./build
+
+#------------------------------------------------------------------------------#
+# Prerequisite phony targets for the "init" target
+#------------------------------------------------------------------------------#
+
+.PHONY: init-swift init-swift-dirs init-swift-vars
+
+## init-swift: Completes all initial Swift setup activites.
+ifeq ($(COOKIECUTTER),)
+init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
+else
+init-swift: init-swift-vars
+	@cookiecutter gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
+	swift package init
+endif
+
+## init-swift-dirs: Completes all initial Swift directory setup activites.
+init-swift-dirs: $(XCODE_DIRS)
+
+## init-swift-vars: Completes all Swift variable setup activites.
+init-swift-vars:
+	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-xcode)
+	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
