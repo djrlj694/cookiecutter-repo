@@ -7,7 +7,7 @@
 
 They can also facilitate, both manually and automatically, the run-time customization of the generated names and content.
 
-The cookiecutter presented here, Cookiecutter-Repo, defines a boilerplate template for creating [**software repositories**](https://en.wikipedia.org/wiki/Software_repository) ("repos") &mdash; collections of one or more software projects.  The resulting boilerplate is a basic directory tree and a starter set of files for beginning a new software project targeting a particular software platform (e.g., Python or Swift).  Included in these files are:
+The cookiecutter presented here, Cookiecutter-Repo, defines a boilerplate template for creating [**software repositories**](https://en.wikipedia.org/wiki/Software_repository) ("repos") &mdash; collections of one or more software projects.  The generated boilerplate is a basic directory tree and a starter set of files for beginning a new software project targeting a particular software platform (e.g., Python or Swift).  Included in these files are:
 
 * Makefiles defining build automation rules for software projects;
 * Skeletal source code targeting a particular software project platform;
