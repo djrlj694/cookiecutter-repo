@@ -54,5 +54,6 @@ init-swift-dirs: $(XCODE_DIRS)
 
 ## init-swift-vars: Completes all Swift variable setup activites.
 init-swift-vars:
-	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-xcode)
+#	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-xcode)
+	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
