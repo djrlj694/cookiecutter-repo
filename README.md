@@ -78,7 +78,7 @@ Customization options defined in Cookiecutter-Repo's `cookiecutter.json` are as 
 | Key | Description | Value(s) | Default Value |
 | --- | ----------- | ------ | ------------- |
 | `repo_name` | The repository's name as it would appear in documents (e.g., with spaces and mixed-case) | N/A | `REPO_NAME` |
-| `repo_dir` | The GitHub-conforming name of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `repo_name` |
+| `repo_dir` | The URL-conforming (i.e., hyphens replace spaces) name of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `repo_name` |
 | `repo_license` | The repository's optional (but highly recommended) open-source software licence | `Not open source`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `Not open source` |
 | `repo_platform` | The repo's primary software platform | `Cookiecutter template`, `Python data science project`, `Python module`, `Python package`, `Swift package`, ``Xcode project` | `Cookiecutter template` |
 | `add_github` | A boolean specifying whether to add a `.github` directory tree with Markdown files documenting rules on how to contribute | `True`, `False` | `True` |
