@@ -45,8 +45,8 @@ ifeq ($(COOKIECUTTER),)
 init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 else
 init-swift: init-swift-vars
+	@swift package init
 	@cookiecutter -f -o '..' gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
-#	swift package init
 endif
 
 ## init-swift-dirs: Completes all initial Swift directory setup activites.
