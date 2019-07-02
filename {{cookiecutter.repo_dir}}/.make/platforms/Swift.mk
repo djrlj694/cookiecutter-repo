@@ -5,7 +5,7 @@
 # COMPANY: djrlj694.dev
 # VERSION: 1.0.0
 # CREATED: 03MAR2019
-# REVISED: 01JUL2019
+# REVISED: 02JUL2019
 #==============================================================================#
 # For more info on terminology, style conventions, or source references, see
 # the file ".make/README.md".
@@ -46,7 +46,7 @@ init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 else
 init-swift: init-swift-vars
 	@swift package init
-	@cookiecutter -f -o '..' gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
+	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
 endif
 
 ## init-swift-dirs: Completes all initial Swift directory setup activites.
