@@ -11,7 +11,7 @@ __maintainer__ = 'Robert (Bob) L. Jones'
 __email__ = 'djrlj694@gmail.com'
 __status__ = 'Development'
 __created_date__= 'May 27, 2019'
-__modified_date__= 'Jun 14, 2019'
+__modified_date__= 'Jul 07, 2019'
 
 ### Libraries ###
 
@@ -50,7 +50,7 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 platform = '{{ cookiecutter.repo_platform | lower}}'.split(' ')[0]
 if platform == 'swift':
 #    os.system('swift package init')
-    os.system('make init-swift')
+    os.system('make init-swift SWIFT_PLATFORM_TYPE=executable')
 ###    os.system('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
 #elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
