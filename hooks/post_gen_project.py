@@ -49,8 +49,7 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 
 platform = '{{ cookiecutter.repo_platform | lower}}'.split(' ')[0]
 if platform == 'swift':
-#    os.system('swift package init')
-    os.system('make init-swift SWIFT_PLATFORM_TYPE=executable')
+    os.system('make init-swift SWIFT_PACKAGE_TYPE=executable')
 ###    os.system('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
 #elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
