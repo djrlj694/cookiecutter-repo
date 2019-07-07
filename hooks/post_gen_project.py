@@ -47,7 +47,7 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 #if {{ cookiecutter.add_make }}:
 #    add('makefile', extra_context)
 
-platform = '{{ cookiecutter.repo_platform }}'.split(' ')[0].lower
+platform = '{{ cookiecutter.repo_platform }}'.split(' ')[0].lower()
 os.system('echo platform={}'.format(platform))
 #os.system('echo platform=%s' % (platform))
 if platform == 'swift':
