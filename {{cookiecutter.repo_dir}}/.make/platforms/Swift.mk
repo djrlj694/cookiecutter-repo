@@ -55,7 +55,7 @@ ifeq ($(COOKIECUTTER),)
 init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 else
 init-swift: init-swift-vars
-	@swift package init --type $(SWIFT_PACKAGE_TYPE)
+	swift package init --type $(SWIFT_PACKAGE_TYPE)
 	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
 endif
 
