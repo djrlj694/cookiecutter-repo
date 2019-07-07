@@ -5,7 +5,7 @@
 # COMPANY: djrlj694.dev
 # VERSION: 1.1.0
 # CREATED: 04FEB2019
-# REVISED: 25MAY2019
+# REVISED: 07JUL2019
 #==============================================================================#
 # For more info on terminology, style conventions, or source references, see
 # the file ".make/README.md".
@@ -28,7 +28,7 @@ USER ?= $(shell whoami)
 # Directories
 #------------------------------------------------------------------------------#
 
-PREFIX = $(PWD)
+PREFIX ?= $(PWD)
 PROJECT ?= $(shell basename $(PREFIX))
 PACKAGE ?= $(PROJECT)
 
