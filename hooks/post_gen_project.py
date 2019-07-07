@@ -48,6 +48,7 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 #    add('makefile', extra_context)
 
 platform = '{{ cookiecutter.repo_platform }}'.split(' ')[0].lower
+os.system('echo platform=%s' % (platform))
 if platform == 'swift':
     os.system('echo platform=swift')
     swift_package_type = '{{ cookiecutter.repo_platform }}'.split(' ')[1]
