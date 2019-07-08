@@ -35,7 +35,8 @@ The following is a list of sources that I found helpful or inspirational when le
 5. https://help.github.com/articles/setting-guidelines-for-repository-contributors/
 6. https://help.github.com/categories/building-a-strong-community/
 7. https://lab.github.com/githubtraining/introduction-to-github
-8. https://stackoverflow.com/questions/11947587/is-there-a-naming-convention-for-git-repositories
+8. https://medium.com/better-programming/create-github-repos-remotely-25153a6e6890
+9. https://stackoverflow.com/questions/11947587/is-there-a-naming-convention-for-git-repositories
 
 ## Makefile
 
