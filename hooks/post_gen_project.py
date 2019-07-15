@@ -11,7 +11,7 @@ __maintainer__ = 'Robert (Bob) L. Jones'
 __email__ = 'djrlj694@gmail.com'
 __status__ = 'Development'
 __created_date__= 'May 27, 2019'
-__modified_date__= 'Jul 07, 2019'
+__modified_date__= 'Jul 15, 2019'
 
 ### Libraries ###
 
@@ -47,11 +47,11 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 #if {{ cookiecutter.add_make }}:
 #    add('makefile', extra_context)
 
-platform = '{{ cookiecutter.repo_platform }}'.split(' ')[0].lower()
+platform = '{{ cookiecutter.repo_platform }}'.split()[0].lower()
 os.system('echo platform={}'.format(platform))
 if platform == 'swift':
     os.system('echo platform=swift')
-    swift_package_type = '{{ cookiecutter.repo_platform }}'.split(' ')[1]
+    swift_package_type = '{{ cookiecutter.repo_platform }}'.split()[1]
     os.system('make init-swift SWIFT_PACKAGE_TYPE={}'.format(swift_package_type))
 ###    os.system('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
