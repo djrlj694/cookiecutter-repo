@@ -19,6 +19,7 @@
 # Command options
 #------------------------------------------------------------------------------#
 
+SWIFT_PROJECT_TYPE ?= "Swift library package"
 SWIFT_PACKAGE_TYPE ?= library
 
 #==============================================================================#
@@ -57,7 +58,7 @@ else
 init-swift: init-swift-vars
 	@swift package init --type $(SWIFT_PACKAGE_TYPE)
 	@swift package generate-xcodeproj
-	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name=$(PROJECT) project_type=$(SWIFT_PACKAGE_TYPE)
+	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name=$(PROJECT) project_type=$(SWIFT_PROJECT_TYPE)
 endif
 
 ## init-swift-dirs: Completes all initial Swift directory setup activites.
