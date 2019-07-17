@@ -5,7 +5,7 @@
 # COMPANY: djrlj694.dev
 # VERSION: 1.0.0
 # CREATED: 03MAR2019
-# REVISED: 16JUL2019
+# REVISED: 17JUL2019
 #==============================================================================#
 # For more info on terminology, style conventions, or source references, see
 # the file ".make/README.md".
@@ -58,6 +58,7 @@ else
 init-swift: init-swift-vars
 	@swift package init --type $(SWIFT_PACKAGE_TYPE)
 	@swift package generate-xcodeproj
+	@echo project_name=$(PROJECT) project_type=$(SWIFT_PROJECT_TYPE)
 	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name=$(PROJECT) project_type=$(SWIFT_PROJECT_TYPE)
 endif
 
