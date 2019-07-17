@@ -58,7 +58,7 @@ else
 init-swift: init-swift-vars
 	@swift package init --type $(SWIFT_PACKAGE_TYPE)
 	@swift package generate-xcodeproj
-	echo PROJECT=$(PROJECT) SWIFT_PROJECT_TYPE=$(SWIFT_PROJECT_TYPE) SWIFT_PACKAGE_TYPE=$(SWIFT_PACKAGE_TYPE)
+	@echo PROJECT=$(PROJECT) SWIFT_PROJECT_TYPE=$(SWIFT_PROJECT_TYPE) SWIFT_PACKAGE_TYPE=$(SWIFT_PACKAGE_TYPE)
 	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name=$(PROJECT) project_type=$(SWIFT_PROJECT_TYPE)
 endif
 
