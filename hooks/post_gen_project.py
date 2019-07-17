@@ -54,7 +54,7 @@ if platform == 'swift':
     swift_package_type = swift_project_type.split()[1]
     os.system('echo swift_project_type={}'.format(swift_project_type))
     os.system('echo swift_package_type={}'.format(swift_package_type))
-    os.system('make init-swift SWIFT_PROJECT_TYPE={} SWIFT_PACKAGE_TYPE={}'.format(swift_project_type, swift_package_type))
+    os.system('make init-swift SWIFT_PROJECT_TYPE="{}" SWIFT_PACKAGE_TYPE="{}"'.format(swift_project_type, swift_package_type))
 ###    os.system('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
 #elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
