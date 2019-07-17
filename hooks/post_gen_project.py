@@ -50,9 +50,10 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 platform = '{{ cookiecutter.repo_platform }}'.split()[0].lower()
 os.system('echo platform={}'.format(platform))
 if platform == 'swift':
-    os.system('echo platform=swift')
     swift_project_type = '{{ cookiecutter.repo_platform }}'
     swift_package_type = swift_project_type.split()[1]
+    os.system('echo swift_project_type={}}'.format(swift_project_type))
+    os.system('echo swift_package_type={}}'.format(swift_package_type))
     os.system('make init-swift SWIFT_PROJECT_TYPE={} SWIFT_PACKAGE_TYPE={}'.format(swift_project_type, swift_package_type))
 ###    os.system('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
