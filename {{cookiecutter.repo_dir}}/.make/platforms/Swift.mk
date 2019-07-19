@@ -5,7 +5,7 @@
 # COMPANY: djrlj694.dev
 # VERSION: 1.0.0
 # CREATED: 03MAR2019
-# REVISED: 17JUL2019
+# REVISED: 18JUL2019
 #==============================================================================#
 # For more info on terminology, style conventions, or source references, see
 # the file ".make/README.md".
@@ -20,7 +20,7 @@
 #------------------------------------------------------------------------------#
 
 SWIFT_PROJECT_TYPE ?= "Swift library package"
-SWIFT_PACKAGE_TYPE ?= library
+#SWIFT_PACKAGE_TYPE ?= library
 
 #==============================================================================#
 # PHONY TARGETS
@@ -57,11 +57,17 @@ init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 else
 init-swift: init-swift-vars
 	@swift package init --type $(SWIFT_PACKAGE_TYPE)
+	MyLibrary3
 	@swift package generate-xcodeproj
 	@echo PROJECT=$(PROJECT) SWIFT_PROJECT_TYPE=$(SWIFT_PROJECT_TYPE) SWIFT_PACKAGE_TYPE=$(SWIFT_PACKAGE_TYPE)
-#	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name="$(PROJECT)" project_type="$(SWIFT_PROJECT_TYPE)"
 	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name='$(PROJECT)' project_type='$(SWIFT_PROJECT_TYPE)'
 endif
+
+Taken from Bash shell script split array:
+
+IN="bla@some.com;john@home.com"
+arrIN=(${IN//;/ })
+Explanation:
 
 ## init-swift-dirs: Completes all initial Swift directory setup activites.
 init-swift-dirs: $(XCODE_DIRS)
@@ -70,3 +76,4 @@ init-swift-dirs: $(XCODE_DIRS)
 init-swift-vars:
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
+	$(eval SWIFT_PACKAGE_TYPE = $(word 2,$(SWIFT_PROJECT_TYPE)))
