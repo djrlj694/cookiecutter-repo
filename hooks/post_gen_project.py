@@ -31,6 +31,9 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 def cmd(*args):
     os.system(' '.join(args))
 
+def echo(*args):
+    cmd('echo', *args)
+
 # Create a repo from a cookiecutter.
 def add(cookiecutter_suffix, extra_context):
     cookiecutter(
@@ -55,8 +58,8 @@ os.system('echo platform={}'.format(platform))
 if platform == 'swift':
     swift_project_type = '{{ cookiecutter.repo_platform }}'
     swift_package_type = swift_project_type.split()[1]
-    cmd(f'echo swift_project_type={swift_project_type}')
-    cmd(f'echo swift_package_type={swift_package_type}')
+    echo(f'swift_project_type={swift_project_type}')
+    echo(f'swift_package_type={swift_package_type}')
     cmd(f'make init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 ###    ccmd('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
@@ -65,8 +68,8 @@ elif platform == 'xcode':
     cmd('open -a Xcode')
     swift_project_type = '{{ cookiecutter.repo_platform }}'
     swift_package_type = swift_project_type.split()[1]
-    cmd(f'echo swift_project_type={swift_project_type}')
-    cmd(f'echo swift_package_type={swift_package_type}')
+    echo(f'swift_project_type={swift_project_type}')
+    echo(f'swift_package_type={swift_package_type}')
     cmd(f'make init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 #    add('xcode', extra_context)
 #elif platform in ['cookiecutter', 'github', 'makefile']:
