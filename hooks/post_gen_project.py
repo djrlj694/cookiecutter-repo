@@ -64,7 +64,7 @@ if platform == 'swift':
     print(f'swift_project_type={swift_project_type}')
     print(f'swift_package_type={swift_package_type}')
     make(f'init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
-###    ccmd('cp -R .boilerplate/swift_package/* .')
+###    cmd('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
 #elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
 elif platform == 'xcode':
