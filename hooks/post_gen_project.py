@@ -11,7 +11,7 @@ __maintainer__ = 'Robert (Bob) L. Jones'
 __email__ = 'djrlj694@gmail.com'
 __status__ = 'Development'
 __created_date__= 'May 27, 2019'
-__modified_date__= 'Jul 17, 2019'
+__modified_date__= 'Jul 24, 2019'
 
 ### Libraries ###
 
@@ -27,6 +27,9 @@ from cookiecutter.main import cookiecutter
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
 ### Function Declarations ###
+
+def cmd(*args):
+    os.system(' '.join(args))
 
 # Create a repo from a cookiecutter.
 def add(cookiecutter_suffix, extra_context):
@@ -52,12 +55,19 @@ os.system('echo platform={}'.format(platform))
 if platform == 'swift':
     swift_project_type = '{{ cookiecutter.repo_platform }}'
     swift_package_type = swift_project_type.split()[1]
-    os.system('echo swift_project_type={}'.format(swift_project_type))
-    os.system('echo swift_package_type={}'.format(swift_package_type))
-    os.system('make init-swift SWIFT_PROJECT_TYPE="{}" SWIFT_PACKAGE_TYPE="{}"'.format(swift_project_type, swift_package_type))
-###    os.system('cp -R .boilerplate/swift_package/* .')
+    cmd(f'echo swift_project_type={swift_project_type}')
+    cmd(f'echo swift_package_type={swift_package_type}'))
+    cmd(f'make init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+###    ccmd('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
 #elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
+elif platform == 'xcode':
+    cmd('open -a Xcode')
+    swift_project_type = '{{ cookiecutter.repo_platform }}'
+    swift_package_type = swift_project_type.split()[1]
+    cmd(f'echo swift_project_type={swift_project_type}')
+    cmd(f'echo swift_package_type={swift_package_type}'))
+    cmd(f'make init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 #    add('xcode', extra_context)
 #elif platform in ['cookiecutter', 'github', 'makefile']:
 #    add(platform, extra_context)
