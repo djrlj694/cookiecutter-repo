@@ -56,7 +56,7 @@ if platform == 'swift':
     swift_project_type = '{{ cookiecutter.repo_platform }}'
     swift_package_type = swift_project_type.split()[1]
     cmd(f'echo swift_project_type={swift_project_type}')
-    cmd(f'echo swift_package_type={swift_package_type}'))
+    cmd(f'echo swift_package_type={swift_package_type}')
     cmd(f'make init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 ###    ccmd('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
