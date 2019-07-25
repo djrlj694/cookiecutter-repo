@@ -70,7 +70,7 @@ if platform == 'swift':
 #elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
 elif platform == 'xcode':
     cmd('open -a Xcode')
-    swift_package_type = swift_project_type.split()[1]
+    swift_package_type = repo_platform_parts[1]
     print(f'swift_package_type={swift_package_type}')
     make(f'init-xcode SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 #    add('xcode', extra_context)
