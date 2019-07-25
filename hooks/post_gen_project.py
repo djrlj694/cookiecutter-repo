@@ -11,7 +11,7 @@ __maintainer__ = 'Robert (Bob) L. Jones'
 __email__ = 'djrlj694@gmail.com'
 __status__ = 'Development'
 __created_date__= 'May 27, 2019'
-__modified_date__= 'Jul 24, 2019'
+__modified_date__= 'Jul 25, 2019'
 
 ### Libraries ###
 
@@ -56,24 +56,23 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 #if {{ cookiecutter.add_make }}:
 #    add('makefile', extra_context)
 
-platform = '{{ cookiecutter.repo_platform }}'.split()[0].lower()
-print(f'platform={platform}')
+repo_platform = '{{ cookiecutter.repo_platform }}'
+repo_platform_parts = repo_platform.lower().split()
+platform = repo_platform_parts[0]
+print(f'repo_platform={repo_platform}, platform={platform}')
+
 if platform == 'swift':
-    swift_project_type = '{{ cookiecutter.repo_platform }}'
-    swift_package_type = swift_project_type.split()[1]
-    print(f'swift_project_type={swift_project_type}')
+    swift_package_type = repo_platform_parts[1]
     print(f'swift_package_type={swift_package_type}')
-    make(f'init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+    make(f'init-swift SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 ###    cmd('cp -R .boilerplate/swift_package/* .')
 #    add(platform, extra_context)
 #elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
 elif platform == 'xcode':
     cmd('open -a Xcode')
-    swift_project_type = '{{ cookiecutter.repo_platform }}'
     swift_package_type = swift_project_type.split()[1]
-    print(f'swift_project_type={swift_project_type}')
     print(f'swift_package_type={swift_package_type}')
-    make(f'init-swift SWIFT_PROJECT_TYPE="{swift_project_type}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+    make(f'init-xcode SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 #    add('xcode', extra_context)
 #elif platform in ['cookiecutter', 'github', 'makefile']:
 #    add(platform, extra_context)
