@@ -26,6 +26,11 @@ from cookiecutter.main import cookiecutter
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
+repo_platform = '{{ cookiecutter.repo_platform }}'
+repo_platform_parts = repo_platform.lower().split()
+platform = repo_platform_parts[0]
+print(f'repo_platform={repo_platform}, platform={platform}')
+
 ### Function Declarations ###
 
 def cmd(*args):
@@ -55,11 +60,6 @@ extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
 #
 #if {{ cookiecutter.add_make }}:
 #    add('makefile', extra_context)
-
-repo_platform = '{{ cookiecutter.repo_platform }}'
-repo_platform_parts = repo_platform.lower().split()
-platform = repo_platform_parts[0]
-print(f'repo_platform={repo_platform}, platform={platform}')
 
 if platform == 'swift':
     swift_package_type = repo_platform_parts[1]
