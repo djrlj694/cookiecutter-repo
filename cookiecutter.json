@@ -1,9 +1,10 @@
 {
-    "repo_name": "REPO_NAME",
+    "project_name": "___PROJECT_NAME___",
+    "repo_name": "___REPO_NAME___",
     "repo_platform": ["Cookiecutter template", "Python data science project", "Python module", "Python package", "Swift executable package", "Swift library package", "Xcode project"],
     "repo_dir": "{{ cookiecutter.repo_name | replace(' ', '-') | replace('_', '-') }}",
     "repo_license": ["Not open source", "Apache Software License 2.0", "BSD-3", "GNU GPL v3.0", "MIT"],
-    "repo_short_description": "___REPO_SHORT_DESCRIPTION___",
+    "repo_description": "___REPO_DESCRIPTION___",
     "repo_usage": "___REPO_USAGE___",
     "repo_options": "___REPO_OPTIONS___",
     "repo_requirements": "___REPO_REQUIREMENTS___",
