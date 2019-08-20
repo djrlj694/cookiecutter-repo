@@ -189,17 +189,11 @@ if platform == 'swift':
     swift_package_type = repo_platform_parts[1]
     print(f'swift_package_type={swift_package_type}')
     make(f'init-swift SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
-###    cmd('cp -R .boilerplate/swift_package/* .')
-#    add(platform, extra_context)
-#elif platform in ['ios', 'ipados', 'macos', 'tvos', 'watchos', 'xcode']:
 elif platform == 'xcode':
     cmd('open -a Xcode')
     swift_package_type = repo_platform_parts[1]
     print(f'swift_package_type={swift_package_type}')
     make(f'init-xcode SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
-#    add('xcode', extra_context)
-#elif platform in ['cookiecutter', 'github', 'makefile']:
-#    add(platform, extra_context)
 
 #rm('.boilerplate')
 
