@@ -5,7 +5,7 @@
 # COMPANY: djrlj694.dev
 # VERSION: 1.0.0
 # CREATED: 03MAR2019
-# REVISED: 01JUL2019
+# REVISED: 17NOV2019
 #==============================================================================#
 # For more info on terminology, style conventions, or source references, see
 # the file ".make/README.md".
@@ -54,6 +54,5 @@ init-swift-dirs: $(XCODE_DIRS)
 
 ## init-swift-vars: Completes all Swift variable setup activites.
 init-swift-vars:
-#	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-xcode)
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
