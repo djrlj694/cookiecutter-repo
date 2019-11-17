@@ -40,4 +40,4 @@ Code and codeless (e.g., documentation) contributions toward improving {{ cookie
 
 ## References
 
-See [REFERENCES.md](REFERENCES.md) for a list of sources that I found helpful or inspirational when learning new topics, troubleshooting bugs, authoring documentation, etc.
+See [REFERENCES.md](REFERENCES.md) for a list of sources that were helpful or inspirational when learning new topics, troubleshooting bugs, authoring documentation, etc.
