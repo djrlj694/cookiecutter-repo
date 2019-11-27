@@ -36,7 +36,7 @@ The command `cookiecutter` generates boilerplate from a shell's command-line int
     # Option 1: URL
     $ cookiecutter https://github.com/djrlj694/cookiecutter-repo.git
     
-    # Option 2: 'gh" prefix
+    # Option 2: 'gh' prefix
     $ cookiecutter gh:djrlj694/cookiecutter-repo
     
     # Option 3: 'git+ssh' prefix
