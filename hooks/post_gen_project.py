@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+__version__ = '0.0.0'
+
 __author__ = 'Robert (Bob) L. Jones'
-__coauthor__ = 'N/A'
-__copyright__ = 'Copyright 2019, Cookiecutter-Repo'
 __credits__ = ['Robert (Bob) L. Jones']
+
+__copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
-__version__ = '0.0.1'
-__maintainer__ = 'Robert (Bob) L. Jones'
-__email__ = 'djrlj694@gmail.com'
-__status__ = 'Development'
+
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Aug 19, 2019'
+__modified_date__= 'Dec 01, 2019'
 
 #==============================================================================#
 # LIBRARIES
@@ -57,20 +56,20 @@ GH_HOME_URL = 'https://github.com'
 
 ### Filesystem
 
-repo_dir = '{{ cookiecutter.repo_dir }}'
+repo_dir = '{{cookiecutter.repo_dir}}'
 
-repo_platform = '{{ cookiecutter.repo_platform }}'
+repo_platform = '{{cookiecutter.repo_platform}}'
 repo_platform_parts = repo_platform.lower().split()
 platform = repo_platform_parts[0]
 print(f'repo_platform={repo_platform}, platform={platform}')
 
 ### GitHub API v3
 
-repo_description = '{{ cookiecutter.repo_description }}'
-repo_license_template = '{{ cookiecutter.repo_license_template }}'
-repo_private = '{{ cookiecutter.repo_private }}'
+repo_description = '{{cookiecutter.repo_description}}'
+repo_license_template = '{{cookiecutter.repo_license_template}}'
+repo_private = '{{cookiecutter.repo_private}}'
 
-gh_user = '{{ cookiecutter.github_user }}'
+gh_user = '{{cookiecutter.github_user}}'
 
 ##----------------------------------------------------------------------------##
 ## Processed Input
@@ -183,7 +182,7 @@ if DEBUG:
 ## Version Control 
 ##----------------------------------------------------------------------------##
 
-extra_context = {'project_name': '{{ cookiecutter.repo_name }}'}
+extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 
 if platform == 'swift':
     swift_package_type = repo_platform_parts[1]
