@@ -1,6 +1,6 @@
-# {{ cookiecutter.repo_name }} Code of Conduct
+# Code of Conduct
 
-Below is the Code of Conduct to which all contributors and participants in the [{{ cookiecutter.repo_name }}](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.repo_name }}) community are expected to adhere.
+Below is the Code of Conduct to which all of our contributors and participants are expected to adhere.
 It is adopted from the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
 
 ## Our Pledge
@@ -58,7 +58,7 @@ further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at {{ cookiecutter.lead_email }}. All
+reported by contacting the project team at {{cookiecutter.lead_email}}. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
