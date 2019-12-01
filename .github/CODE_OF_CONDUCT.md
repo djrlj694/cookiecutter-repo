@@ -1,6 +1,6 @@
-# Cookiecutter-Repo Code of Conduct
+# Code of Conduct
 
-Below is the Code of Conduct to which all contributors and participants in the [Cookiecutter-Repo](https://github.com/djrlj694/cookiecutter-repo) community are expected to adhere.
+Below is the Code of Conduct to which all of our contributors and participants are expected to adhere.
 It is adopted from the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct.html).
 
 ## Our Pledge
