@@ -1,9 +1,9 @@
-# Contributing to {{ cookiecutter.repo_name }}
+# Contributing to {{cookiecutter.repo_name}}
 
-Contributions toward improving [{{ cookiecutter.repo_name }}](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.repo_name }}) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.repo_name }}/pull/new/master) process.  By submitting a pull request, you acknowledge and agree to the following:
+Contributions toward improving [{{cookiecutter.repo_name}}](https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}/pull/new/master) process.  By submitting a pull request, you acknowledge and agree to the following:
 
-1. You have the right to license your contribution to {{ cookiecutter.repo_name }}'s project leader ({{ cookiecutter.lead_email }}) and the {{ cookiecutter.repo_name }} community;
-2. Your contributions are licensed under the [{{ cookiecutter.repo_license }}](LICENSE.md).
+1. You have the right to license your contribution to {{cookiecutter.repo_name}}'s project leader ({{cookiecutter.lead_email}}) and the {{cookiecutter.repo_name}} community;
+2. Your contributions are licensed under the [{{cookiecutter.repo_license}}](LICENSE.md).
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
 email, or any other method with the owners of this repository before making a change.
