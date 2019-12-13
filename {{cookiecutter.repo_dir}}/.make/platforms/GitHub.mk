@@ -5,7 +5,7 @@
 # COMPANY: djrlj694.dev
 # VERSION: 1.0
 # CREATED: 23FEB2019
-# REVISED: 25MAY2019
+# REVISED: 08JUL2019
 #==============================================================================#
 # For more info on terminology, style conventions, or source references, see
 # the file ".make/README.md".
@@ -88,6 +88,8 @@ else
 init-github: init-github-vars
 	@cookiecutter gh:$(TEMPLATES_REPO) email=$(EMAIL) project_name=$(PROJECT)
 endif
+#	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${NEW_REPO_NAME}"'"}'
+	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${PROJECT}"'"}'
 
 ## init-github-dirs: Completes all initial Github directorry setup activites.
 init-github-dirs: $(GITHUB_DIRS)
