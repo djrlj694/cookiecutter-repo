@@ -130,7 +130,7 @@ Currently, there are no known issues.  If you discover any, please kindly submit
 
 ## Contributing
 
-Code and codeless (e.g., documentation) contributions toward improving Cookiecutter Repo are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to become a contributor.
+Code and codeless (documentation, donations, etc.) contributions are welcome. To contribute yours, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
@@ -138,4 +138,4 @@ Cookiecutter Repo is released under the [MIT License](LICENSE.md).
 
 ## References
 
-API documentation, tutorials, and other online references and made portions of Cookiecutter Repo possible.  See [REFERENCES.md](REFERENCES.md) for a list of some of them.
+API documentation, tutorials, and other online references and made portions of this project possible.  See [REFERENCES.md](REFERENCES.md) for a list of some.
