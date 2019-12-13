@@ -1,6 +1,6 @@
 # References
 
-The following is a list of sources that were helpful or inspirational when learning new topics, troubleshooting bugs, authoring documentation, etc. while developing or maintaining [{{ cookiecutter.repo_name }}](https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.repo_dir }}).
+The following is a list of sources that were helpful or inspirational when learning new topics, troubleshooting bugs, authoring documentation, etc. while developing or maintaining [{{cookiecutter.repo_name}}](README.md).
 
 {% if cookiecutter.repo_platform == 'Cookiecutter template' %}
 ## Cookiecutter
