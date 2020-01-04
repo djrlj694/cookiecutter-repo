@@ -1,4 +1,4 @@
-# Contributing to Cookiecutter Repo
+# Contributing Guidelines
 
 Contributions toward improving [Cookiecutter Repo](README.md) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://github.com/djrlj694/cookiecutter-repo/pull/new/master) process.  By submitting a pull request, you acknowledge and agree to the following:
 
