@@ -18,7 +18,7 @@ ___PENDING___
 
 ## Installation
 
-{{cookiecutter.repo_installation}}
+___PENDING___
 
 ## Documentation
 
