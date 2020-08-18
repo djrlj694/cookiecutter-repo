@@ -25,7 +25,7 @@ import logging as log
 #import pygit2
 import os
 import requests
-import sh
+#import sh
 import sys
 
 ##----------------------------------------------------------------------------##
@@ -45,7 +45,7 @@ from github import Github
 ## Debugging
 ##----------------------------------------------------------------------------##
 
-DEBUG = False
+DEBUG = True
 
 ##----------------------------------------------------------------------------##
 ## Filesystem
@@ -160,26 +160,26 @@ def setup_logging(is_verbose: bool):
 ## Version Control 
 ##----------------------------------------------------------------------------##
 
-def add_gh_repo(origin_url):
-    """
-    Add a GitHub repo to the local git repo, then syncs the two.
-    """
+#def add_gh_repo(origin_url):
+#    """
+#    Add a GitHub repo to the local git repo, then syncs the two.
+#    """
+#
+#    git = sh.git
+#
+#    git.remote.add.origin(origin_url)
+#    git.push('-u', 'origin', 'master')
 
-    git = sh.git
-
-    git.remote.add.origin(origin_url)
-    git.push('-u', 'origin', 'master')
-
-def create_file(file_path):
-    """
-    Create a file (from a repo's perspective).
-    """
-
-    git = sh.git
-    filename = os.path.basename(file_path)
-
-    git.add(file_path)
-    git.commit(f'-m Create {filename}')
+#def create_file(file_path):
+#    """
+#    Create a file (from a repo's perspective).
+#    """
+#
+#    git = sh.git
+#    filename = os.path.basename(file_path)
+#
+#    git.add(file_path)
+#    git.commit(f'-m Create {filename}')
 
 def create_gh_repo(repo_name):
 #def create_gh_repo():
@@ -202,15 +202,15 @@ def create_gh_repo(repo_name):
         auth=(GH_USER, gh_password)
         )
 
-def create_git_repo(repo_name):
+#def create_git_repo(repo_name):
 #def create_git_repo():
-    """
-    Create a Git repo with a single file.
-    """
-
-    git = sh.git
-    git.init()
-    git.remote.add.origin(f'{GH_HOME_URL}/{GH_USER}/{repo_name}.git')
+#    """
+#    Create a Git repo with a single file.
+#    """
+#
+#    git = sh.git
+#    git.init()
+#    git.remote.add.origin(f'{GH_HOME_URL}/{GH_USER}/{repo_name}.git')
 
 def add(cookiecutter_suffix, extra_context):
     """
@@ -234,18 +234,18 @@ def main():
     """
 
     # Create repositories.
-    create_gh_repo(REPO_NAME)
-    create_git_repo(REPO_NAME)
+    #create_gh_repo(REPO_NAME)
+    #create_git_repo(REPO_NAME)
 
     # Download files to local repository.
-    sh.git.pull('origin', 'master')
+    #sh.git.pull('origin', 'master')
 
     # Add files to local repository.
     create_file('README.md')
     create_file('.gitignore')
 
     # Upload (updated) files to remote repository.
-    sh.git.push('-u', 'origin', 'master')
+    #sh.git.push('-u', 'origin', 'master')
 
 #==============================================================================#
 # MAIN EXECUTION
