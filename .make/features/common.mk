@@ -7,17 +7,14 @@
 # CREATED: 03MAR2019
 # REVISED: 25MAY2019
 #==============================================================================#
-# For more info on terminology, style conventions, or source references, see
-# the file ".make/README.md".
+# For info on terminology or style conventions, see ".make/README.md".
 #==============================================================================#
 
 #==============================================================================#
 # INTERNAL CONSTANTS
 #==============================================================================#
 
-#------------------------------------------------------------------------------#
-# Files
-#------------------------------------------------------------------------------#
+# -- Files -- #
 
 COMMON_DOCS := README REFERENCES
 
@@ -28,9 +25,7 @@ COMMON_DOWNLOADED_FILES := $(addsuffix .download,$(COMMON_FILES))
 # PHONY TARGETS
 #==============================================================================#
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "clean" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite phony targets for the "clean" target -- #
 
 .PHONY: clean-common clean-docs-common
 
@@ -43,18 +38,14 @@ clean-docs-common: | $(LOG)
 	@rm -rf $(COMMON_FILES) 2>&1; \
 	$(status_result)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "docs" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite phony targets for the "docs" target -- #
 
 .PHONY: docs-common 
 
 ## docs-common: Completes all common document generation activites.
 docs-common: $(COMMON_FILES)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite phony targets for the "init" target -- #
 
 .PHONY: init-common
 

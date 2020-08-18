@@ -1,23 +1,20 @@
-# Copyright © 2019 djrlj694.dev. All rights reserved.
-#==============================================================================#
+# Copyright © 2020 djrlj694.dev. All rights reserved.
+# ============================================================================ #
 # PROGRAM: Xcode.mk
-# AUTHORS: Robert L. Jones
-# COMPANY: djrlj694.dev
-# VERSION: 1.1.0
+# AUTHORS: Robert (Bob) L. Jones
+# VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 25MAY2019
-#==============================================================================#
-# For more info on terminology, style conventions, or source references, see
-# the file ".make/README.md".
-#==============================================================================#
+# REVISED: 18AUG2020
+# ============================================================================ #
+# For info on terminology or style conventions, see ".make/README.md".
+# ============================================================================ #
 
-#==============================================================================#
+
+# ============================================================================ #
 # INTERNAL CONSTANTS
-#==============================================================================#
+# ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Directories
-#------------------------------------------------------------------------------#
+# -- Directories -- #
 
 XCODE_RESOURCES := Data Fonts Localization Media UserInterfaces
 XCODE_RESOURCES_DIRS := $(addprefix $(PACKAGE)/Resources/,$(XCODE_RESOURCES))
@@ -28,22 +25,19 @@ XCODE_SOURCES_DIRS := $(addprefix $(PACKAGE)/Sources/,$(XCODE_SOURCES))
 XCODE_DIRS := $(addsuffix /.,$(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS))
 #XCODE_DIRS := $(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS)
 
-#------------------------------------------------------------------------------#
-# Help strings
-#------------------------------------------------------------------------------#
+# -- Help strings -- #
 
 # Argument syntax for the "make" command when used with this makefile.
 MAKE_ARGS += [PACKAGE=$(FG_CYAN)<package>$(RESET)]
 MAKE_ARGS += [PREFIX=$(FG_CYAN)<prefix>$(RESET)]
 MAKE_ARGS += [USER=$(FG_CYAN)<user>$(RESET)]
 
-#==============================================================================#
-# MACROS
-#==============================================================================#
 
-#------------------------------------------------------------------------------#
-# Test strings
-#------------------------------------------------------------------------------#
+# ============================================================================ #
+# MACROS
+# ============================================================================ #
+
+# -- Test strings -- #
 
 define XCODE_DIRS_TEST
 .
@@ -87,13 +81,12 @@ define XCODE_FILES_TEST
 endef
 export XCODE_FILES_TEST
 
-#==============================================================================#
-# PHONY TARGETS
-#==============================================================================#
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "clean" target
-#------------------------------------------------------------------------------#
+# ============================================================================ #
+# PHONY TARGETS
+# ============================================================================ #
+
+# -- Prerequisite phony targets for the "clean" target -- #
 
 #.PHONY: clean-xcode clean-xcode-dirs clean-docs-xcode
 .PHONY: clean-xcode clean-xcode-dirs
@@ -104,9 +97,7 @@ clean-xcode: clean-carthage clean-cocoapods clean-xcode-dirs
 	@rm -rf $(PACKAGE) >$(LOG) 2>&1; \
 	$(status_result)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite phony targets for the "init" target -- #
 
 .PHONY: init-xcode init-xcode-dirs init-xcode-vars
 
@@ -126,9 +117,7 @@ init-xcode-vars:
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/Cookiecutter-Xcode)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "test" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite phony targets for the "test" target -- #
 
 .PHONY: test-xcode test-xcode-dirs test-xcode-files
 
@@ -147,9 +136,10 @@ test-xcode-files: expected_xcode_files.txt actual_xcode_files.txt | $(LOG)
 	@diff expected_xcode_files.txt actual_xcode_files.txt >$(LOG) 2>&1; \
 	$(test_result)
 
-#==============================================================================#
+
+# ============================================================================ #
 # INTERMEDIATE TARGETS
-#==============================================================================#
+# ============================================================================ #
 
 .INTERMEDIATE: actual_xcode_dirs.txt actual_xcode_files.txt expected_xcode_dirs.txt expected_xcode_files.txt
 
@@ -173,9 +163,10 @@ expected_xcode_files.txt:
 #	@printf "Making file $(target_var).\n"
 	@echo "$$XCODE_FILES_TEST" >$@
 
-#==============================================================================#
+
+# ============================================================================ #
 # PLATFORM DEPENDENCIES
-#==============================================================================#
+# ============================================================================ #
 
 include $(MAKEFILE_DIR)/platforms/Carthage.mk
 include $(MAKEFILE_DIR)/platforms/CocoaPods.mk

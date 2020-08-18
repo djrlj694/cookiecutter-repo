@@ -1,32 +1,27 @@
-# Copyright © 2019 djrlj694.dev. All rights reserved.
-#==============================================================================#
+# Copyright © 2020 djrlj694.dev. All rights reserved.
+# ============================================================================ #
 # PROGRAM: GitHub.mk
-# AUTHORS: Robert L. Jones
-# COMPANY: djrlj694.dev
-# VERSION: 1.0
+# AUTHORS: Robert (Bob) L. Jones
+# VERSION: 0.0.0
 # CREATED: 23FEB2019
-# REVISED: 08JUL2019
-#==============================================================================#
-# For more info on terminology, style conventions, or source references, see
-# the file ".make/README.md".
-#==============================================================================#
+# REVISED: 18AUG2020
+# ============================================================================ #
+# For info on terminology or style conventions, see ".make/README.md".
+# ============================================================================ #
 
-#==============================================================================#
+
+# ============================================================================ #
 # INTERNAL CONSTANTS
-#==============================================================================#
+# ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Accounts
-#------------------------------------------------------------------------------#
+# -- Accounts -- #
 
 GITHUB_USER := $(USER)
 TRAVIS_USER := $(USER)
 
 EMAIL := $(USER)@gmail.com
 
-#------------------------------------------------------------------------------#
-# Directories
-#------------------------------------------------------------------------------#
+# -- Directories -- #
 
 GITHUB_DIR1 := .github
 GITHUB_DIR2 := $(GITHUB_DIR1)/ISSUE_TEMPLATE
@@ -34,9 +29,7 @@ GITHUB_DIR3 := $(GITHUB_DIR1)/PULL_REQUEST_TEMPLATE
 
 GITHUB_DIRS := $(addsuffix /.,$(GITHUB_DIR2) $(GITHUB_DIR3))
 
-#------------------------------------------------------------------------------#
-# Files
-#------------------------------------------------------------------------------#
+# -- Files -- #
 
 GITHUB_DOCS0 := CHANGELOG CODE_OF_CONDUCT CONTRIBUTING SUPPORT
 #GITHUB_DOCS1 := $(addprefix $(GITHUB_DIR1)/,CODE_OF_CONDUCT CONTRIBUTING) 
@@ -47,13 +40,12 @@ GITHUB_DOCS := $(GITHUB_DOCS0) $(GITHUB_DOCS2) $(GITHUB_DOCS3)
 GITHUB_FILES := $(addsuffix .md,$(GITHUB_DOCS))
 GITHUB_DOWNLOADED_FILES := $(addsuffix .download,$(GITHUB_FILES))
 
-#==============================================================================#
-# PHONY TARGETS
-#==============================================================================#
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "clean" target
-#------------------------------------------------------------------------------#
+# ============================================================================ #
+# PHONY TARGETS
+# ============================================================================ #
+
+# -- Prerequisite phony targets for the "clean" target -- #
 
 .PHONY: clean-docs-github
 
@@ -66,18 +58,14 @@ clean-docs-github: | $(LOG)
 	@rm -rf $(GITHUB_FILES) $(GITHUB_DIR1) >$(LOG) 2>&1; \
 	$(status_result)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "docs" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite phony targets for the "docs" target -- #
 
 .PHONY: docs-github 
 
 ## docs-github: Completes all GitHub document generation activites.
 docs-github: $(GITHUB_FILES)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite phony targets for the "init" target -- #
 
 .PHONY: init-github init-github-dirs init-github-vars
 
@@ -101,9 +89,10 @@ init-github-vars:
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 	$(eval ORIGIN_URL = https://github.com/$(PROJECT_REPO).git)
 
-#==============================================================================#
+
+# ============================================================================ #
 # FILE TARGETS
-#==============================================================================#
+# ============================================================================ #
 
 # Makes a bug_report.md file.
 $(GITHUB_DIR2)/bug_report.md: $(GITHUB_DIR2)/bug_report.md.download
@@ -144,8 +133,9 @@ CONTRIBUTING.sed:
 # Makes a SUPPORT.md file.
 SUPPORT.md: SUPPORT.md.download
 
-#==============================================================================#
+
+# ============================================================================ #
 # INTERMEDIATE TARGETS
-#==============================================================================#
+# ============================================================================ #
 
 .INTERMEDIATE: $(GITHUB_DOWNLOADED_FILES) CODE_OF_CONDUCT.sed CONTRIBUTING.sed

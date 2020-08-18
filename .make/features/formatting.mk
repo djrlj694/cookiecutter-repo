@@ -7,8 +7,7 @@
 # CREATED: 16MAR2019
 # REVISED: 25MAY2019
 #==============================================================================#
-# For more info on terminology, style conventions, or source references, see
-# the file ".make/README.md".
+# For info on terminology or style conventions, see ".make/README.md".
 #==============================================================================#
 
 #==============================================================================#

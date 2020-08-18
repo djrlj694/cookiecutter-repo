@@ -4,11 +4,10 @@
 # AUTHORS: Robert L. Jones
 # COMPANY: djrlj694.dev
 # VERSION: 1.0.0
-# CREATED: 10MAR16MAR20192019
+# CREATED: 10MAR2019
 # REVISED: 25MAY2019
 #==============================================================================#
-# For more info on terminology, style conventions, or source references, see
-# the file ".make/README.md".
+# For info on terminology or style conventions, see ".make/README.md".
 #==============================================================================#
 
 #==============================================================================#
