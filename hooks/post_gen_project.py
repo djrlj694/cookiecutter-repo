@@ -85,7 +85,7 @@ GH_USER = '{{cookiecutter.github_user}}'
 
 ### Filesystem
 
-repo_subdir = os.path.basename(repo_dir)
+repo_subdir = os.path.basename(REPO_DIR)
 
 ### GitHub API v3
 
