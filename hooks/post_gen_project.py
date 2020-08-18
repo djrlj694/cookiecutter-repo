@@ -241,11 +241,13 @@ def main():
     #sh.git.pull('origin', 'master')
 
     # Add files to local repository.
-    create_file('README.md')
-    create_file('.gitignore')
+    #create_file('README.md')
+    #create_file('.gitignore')
 
     # Upload (updated) files to remote repository.
     #sh.git.push('-u', 'origin', 'master')
+
+    pass
 
 #==============================================================================#
 # MAIN EXECUTION
