@@ -6,6 +6,7 @@ The following is a list of sources that were helpful or inspirational when learn
 
 1. https://github.com/audreyr/cookiecutter
 2. https://github.com/audreyr/cookiecutter-pypackage
+3. https://github.com/myhumankit/cookiecutter-new-project
 
 ## CODE_OF_CONDUCT.md
 
@@ -29,16 +30,18 @@ The following is a list of sources that were helpful or inspirational when learn
 ## GitHub
 
 1. https://github.com/bcgov/BC-Policy-Framework-For-GitHub/blob/master/BC-Gov-Org-HowTo/Naming-Repos.md
-2. https://gist.github.com/methodbox/2b18dbf5090d55a00d11901e6515cd33#file-setup-repo-sh
-3. https://gist.github.com/robwierzbowski/5430952
-4. https://help.github.com/articles/adding-support-resources-to-your-project/
-5. https://help.github.com/articles/creating-a-pull-request-template-for-your-repository/
-6. https://help.github.com/articles/creating-issue-templates-for-your-repository/
-7. https://help.github.com/articles/setting-guidelines-for-repository-contributors/
-8. https://help.github.com/categories/building-a-strong-community/
-9. https://lab.github.com/githubtraining/introduction-to-github
-10. https://medium.com/better-programming/create-github-repos-remotely-25153a6e6890
-11. https://stackoverflow.com/questions/11947587/is-there-a-naming-convention-for-git-repositories
+2. https://developer.github.com/v3/repos/
+3. https://gist.github.com/methodbox/2b18dbf5090d55a00d11901e6515cd33#file-setup-repo-sh
+4. https://gist.github.com/robwierzbowski/5430952
+5. https://help.github.com/en/articles/adding-support-resources-to-your-project/
+6. https://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository/
+7. https://help.github.com/en/articles/creating-issue-templates-for-your-repository/
+8. https://help.github.com/en/articles/licensing-a-repository
+9. https://help.github.com/en/articles/setting-guidelines-for-repository-contributors/
+10. https://help.github.com/en/categories/building-a-strong-community/
+11. https://lab.github.com/githubtraining/introduction-to-github
+12. https://medium.com/better-programming/create-github-repos-remotely-25153a6e6890
+13. https://stackoverflow.com/questions/11947587/is-there-a-naming-convention-for-git-repositories
 
 ## Makefile
 
@@ -60,7 +63,18 @@ The following is a list of sources that were helpful or inspirational when learn
 
 ## Open Source
 
-1. https://opensource.guide
+1. https://choosealicense.com
+2. https://opensource.guide
+
+## Python
+
+1. https://dbader.org/blog/python-assert-tutorial
+2. https://pymotw.com/2/getpass/
+3. https://2.python-requests.org//en/latest/user/authentication/
+4. https://stackoverflow.com/questions/10660435/pythonic-way-to-create-a-long-multi-line-string
+5. https://stackoverflow.com/questions/25491090/how-to-use-python-to-execute-a-curl-command
+6. https://stackoverflow.com/questions/26745519/converting-dictionary-to-json7
+7. https://stackoverflow.com/questions/48117986/python-how-to-make-a-curl-request-with-username-password?rq=1
 
 ## Unix
 

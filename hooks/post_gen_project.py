@@ -21,13 +21,21 @@ __modified_date__= 'Dec 01, 2019'
 ##----------------------------------------------------------------------------##
 
 import json
+import logging as log
+#import pygit2
 import os
 import requests
 import sh
 import sys
 
+##----------------------------------------------------------------------------##
+## 3rd-party
+##----------------------------------------------------------------------------##
+
 from cookiecutter.main import cookiecutter
 from getpass import getpass
+#from git import Repo
+from github import Github
 
 #==============================================================================#
 # CONSTANTS
@@ -40,15 +48,14 @@ from getpass import getpass
 DEBUG = False
 
 ##----------------------------------------------------------------------------##
-## Version Control
+## Filesystem
 ##----------------------------------------------------------------------------##
 
-GH_API_URL = 'https://api.github.com/user/repos'
-GH_HOME_URL = 'https://github.com'
-
-#==============================================================================#
-# VARIABLES
-#==============================================================================#
+# Calling os.path.basename(__file__) generates filename (e.g.,tmp69w3m_kf.py).
+# This is due to how Cookiecutter processes a template's hooks (i.e., Python
+# scripts for handling any pre- or post-boilerplate generation.  So, hard-code
+# the name of of the hook instead.
+SCRIPT_NAME = 'post_gen_project.py'
 
 ##----------------------------------------------------------------------------##
 ## Input
@@ -56,7 +63,7 @@ GH_HOME_URL = 'https://github.com'
 
 ### Filesystem
 
-repo_dir = '{{cookiecutter.repo_dir}}'
+REPO_DIR = '{{cookiecutter.repo_dir}}'
 
 repo_platform = '{{cookiecutter.repo_platform}}'
 repo_platform_parts = repo_platform.lower().split()
@@ -65,11 +72,12 @@ print(f'repo_platform={repo_platform}, platform={platform}')
 
 ### GitHub API v3
 
-repo_description = '{{cookiecutter.repo_description}}'
-repo_license_template = '{{cookiecutter.repo_license_template}}'
-repo_private = '{{cookiecutter.repo_private}}'
+REPO_DESCRIPTION = '{{cookiecutter.repo_description}}'
+REPO_LICENSE_TEMPLATE = '{{cookiecutter.repo_license_template}}'
+REPO_NAME = '{{cookiecutter.repo_name}}'
+REPO_PRIVATE = '{{cookiecutter.repo_private}}'
 
-gh_user = '{{cookiecutter.github_user}}'
+GH_USER = '{{cookiecutter.github_user}}'
 
 ##----------------------------------------------------------------------------##
 ## Processed Input
@@ -83,6 +91,15 @@ repo_subdir = os.path.basename(repo_dir)
 
 repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
 
+##----------------------------------------------------------------------------##
+## Version Control
+##----------------------------------------------------------------------------##
+
+### GitHub API v3
+
+GH_API_URL = 'https://api.github.com/user/repos'
+GH_HOME_URL = 'https://github.com'
+
 #==============================================================================#
 # FUNCTIONS
 #==============================================================================#
@@ -91,9 +108,14 @@ repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
 ## Debugging
 ##----------------------------------------------------------------------------##
 
-### Executes shell commands that the "sh" module can't.
-
 def cmd(*args):
+    """
+    Execute shell commands that import `sh` can't.
+
+    Args:
+        *args: Variable length argument list.
+    """
+
     os.system(' '.join(args))
 
 def make(*args):
@@ -103,21 +125,55 @@ def rm(*args):
     cmd('rm -rf', *args)
 
 ##----------------------------------------------------------------------------##
+## Logging
+##----------------------------------------------------------------------------##
+
+def setup_logging(is_verbose: bool):
+    """
+    Configure logging system.
+    
+    Args:
+        is_verbose (bool): A boolean flag for setting log verbosity.
+    """
+
+    # For more info or inspiration on log formats, see:
+    # https://alvinalexander.com/blog/post/java/sample-how-format-log4j-logging-logfile-output
+    log_parts = [
+        '%(levelname)-8s',
+        '%(asctime)s',
+        '%(module)s',
+        '%(funcName)s',
+        f'{SCRIPT_NAME}:%(lineno)d',
+        '%(message)s'
+    ]
+    format = ' | '.join(log_parts)
+    datefmt = '%Y-%m-%d %H:%M:%S'
+
+    if is_verbose:
+        DEBUG = True
+        log.basicConfig(format=format, datefmt=datefmt, level=log.INFO)
+        log.info('Logging verbosely...')
+    else:
+        log.basicConfig(format=format, datefmt=datefmt, level=log.WARNING)
+
+##----------------------------------------------------------------------------##
 ## Version Control 
 ##----------------------------------------------------------------------------##
 
-### Adds a GitHub repo to the local git repo, then syncs the two.
-
 def add_gh_repo(origin_url):
+    """
+    Add a GitHub repo to the local git repo, then syncs the two.
+    """
 
     git = sh.git
 
     git.remote.add.origin(origin_url)
     git.push('-u', 'origin', 'master')
 
-### Creates a file (from a repo's perspective).
-
 def create_file(file_path):
+    """
+    Create a file (from a repo's perspective).
+    """
 
     git = sh.git
     filename = os.path.basename(file_path)
@@ -125,15 +181,17 @@ def create_file(file_path):
     git.add(file_path)
     git.commit(f'-m Create {filename}')
 
-### Creates a GitHub repo.
-
-def create_gh_repo():
+def create_gh_repo(repo_name):
+#def create_gh_repo():
+    """
+    Create a GitHub repo.
+    """
 
     gh_data_dict = {
         'name': repo_name,
-        'description': repo_description,
-        'private': repo_private,
-        'license_template': repo_license_template
+        'description': REPO_DESCRIPTION,
+        'private': REPO_PRIVATE,
+        'license_template': REPO_LICENSE_TEMPLATE
         }
     gh_data = json.dumps(gh_data_dict)
     gh_password = getpass('github_password: ')
@@ -141,19 +199,24 @@ def create_gh_repo():
     requests.post(
         GH_API_URL,
         data=gh_data,
-        auth=(gh_user, gh_password)
+        auth=(GH_USER, gh_password)
         )
 
-### Creates a Git repo with a single file.
+def create_git_repo(repo_name):
+#def create_git_repo():
+    """
+    Create a Git repo with a single file.
+    """
 
-def create_git_repo():
     git = sh.git
     git.init()
-    git.remote.add.origin(f'{GH_HOME_URL}/{gh_user}/{repo_name}.git')
-
-# Create a repo from a cookiecutter.
+    git.remote.add.origin(f'{GH_HOME_URL}/{GH_USER}/{repo_name}.git')
 
 def add(cookiecutter_suffix, extra_context):
+    """
+    Create a repo from a cookiecutter.
+    """
+
     cookiecutter(
         'gh:djrlj694/cookiecutter-%s' % cookiecutter_suffix,
         extra_context=extra_context,
@@ -161,8 +224,31 @@ def add(cookiecutter_suffix, extra_context):
         output_dir='..',
         overwrite_if_exists=True)   
 
+##----------------------------------------------------------------------------##
+## Main Program
+##----------------------------------------------------------------------------##
+
+def main():
+    """
+    Run the main set of functions that define the program.
+    """
+
+    # Create repositories.
+    create_gh_repo(REPO_NAME)
+    create_git_repo(REPO_NAME)
+
+    # Download files to local repository.
+    sh.git.pull('origin', 'master')
+
+    # Add files to local repository.
+    create_file('README.md')
+    create_file('.gitignore')
+
+    # Upload (updated) files to remote repository.
+    sh.git.push('-u', 'origin', 'master')
+
 #==============================================================================#
-# MAIN PROGRAM
+# MAIN EXECUTION
 #==============================================================================#
 
 ##----------------------------------------------------------------------------##
@@ -171,11 +257,12 @@ def add(cookiecutter_suffix, extra_context):
 
 if DEBUG:
     cmd('echo PWD=$PWD')
+    cmd('which python')
+    cmd('python --version')
     cmd('conda list')
     cmd('pip list')
-    cmd('python --version')
-    print(f'repo_dir={repo_dir}')
-    print(f'repo_subdir={repo_subdir}')
+    print(f'REPO_DIR={REPO_DIR}')
+    print(f'REPO_NAME={REPO_NAME}')
     print(f'repo_name={repo_name}')
 
 ##----------------------------------------------------------------------------##
@@ -195,6 +282,14 @@ elif platform == 'xcode':
     make(f'init-xcode SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
 #rm('.boilerplate')
+
+##----------------------------------------------------------------------------##
+## Main Program
+##----------------------------------------------------------------------------##
+
+# If this module is in the main module, call the main() function.
+if __name__ == "__main__":
+    main()
 
 ##----------------------------------------------------------------------------##
 ## Housekeeping

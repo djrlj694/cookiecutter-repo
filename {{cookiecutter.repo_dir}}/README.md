@@ -1,18 +1,20 @@
-# {{cookiecutter.repo_name}}
+# {{cookiecutter.project_name}}
 
 [![Build Status](https://travis-ci.org/{{cookiecutter.travis_user}}/TravisCIBlog.svg?branch=master)](https://travis-ci.org/{{cookiecutter.travis_user}}/{{cookiecutter.repo_name}})
 
+{{cookiecutter.repo_description}}
+
 ## Usage
 
-{{cookiecutter.repo_usage}}
+___PENDING___
 
 ## Options
 
-{{cookiecutter.repo_options}}
+___PENDING___
 
 ## System Requirements
 
-{{cookiecutter.repo_requirements}}
+___PENDING___
 
 ## Installation
 
@@ -20,22 +22,20 @@
 
 ## Documentation
 
-Documentation for the project can be found [here](https://{{cookiecutter.github_user}}.github.io/{{cookiecutter.repo_name}}/).
+Documentation for the project is pending but eventually will be found [here](https://{{cookiecutter.github_user}}.github.io/{{cookiecutter.repo_name}}/).
 
 ## Known Issues
 
-Currently, there are no known issues.{% if cookiecutter.add_github %}  If you discover any, please kindly submit a [pull request](CONTRIBUTING.md).{% endif %}
+Currently, there are no known issues.  If you discover any, please kindly submit a [pull request](CONTRIBUTING.md).
 
-{% if cookiecutter.add_github %}
 ## Contributing
 
 Code and codeless (documentation, donations, etc.) contributions are welcome. To contribute yours, see [CONTRIBUTING.md](CONTRIBUTING.md).
-{% endif %}
 
 {% if cookiecutter.repo_license != 'Not open source' %}
 ## License
 
-{{cookiecutter.repo_name}} is released under the [{{cookiecutter.repo_license}}](LICENSE.md).
+{{cookiecutter.project_name}} is released under the [{{cookiecutter.repo_license}}](LICENSE.md).
 {% endif %}
 
 ## References

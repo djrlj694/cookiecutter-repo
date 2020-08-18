@@ -1,8 +1,8 @@
 {
     "project_name": "___PROJECT_NAME___",
-    "repo_name": "___REPO_NAME___",
+    "repo_name": "{{cookiecutter.project_name | lower|replace(' ', '-') | replace('_', '-')}}",
     "repo_platform": ["Cookiecutter template", "Python data science project", "Python module", "Python package", "Swift executable package", "Swift library package", "Xcode project"],
-    "repo_dir": "{{cookiecutter.repo_name | replace(' ', '-') | replace('_', '-')}}",
+    "repo_dir": "{{cookiecutter.repo_name}}",
     "repo_description": "___REPO_DESCRIPTION___",
     "repo_private": [true, false],
     "repo_license_template": "mit",

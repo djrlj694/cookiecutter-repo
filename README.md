@@ -78,8 +78,8 @@ Customization options defined in Cookiecutter Repo's `cookiecutter.json` are as 
 | Key | Description | Value(s) | Default Value |
 | --- | ----------- | ------ | ------------- |
 | `project_name` | The formal, human-friendly name of the repository or its (primary) project as it would appear in documentation (e.g., with spaces and mixed-case) | N/A | `___PROJECT_NAME___` |
-| `repo_name` | The formal, human-friendly name of the repository or its (primary) project as it would appear in documentation (e.g., with spaces and mixed-case) | N/A | `___REPO_NAME___` |
-| `repo_dir` | The local, URL-conforming (i.e., hyphens replace spaces) pathname of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `repo_name` |
+| `repo_name` | The remote, URL-conforming (i.e., hyphens replace spaces and underscores) name of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `project_name` |
+| `repo_dir` | The local pathname of the repository's root directory | N/A | `repo_name` |
 | `repo_description` | A short description of the repository | N/A | `___REPO_DESCRIPTION___` |
 | `repo_private` | A boolean specifying whether to create a private repository or a public one | `True`, `False` | `True` |
 | `repo_license_template` | An optional (but highly recommended) [GitHub API v3 keyword](https://help.github.com/en/articles/licensing-a-repository#searching-github-by-license-type) for the repository's [open source license template](https://choosealicense.com) | N/A | `mit` |
