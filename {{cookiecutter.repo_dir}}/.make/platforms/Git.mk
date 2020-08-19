@@ -45,7 +45,7 @@ clean-git: | $(LOG)
 	$(status_result)
 
 ## init-git: Completes all initial git setup activities.
-init-git: .git | $(LOG)
+init-git: .gitignore .git | $(LOG)
 	@printf "Committing the initial project to the master branch..."
 	@git checkout -b master >$(LOG) 2>&1; \
 	git add . >>$(LOG) 2>&1; \
@@ -73,28 +73,8 @@ init-git: .git | $(LOG)
 # ============================================================================ #
 
 ## .gitignore: Makes a .gitignore file.
-.gitignore: .gitignore.download
-
-# Makes a special empty file for marking that a directory tree has been generated.
-%/.gitkeep:
-	@printf "Making directory tree for marker file $(target_var)..."
-	@printf "Making marker file $(target_var) and its directory tree..."
-	@mkdir -p $(@D); $(status_result)
-	@printf "Making marker file $(target_var)..."
-	@touch $@; $(status_result)
-
-
-# ============================================================================ #
-# INTERMEDIATE TARGETS
-# ============================================================================ #
-
-.INTERMEDIATE: .gitignore.download
-
-
-# ============================================================================ #
-# Second Expansion Targets
-# ============================================================================ #
-
-.SECONDEXPANSION:
-# Make a directory tree.
-#$(PREFIX)/%.gitkeep: $$(@D)/.gitkeep | $$(@D)/.
+.gitignore: | $(LOG)
+	$(eval toolchain = "macos,swift,swiftpackagemanager,vim,visualstudiocode")
+	@printf "Downloading file $@..."
+	@$(call download-gitignore) >$(LOG) 2>&1; \
+	$(status_result)

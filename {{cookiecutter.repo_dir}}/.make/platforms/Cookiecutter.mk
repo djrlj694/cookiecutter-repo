@@ -46,22 +46,3 @@ MAKE_ARGS += [COOKIECUTTER=]
 ifeq ($(COOKIECUTTER),)
 cc-sed-cmd = s/\{\{ cookiecutter.$1 \}\}/$2/g
 endif
-
-
-# ============================================================================ #
-# UTILITY DEPENDENCIES
-# ============================================================================ #
-
-ifeq ($(COOKIECUTTER),)
-include $(MAKEFILE_DIR)/utilities/sed.mk
-endif
-
-
-# ============================================================================ #
-# FEATURE DEPENDENCIES
-# ============================================================================ #
-
-ifeq ($(COOKIECUTTER),)
-include $(MAKEFILE_DIR)/features/downloading.mk
-include $(MAKEFILE_DIR)/features/setting_up.mk
-endif

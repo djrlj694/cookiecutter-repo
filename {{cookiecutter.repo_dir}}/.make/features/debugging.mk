@@ -14,12 +14,9 @@
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-# -- Debugging & Error Capture -- #
-
 # A list of makefile variables to show when testing/debugging.
-VARIABLES_TO_SHOW += PREFIX
-
-# -- Files -- #
+VARIABLES_TO_SHOW := MAKEFILE MAKEFILE_DIR MAKEFILE_LIST
+VARIABLES_TO_SHOW += PACKAGE PREFIX PROJECT PWD USER
 
 #LOG = $(shell mktemp /tmp/log.XXXXXXXXXX)
 #LOG = `mktemp /tmp/log.XXXXXXXXXX`
@@ -27,8 +24,6 @@ VARIABLES_TO_SHOW += PREFIX
 #LOG = $(shell mktemp)
 #LOG = /tmp/make.$$$$.log
 LOG := make.log
-
-# -- Result Strings -- #
 
 # Color-formatted outcome statuses, each of which is based on the return code
 # ($$?) of having run a shell command.
@@ -42,8 +37,6 @@ PASSED := $(FG_GREEN)passed$(RESET).\n
 # INTERNAL VARIABLES
 # ============================================================================ #
 
-# -- Debugging & Error Capture -- #
-
 status_result = $(call result,$(DONE))
 test_result = $(call result,$(PASSED))
 
@@ -51,8 +44,6 @@ test_result = $(call result,$(PASSED))
 # ============================================================================ #
 # USER-DEFINED FUNCTIONS
 # ============================================================================ #
-
-# -- Debugging & Error Capture -- #
 
 # $(call result,formatted-string)
 # Prints a success string ($DONE or $PASSED) if the most recent return code
