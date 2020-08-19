@@ -10,15 +10,14 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Dec 01, 2019'
+__modified_date__= 'Aug 19, 2019'
+
 
 # ============================================================================ #
 # LIBRARIES
 # ============================================================================ #
 
-##----------------------------------------------------------------------------##
-## 3rd-party
-##----------------------------------------------------------------------------##
+# -- 3rd-party -- #
 
 import json
 import logging as log
@@ -28,28 +27,23 @@ import requests
 #import sh
 import sys
 
-##----------------------------------------------------------------------------##
-## 3rd-party
-##----------------------------------------------------------------------------##
+# -- 3rd-party -- #
 
 from cookiecutter.main import cookiecutter
 from getpass import getpass
 #from git import Repo
 #from github import Github
 
+
 # ============================================================================ #
 # CONSTANTS
 # ============================================================================ #
 
-##----------------------------------------------------------------------------##
-## Debugging
-##----------------------------------------------------------------------------##
+# -- Debugging -- #
 
 DEBUG = True
 
-##----------------------------------------------------------------------------##
-## Filesystem
-##----------------------------------------------------------------------------##
+# -- Filesystem -- #
 
 # Calling os.path.basename(__file__) generates filename (e.g.,tmp69w3m_kf.py).
 # This is due to how Cookiecutter processes a template's hooks (i.e., Python
@@ -57,12 +51,9 @@ DEBUG = True
 # the name of of the hook instead.
 SCRIPT_NAME = 'post_gen_project.py'
 
-##----------------------------------------------------------------------------##
-## Input
-##----------------------------------------------------------------------------##
+# -- Input -- #
 
-### Filesystem
-
+# Filesystem
 REPO_DIR = '{{cookiecutter.repo_dir}}'
 
 repo_platform = '{{cookiecutter.repo_platform}}'
@@ -70,8 +61,7 @@ repo_platform_parts = repo_platform.lower().split()
 platform = repo_platform_parts[0]
 print(f'repo_platform={repo_platform}, platform={platform}')
 
-### GitHub API v3
-
+# GitHub API v3
 REPO_DESCRIPTION = '{{cookiecutter.repo_description}}'
 REPO_LICENSE_TEMPLATE = '{{cookiecutter.repo_license_template}}'
 REPO_NAME = '{{cookiecutter.repo_name}}'
@@ -79,34 +69,26 @@ REPO_PRIVATE = '{{cookiecutter.repo_private}}'
 
 GH_USER = '{{cookiecutter.github_user}}'
 
-##----------------------------------------------------------------------------##
-## Processed Input
-##----------------------------------------------------------------------------##
+# -- Processed Input -- #
 
-### Filesystem
-
+# Filesystem
 repo_subdir = os.path.basename(REPO_DIR)
 
-### GitHub API v3
-
+# GitHub API v3
 repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
 
-##----------------------------------------------------------------------------##
-## Version Control
-##----------------------------------------------------------------------------##
+# -- Version Control -- #
 
-### GitHub API v3
-
+# GitHub API v3
 GH_API_URL = 'https://api.github.com/user/repos'
 GH_HOME_URL = 'https://github.com'
+
 
 # ============================================================================ #
 # FUNCTIONS
 # ============================================================================ #
 
-##----------------------------------------------------------------------------##
-## Debugging
-##----------------------------------------------------------------------------##
+# -- Debugging -- #
 
 def cmd(*args):
     """
@@ -124,9 +106,7 @@ def make(*args):
 def rm(*args):
     cmd('rm -rf', *args)
 
-##----------------------------------------------------------------------------##
-## Logging
-##----------------------------------------------------------------------------##
+# -- Logging -- #
 
 def setup_logging(is_verbose: bool):
     """
@@ -156,9 +136,7 @@ def setup_logging(is_verbose: bool):
     else:
         log.basicConfig(format=format, datefmt=datefmt, level=log.WARNING)
 
-##----------------------------------------------------------------------------##
-## Version Control 
-##----------------------------------------------------------------------------##
+# -- Version Control -- #
 
 #def add_gh_repo(origin_url):
 #    """
@@ -224,9 +202,7 @@ def add(cookiecutter_suffix, extra_context):
         output_dir='..',
         overwrite_if_exists=True)   
 
-##----------------------------------------------------------------------------##
-## Main Program
-##----------------------------------------------------------------------------##
+# -- Main Program -- #
 
 def main():
     """
@@ -249,13 +225,12 @@ def main():
 
     pass
 
+
 # ============================================================================ #
 # MAIN EXECUTION
 # ============================================================================ #
 
-##----------------------------------------------------------------------------##
-## Debugging
-##----------------------------------------------------------------------------##
+# -- Debugging -- #
 
 if DEBUG:
     cmd('echo PWD=$PWD')
@@ -267,9 +242,7 @@ if DEBUG:
     print(f'REPO_NAME={REPO_NAME}')
     print(f'repo_name={repo_name}')
 
-##----------------------------------------------------------------------------##
-## Version Control 
-##----------------------------------------------------------------------------##
+# -- Version Control -- #
 
 extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 
@@ -285,16 +258,12 @@ elif platform == 'xcode':
 
 #rm('.boilerplate')
 
-##----------------------------------------------------------------------------##
-## Main Program
-##----------------------------------------------------------------------------##
+# -- Main Execution -- #
 
 # If this module is in the main module, call the main() function.
 if __name__ == "__main__":
     main()
 
-##----------------------------------------------------------------------------##
-## Housekeeping
-##----------------------------------------------------------------------------##
+# -- Housekeeping -- #
 
 sys.exit(0)
