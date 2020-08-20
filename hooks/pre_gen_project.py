@@ -17,7 +17,7 @@ __modified_date__= 'Aug 19, 2019'
 # LIBRARIES
 # ============================================================================ #
 
-# -- 3rd-party -- #
+# -- Python Standard Library -- #
 
 import os
 import re

@@ -17,23 +17,23 @@ __modified_date__= 'Aug 19, 2019'
 # LIBRARIES
 # ============================================================================ #
 
-# -- 3rd-party -- #
+# -- Python Standard Library -- #
 
 import json
 import logging as log
-#import pygit2
 import os
-import requests
-#import sh
 import sys
 
-# -- 3rd-party -- #
+# -- 3rd-Party -- #
 
 from cookiecutter.main import cookiecutter
 from getpass import getpass
 #from git import Repo
 #from github import Github
 
+#import pygit2
+import requests
+#import sh
 
 # ============================================================================ #
 # CONSTANTS
