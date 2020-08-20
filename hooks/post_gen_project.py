@@ -63,11 +63,16 @@ print(f'repo_platform={repo_platform}, platform={platform}')
 
 # GitHub API v3
 REPO_DESCRIPTION = '{{cookiecutter.repo_description}}'
-REPO_LICENSE_TEMPLATE = '{{cookiecutter.repo.license_template}}'
 REPO_NAME = '{{cookiecutter.repo_name}}'
 REPO_PRIVATE = '{{cookiecutter.repo_private}}'
 
 GH_USER = '{{cookiecutter.github_user}}'
+
+# -- Input Mappings -- #
+
+LICENSE_TEMPLATES = {
+    'MIT': 'mit'
+}
 
 # -- Processed Input -- #
 
@@ -75,6 +80,7 @@ GH_USER = '{{cookiecutter.github_user}}'
 repo_subdir = os.path.basename(REPO_DIR)
 
 # GitHub API v3
+LICENSE_TEMPLATE = LICENSE_TEMPLATES['{{cookiecutter.repo_license}}']
 repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
 
 # -- Version Control -- #
@@ -169,7 +175,7 @@ def create_gh_repo(repo_name):
         'name': repo_name,
         'description': REPO_DESCRIPTION,
         'private': REPO_PRIVATE,
-        'license_template': REPO_LICENSE_TEMPLATE
+        'license_template': LICENSE_TEMPLATE
         }
     gh_data = json.dumps(gh_data_dict)
     gh_password = getpass('github_password: ')
