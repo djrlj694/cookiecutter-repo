@@ -80,7 +80,7 @@ LICENSE_TEMPLATES = {
 repo_subdir = os.path.basename(REPO_DIR)
 
 # GitHub API v3
-IS_PRIVATE = true if LICENSE == 'Not open source' else false
+IS_PRIVATE = True if LICENSE == 'Not open source' else False
 LICENSE_TEMPLATE = LICENSE_TEMPLATES[LICENSE]
 repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
 
