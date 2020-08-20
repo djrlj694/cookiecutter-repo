@@ -9,11 +9,12 @@
     "project_type": [
         "unspecified",
         "command-line interface",
+        "data science",
         "library",
         "script",
         "template"
     ],
-    "repo_name": "{{[cookiecutter.project_platform, cookiecutter.project_type, cookiecutter.project_name] | select('!=', 'Unspecified') | join('-') | replace('command-line interface', 'cli') | replace('library', 'lib') | replace(' ', '-') | replace('_', '-') | lower}}",
+    "repo_name": "{{[cookiecutter.project_platform, cookiecutter.project_type, cookiecutter.project_name] | select('!=', 'Unspecified') | join('-') | replace('command-line interface', 'cli') | replace('data science', 'datasci') | replace('library', 'lib') | replace(' ', '-') | replace('_', '-') | lower}}",
     "repo_dir": "./{{cookiecutter.repo_name}}",
     "repo_description": "___REPO_DESCRIPTION___",
     "repo_license": [
