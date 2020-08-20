@@ -54,6 +54,7 @@ SCRIPT_NAME = 'post_gen_project.py'
 # -- Input -- #
 
 # Filesystem
+LICENSE = '{{cookiecutter.repo_license}}'
 REPO_DIR = '{{cookiecutter.repo_dir}}'
 
 repo_platform = '{{cookiecutter.repo_platform}}'
@@ -64,7 +65,6 @@ print(f'repo_platform={repo_platform}, platform={platform}')
 # GitHub API v3
 REPO_DESCRIPTION = '{{cookiecutter.repo_description}}'
 REPO_NAME = '{{cookiecutter.repo_name}}'
-REPO_PRIVATE = '{{cookiecutter.repo_private}}'
 
 GH_USER = '{{cookiecutter.github_user}}'
 
@@ -80,7 +80,8 @@ LICENSE_TEMPLATES = {
 repo_subdir = os.path.basename(REPO_DIR)
 
 # GitHub API v3
-LICENSE_TEMPLATE = LICENSE_TEMPLATES['{{cookiecutter.repo_license}}']
+IS_PRIVATE = true if LICENSE == 'Not open source' else false
+LICENSE_TEMPLATE = LICENSE_TEMPLATES[LICENSE]
 repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
 
 # -- Version Control -- #
@@ -174,7 +175,7 @@ def create_gh_repo(repo_name):
     gh_data_dict = {
         'name': repo_name,
         'description': REPO_DESCRIPTION,
-        'private': REPO_PRIVATE,
+        'private': IS_PRIVATE,
         'license_template': LICENSE_TEMPLATE
         }
     gh_data = json.dumps(gh_data_dict)
