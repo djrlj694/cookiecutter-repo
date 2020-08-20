@@ -29,19 +29,49 @@ The following is a list of sources that were helpful or inspirational when learn
 
 ## GitHub
 
+### API
+
+1. https://developer.github.com/v3/repos/
+2. https://docs.github.com/en/rest/reference/repos
+
+### Community
+
+1. https://docs.github.com/en/github/building-a-strong-community
+
+### Contributing
+
+1. https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940
+2. https://docs.github.com/en/github/building-a-strong-community/adding-support-resources-to-your-project
+3. https://docs.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors
+4. https://medium.com/comparethemarket/three-quick-tips-to-make-your-github-repository-more-contributor-friendly-47c2db522fe6
+
+### Conventions
+
 1. https://github.com/bcgov/BC-Policy-Framework-For-GitHub/blob/master/BC-Gov-Org-HowTo/Naming-Repos.md
-2. https://developer.github.com/v3/repos/
-3. https://gist.github.com/methodbox/2b18dbf5090d55a00d11901e6515cd33#file-setup-repo-sh
-4. https://gist.github.com/robwierzbowski/5430952
-5. https://help.github.com/en/articles/adding-support-resources-to-your-project/
-6. https://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository/
-7. https://help.github.com/en/articles/creating-issue-templates-for-your-repository/
-8. https://help.github.com/en/articles/licensing-a-repository
-9. https://help.github.com/en/articles/setting-guidelines-for-repository-contributors/
-10. https://help.github.com/en/categories/building-a-strong-community/
-11. https://lab.github.com/githubtraining/introduction-to-github
-12. https://medium.com/better-programming/create-github-repos-remotely-25153a6e6890
-13. https://stackoverflow.com/questions/11947587/is-there-a-naming-convention-for-git-repositories
+2. https://stackoverflow.com/questions/11947587/is-there-a-naming-convention-for-git-repositories
+
+### Licensing
+
+1. https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository
+
+### Releases
+
+1. https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository
+
+### Setup
+
+1. https://gist.github.com/methodbox/2b18dbf5090d55a00d11901e6515cd33#file-setup-repo-sh
+2. https://gist.github.com/robwierzbowski/5430952
+3. https://medium.com/better-programming/create-github-repos-remotely-25153a6e6890
+
+### Templates
+
+1. https://docs.github.com/en/github/building-a-strong-community/configuring-issue-templates-for-your-repository
+2. https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository
+
+### Training
+
+1. https://lab.github.com/githubtraining/introduction-to-github
 
 ## Makefile
 
