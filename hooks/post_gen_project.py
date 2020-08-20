@@ -63,7 +63,7 @@ print(f'repo_platform={repo_platform}, platform={platform}')
 
 # GitHub API v3
 REPO_DESCRIPTION = '{{cookiecutter.repo_description}}'
-REPO_LICENSE_TEMPLATE = '{{cookiecutter.repo_license_template}}'
+REPO_LICENSE_TEMPLATE = '{{cookiecutter.repo.license_template}}'
 REPO_NAME = '{{cookiecutter.repo_name}}'
 REPO_PRIVATE = '{{cookiecutter.repo_private}}'
 
