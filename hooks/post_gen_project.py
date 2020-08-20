@@ -57,10 +57,8 @@ SCRIPT_NAME = 'post_gen_project.py'
 LICENSE = '{{cookiecutter.repo_license}}'
 REPO_DIR = '{{cookiecutter.repo_dir}}'
 
-#repo_platform = '{{cookiecutter.repo_platform}}'
-#repo_platform_parts = repo_platform.lower().split()
-#platform = repo_platform_parts[0]
-#print(f'repo_platform={repo_platform}, platform={platform}')
+#PROJECT_PLATFORM = '{{cookiecutter.project_platform}}'
+#print(f'PROJECT_PLATFORM={PROJECT_PLATFORM}')
 
 # GitHub API v3
 REPO_DESCRIPTION = '{{cookiecutter.repo_description}}'
@@ -253,15 +251,13 @@ if DEBUG:
 
 extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 
-#if platform == 'swift':
-#    swift_package_type = repo_platform_parts[1]
+#if PROJECT_PLATFORM == 'Swift':
 #    print(f'swift_package_type={swift_package_type}')
-#    make(f'init-swift SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
-#elif platform == 'xcode':
+#    make(f'init-swift SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+#elif PROJECT_PLATFORM == 'Xcode':
 #    cmd('open -a Xcode')
-#    swift_package_type = repo_platform_parts[1]
 #    print(f'swift_package_type={swift_package_type}')
-#    make(f'init-xcode SWIFT_PROJECT_TYPE="{repo_platform}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+#    make(f'init-xcode SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
 #rm('.boilerplate')
 
