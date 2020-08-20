@@ -6,7 +6,7 @@
     "__repo_type": "{{cookiecutter.project_type | replace('Unspecified', '')}}",
     "__repo_suffix": "{{cookiecutter.project_name | replace(' ', '-') | replace('_', '-')}}",
     "__repo_name_parts": ["{{cookiecutter.__repo_platform}}", "{{cookiecutter.__repo_type}}", "{{cookiecutter.__repo_suffix}}"],
-    "repo_name": "{{cookiecutter.__repo_name_parts | select('ne', '') | join('-') | lower}}",
+    "repo_name": "{{cookiecutter.__repo_name_parts | select('!=', '') | join('-') | lower}}",
     "repo_dir": "./{{cookiecutter.repo_name}}",
     "repo_description": "___REPO_DESCRIPTION___",
     "repo_license": ["Not open source", "Apache Software License 2.0", "BSD-3", "GNU GPL v3.0", "MIT"],
