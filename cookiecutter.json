@@ -11,8 +11,8 @@
     "github_user": "{{default_context.github_user or '___GITHUB_USER___'}}",
     "travis_user": "{{default_context.travis_user or '___TRAVIS_USER___'}}",
     "repo": {
-        "license_templates" {
-            "MIT"; "mit"
+        "license_templates": {
+            "MIT": "mit"
         },
         "license_template": "{{cookiecutter.repo.license_templates[cookiecutter.repo_licence]}}"
     }
