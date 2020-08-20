@@ -2,7 +2,7 @@
 
 The following is a list of sources that were helpful or inspirational when learning new topics, troubleshooting bugs, authoring documentation, etc. while developing or maintaining [{{cookiecutter.project_name}}](README.md).
 
-{% if cookiecutter.repo_platform == 'Cookiecutter template' %}
+{% if cookiecutter.project_platform == 'Cookiecutter' %}
 ## Cookiecutter
 
 1. https://github.com/audreyr/cookiecutter

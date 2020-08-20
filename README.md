@@ -83,7 +83,6 @@ Customization options defined in Cookiecutter Repo's `cookiecutter.json` are as 
 | `repo_dir` | The local pathname of the repository's root directory | N/A | `repo_name` |
 | `repo_description` | A short description of the repository | N/A | `___REPO_DESCRIPTION___` |
 | `repo_license` | The repository's optional (but highly recommended) open-source software licence | `Not open source`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `Not open source` |
-| `repo_platform` | The repo's primary software platform/product | `Cookiecutter template`, `Python data science project`, `Python module`, `Python package`, `Swift executable package`, `Swift library package`, `Xcode project` | `Cookiecutter template` |
 | `lead_name` | The name of the repository's lead author | N/A | `___LEAD_NAME___` |
 | `lead_email` | The email address of the repository's lead author | N/A | `___USER@DOMAIN.TLD___` |
 | `github_user` | The repository's GitHub account | N/A | `___GITHUB_USER___` |
