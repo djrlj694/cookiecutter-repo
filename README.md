@@ -78,15 +78,12 @@ Customization options defined in Cookiecutter Repo's `cookiecutter.json` are as 
 | Key | Description | Value(s) | Default Value |
 | --- | ----------- | ------ | ------------- |
 | `project_name` | The formal, human-friendly name of the repository or its (primary) project as it would appear in documentation (e.g., with spaces and mixed-case) | N/A | `___PROJECT_NAME___` |
+| `project_platform` | The project's primary software platform | `Cookiecutter`, `Python`, `Python`, `Swift` | `Cookiecutter` |
 | `repo_name` | The remote, URL-conforming (i.e., hyphens replace spaces and underscores) name of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `project_name` |
 | `repo_dir` | The local pathname of the repository's root directory | N/A | `repo_name` |
 | `repo_description` | A short description of the repository | N/A | `___REPO_DESCRIPTION___` |
-| `repo_private` | A boolean specifying whether to create a private repository or a public one | `True`, `False` | `True` |
-| `repo_license_template` | An optional (but highly recommended) [GitHub API v3 keyword](https://help.github.com/en/articles/licensing-a-repository#searching-github-by-license-type) for the repository's [open source license template](https://choosealicense.com) | N/A | `mit` |
 | `repo_license` | The repository's optional (but highly recommended) open-source software licence | `Not open source`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `Not open source` |
 | `repo_platform` | The repo's primary software platform/product | `Cookiecutter template`, `Python data science project`, `Python module`, `Python package`, `Swift executable package`, `Swift library package`, `Xcode project` | `Cookiecutter template` |
-| `add_github` | A boolean specifying whether to add a `.github` directory tree with Markdown files documenting rules on how to contribute | `True`, `False` | `True` |
-| `add_make` | A boolean specifying whether to add a `.make` directory tree with makefile files defining build automation rules for software projects | `True`, `False` | `True` 
 | `lead_name` | The name of the repository's lead author | N/A | `___LEAD_NAME___` |
 | `lead_email` | The email address of the repository's lead author | N/A | `___USER@DOMAIN.TLD___` |
 | `github_user` | The repository's GitHub account | N/A | `___GITHUB_USER___` |
