@@ -10,10 +10,10 @@
     "lead_email": "{{default_context.lead_email or '___USER@DOMAIN.TLD___'}}",
     "github_user": "{{default_context.github_user or '___GITHUB_USER___'}}",
     "travis_user": "{{default_context.travis_user or '___TRAVIS_USER___'}}",
+    "repo_license_templates": {
+        "MIT": "mit"
+    },
     "repo": {
-        "license_templates": {
-            "MIT": "mit"
-        },
-        "license_template": "{{license_templates[cookiecutter.repo_licence]}}"
+        "license_template": "{{cookiecutter.repo_license_templates[cookiecutter.repo_licence]}}"
     }
 }
