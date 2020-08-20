@@ -7,13 +7,15 @@ The following is a list of sources that were helpful or inspirational when learn
 
 1. https://github.com/audreyr/cookiecutter
 2. https://github.com/audreyr/cookiecutter-pypackage
+3. https://github.com/myhumankit/cookiecutter-new-project
+
 
 {% endif %}
 ## GitHub
 
 ### API
 
-1. https://docs.github.com/en/rest/reference/repos
+1. https://developer.github.com/v3/repos/
 2. https://docs.github.com/en/rest/reference/repos
 
 ### Community
@@ -61,19 +63,37 @@ The following is a list of sources that were helpful or inspirational when learn
 2. https://www.gnu.org/software/make/manual/make.html
 3. https://www.oreilly.com/library/view/managing-projects-with/0596006101/
 4. https://www.oreilly.com/openbook/make3/book/
-5. https://en.wikipedia.org/wiki/Make_(software)
-6. https://en.wikipedia.org/wiki/Makefile
+5. https://unix.stackexchange.com/questions/425297/how-can-i-use-files-from-http-as-prerequisites-in-gnu-make
+6. https://stackoverflow.com/questions/11675070/makefile-echo-n-not-working
+7. https://stackoverflow.com/questions/1588013/how-to-write-a-makefile-rule-to-download-a-file-only-if-it-is-missing
+8. https://stackoverflow.com/questions/23494088/makefile-generic-target-rule
+9. https://stackoverflow.com/questions/649246/is-it-possible-to-create-a-multi-line-string-variable-in-a-makefile
+10. https://stackoverflow.com/questions/26063839/how-can-i-make-a-target-private-in-gnu-make-for-internal-use-only-or-how-to
+11. https://stackoverflow.com/questions/7281395/output-multiline-variable-to-a-file-with-gnu-make
+12. https://stackoverflow.com/questions/816370/how-do-you-force-a-makefile-to-rebuild-a-target
+13. https://stackoverflow.com/questions/8540485/how-do-i-split-a-string-in-make 
+14. https://en.wikipedia.org/wiki/Make_(software)
+15. https://en.wikipedia.org/wiki/Makefile
 
 ## Open Source
 
-### CODE_OF_CONDUCT.md
+## CODE_OF_CONDUCT.md
 
 1. https://www.contributor-covenant.org
 2. https://www.contributor-covenant.org/version/1/4/code-of-conduct.md
+3. https://github.com/JohnSundell/Marathon/blob/master/CODE_OF_CONDUCT.md
+4. https://github.com/JohnSundell/Require/blob/master/CODE_OF_CONDUCT.md
+5. https://github.com/JohnSundell/SwiftPlate/blob/master/CODE_OF_CONDUCT.md
+6. https://github.com/tensorflow/tensorflow/blob/master/CODE_OF_CONDUCT.md
 
-### CONTRIBUTING.md
+## CONTRIBUTING.md
 
-1. https://help.github.com/articles/setting-guidelines-for-repository-contributors/
+1. https://github.com/apple/example-package-dealer/blob/master/CONTRIBUTING.md
+2. https://github.com/atom/atom/blob/master/CONTRIBUTING.md
+3. https://github.com/JohnSundell/Marathon/blob/master/CONTRIBUTING.md
+4. https://github.com/opengovernment/opengovernment/blob/master/CONTRIBUTING.md
+5. https://github.com/rails/rails/blob/master/CONTRIBUTING.md
+6. https://github.com/tensorflow/tensorflow/blob/master/CONTRIBUTING.md
 
 ### Guides
 

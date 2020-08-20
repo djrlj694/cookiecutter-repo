@@ -8,25 +8,6 @@ The following is a list of sources that were helpful or inspirational when learn
 2. https://github.com/audreyr/cookiecutter-pypackage
 3. https://github.com/myhumankit/cookiecutter-new-project
 
-## CODE_OF_CONDUCT.md
-
-1. https://www.contributor-covenant.org
-2. https://www.contributor-covenant.org/version/1/4/code-of-conduct.md
-3. https://github.com/JohnSundell/Marathon/blob/master/CODE_OF_CONDUCT.md
-4. https://github.com/JohnSundell/Require/blob/master/CODE_OF_CONDUCT.md
-5. https://github.com/JohnSundell/SwiftPlate/blob/master/CODE_OF_CONDUCT.md
-6. https://github.com/tensorflow/tensorflow/blob/master/CODE_OF_CONDUCT.md
-
-## CONTRIBUTING.md
-
-1. https://github.com/apple/example-package-dealer/blob/master/CONTRIBUTING.md
-2. https://github.com/atom/atom/blob/master/CONTRIBUTING.md
-3. https://github.com/JohnSundell/Marathon/blob/master/CONTRIBUTING.md
-4. https://github.com/opengovernment/opengovernment/blob/master/CONTRIBUTING.md
-5. https://github.com/rails/rails/blob/master/CONTRIBUTING.md
-6. https://github.com/tensorflow/tensorflow/blob/master/CONTRIBUTING.md
-7. https://help.github.com/articles/setting-guidelines-for-repository-contributors/
-
 ## GitHub
 
 ### API
@@ -93,8 +74,31 @@ The following is a list of sources that were helpful or inspirational when learn
 
 ## Open Source
 
+## CODE_OF_CONDUCT.md
+
+1. https://www.contributor-covenant.org
+2. https://www.contributor-covenant.org/version/1/4/code-of-conduct.md
+3. https://github.com/JohnSundell/Marathon/blob/master/CODE_OF_CONDUCT.md
+4. https://github.com/JohnSundell/Require/blob/master/CODE_OF_CONDUCT.md
+5. https://github.com/JohnSundell/SwiftPlate/blob/master/CODE_OF_CONDUCT.md
+6. https://github.com/tensorflow/tensorflow/blob/master/CODE_OF_CONDUCT.md
+
+## CONTRIBUTING.md
+
+1. https://github.com/apple/example-package-dealer/blob/master/CONTRIBUTING.md
+2. https://github.com/atom/atom/blob/master/CONTRIBUTING.md
+3. https://github.com/JohnSundell/Marathon/blob/master/CONTRIBUTING.md
+4. https://github.com/opengovernment/opengovernment/blob/master/CONTRIBUTING.md
+5. https://github.com/rails/rails/blob/master/CONTRIBUTING.md
+6. https://github.com/tensorflow/tensorflow/blob/master/CONTRIBUTING.md
+
+### Guides
+
+1. https://opensource.guide
+
+### Licensing
+
 1. https://choosealicense.com
-2. https://opensource.guide
 
 ## Python
 
