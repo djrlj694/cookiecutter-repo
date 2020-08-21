@@ -78,8 +78,9 @@ Customization options defined in Cookiecutter Repo's `cookiecutter.json` are as 
 | Key | Description | Value(s) | Default Value |
 | --- | ----------- | ------ | ------------- |
 | `project_name` | The formal, human-friendly name of the repository or its (primary) project as it would appear in documentation (e.g., with spaces and mixed-case) | N/A | `___PROJECT_NAME___` |
-| `project_platform` | The project's primary software platform | `Cookiecutter`, `Python`, `Python`, `Swift` | `Cookiecutter` |
-| `repo_name` | The remote, URL-conforming (i.e., hyphens replace spaces and underscores) name of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `project_name` |
+| `project_platform` | The project's primary software platform | `unspecified`, `Cookiecutter`, `Python`, `Python`, `Swift` | `unspecified` |
+| `project_type` | The project's primary build artifact | `unspecified`, `command-line interface`, `data science`, `library` `script`, `template` | `unspecified` |
+| `repo_name` | The remote, URL-conforming (i.e., hyphens replace spaces), name of the repository's root directory | N/A | A lower-case, hyphenated version of the value of `project_name`, prefixed with lower-cased (and abbreviated where practical) versions of `project-platform` and `project-type` |
 | `repo_dir` | The local pathname of the repository's root directory | N/A | `repo_name` |
 | `repo_description` | A short description of the repository | N/A | `___REPO_DESCRIPTION___` |
 | `repo_license` | The repository's optional (but highly recommended) open-source software licence | `Not open source`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `Not open source` |
@@ -87,7 +88,6 @@ Customization options defined in Cookiecutter Repo's `cookiecutter.json` are as 
 | `lead_email` | The email address of the repository's lead author | N/A | `___USER@DOMAIN.TLD___` |
 | `github_user` | The repository's GitHub account | N/A | `___GITHUB_USER___` |
 | `travis_user` | The repository's Travis CI account | N/A | `___TRAVIS_USER___` |
-| `package_name` | The Xcode-conforming name of the project's subdirectory for its primary software package | N/A | A de-hyphenated version of the value of `repo_dir` |
 
 By default, the user is prompted to assign a value for each key.  This cookiecutter feature may also be silenced.  The subsections that follow show how.
 
