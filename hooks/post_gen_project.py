@@ -294,7 +294,7 @@ extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 #    print(f'swift_package_type={swift_package_type}')
 #    make(f'init-xcode SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
-make('init')
+make(f'init USER={GH_USER}')
 rm('.boilerplate')
 
 # -- Main Execution -- #
