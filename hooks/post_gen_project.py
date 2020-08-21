@@ -33,7 +33,7 @@ from getpass import getpass
 
 #import pygit2
 import requests
-#import sh
+import sh
 
 # ============================================================================ #
 # CONSTANTS
