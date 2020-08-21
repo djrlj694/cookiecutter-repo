@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 18AUG2020
+# REVISED: 21AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -74,7 +74,7 @@ init-git: .gitignore .git | $(LOG)
 
 ## .gitignore: Makes a .gitignore file.
 .gitignore: | $(LOG)
-	$(eval toolchain = "macos,swift,swiftpackagemanager,vim,visualstudiocode")
+	#$(eval toolchain = "macos,swift,swiftpackagemanager,vim,visualstudiocode")
 	@printf "Downloading file $@..."
 	@$(call download-gitignore) >$(LOG) 2>&1; \
 	$(status_result)
