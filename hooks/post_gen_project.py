@@ -41,7 +41,7 @@ import sh
 
 # -- Debugging -- #
 
-DEBUG = True
+DEBUG = False
 
 # -- Filesystem -- #
 
