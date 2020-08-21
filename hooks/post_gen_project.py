@@ -300,8 +300,8 @@ rm('.boilerplate')
 # -- Main Execution -- #
 
 # If this module is in the main module, call the main() function.
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
 
 # -- Housekeeping -- #
 
