@@ -9,6 +9,15 @@
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
 
+
+# ============================================================================ #
+# EXTERNAL CONSTANTS
+# ============================================================================ #
+
+# OSes, IDEs, or programming languagses
+TOOLCHAIN ?= "dropbox,vim,visualstudiocode"
+
+
 # ============================================================================ #
 # PHONY TARGETS
 # ============================================================================ #
@@ -62,7 +71,13 @@ endif
 # ============================================================================ #
 
 ## .gitignore: Makes a .gitignore file.
-.gitignore: .gitignore.download
+#.gitignore: .gitignore.download
+.gitignore: | $(LOG)
+	$(eval toolchain = "macos,swift,swiftpackagemanager,vim,visualstudiocode")
+	@printf "Downloading file $@..."
+	@$(call download-gitignore) >$(LOG) 2>&1; \
+	$(status_result)
+
 
 # Makes a special empty file for marking that a directory tree has been generated.
 %/.gitkeep:
@@ -71,6 +86,7 @@ endif
 	@mkdir -p $(@D); $(status_result)
 	@printf "Making marker file $(target_var)..."
 	@touch $@; $(status_result)
+
 
 # ============================================================================ #
 # INTERMEDIATE TARGETS
