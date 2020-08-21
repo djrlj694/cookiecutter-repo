@@ -43,10 +43,12 @@ clean-docs-github: | $(LOG)
 
 ## init-github: Completes all initial Github setup activites.
 init-github:
+	@printf "Initializing GitHub repository..."
 	$(eval PROJECT_REPO = $(GITHUB_USER)/$(PROJECT))
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-github)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 	$(eval ORIGIN_URL = https://github.com/$(PROJECT_REPO).git)
 #	@cookiecutter gh:$(TEMPLATES_REPO) email=$(EMAIL) project_name=$(PROJECT)
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${NEW_REPO_NAME}"'"}'
-	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${PROJECT}"'"}'
+	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${PROJECT}"'"}' >$(LOG) 2>&1; \
+	$(status_result)
