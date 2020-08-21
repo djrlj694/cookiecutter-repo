@@ -115,7 +115,7 @@ IS_PRIVATE = True if LICENSE == 'Not open source' else False
 LICENSE_TEMPLATE = LICENSE_TEMPLATES[LICENSE]
 repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
 
-# -- Version Control -- #
+# -- Source Code Control (SCM) -- #
 
 # GitHub API v3
 GH_API_URL = 'https://api.github.com/user/repos'
@@ -174,28 +174,28 @@ def setup_logging(is_verbose: bool):
     else:
         log.basicConfig(format=format, datefmt=datefmt, level=log.WARNING)
 
-# -- Version Control -- #
+# -- Source Code Control (SCM) -- #
 
-#def add_gh_repo(origin_url):
-#    """
-#    Add a GitHub repo to the local git repo, then syncs the two.
-#    """
-#
-#    git = sh.git
-#
-#    git.remote.add.origin(origin_url)
-#    git.push('-u', 'origin', 'master')
+def add_gh_repo(origin_url):
+    """
+    Add a GitHub repo to the local git repo, then syncs the two.
+    """
 
-#def create_file(file_path):
-#    """
-#    Create a file (from a repo's perspective).
-#    """
-#
-#    git = sh.git
-#    filename = os.path.basename(file_path)
-#
-#    git.add(file_path)
-#    git.commit(f'-m Create {filename}')
+    git = sh.git
+
+    git.remote.add.origin(origin_url)
+    git.push('-u', 'origin', 'master')
+
+def create_file(file_path):
+    """
+    Create a file (from a repo's perspective).
+    """
+
+    git = sh.git
+    filename = os.path.basename(file_path)
+
+    git.add(file_path)
+    git.commit(f'-m Create {filename}')
 
 def create_gh_repo(repo_name):
 #def create_gh_repo():
@@ -280,7 +280,7 @@ if DEBUG:
     print(f'REPO_NAME={REPO_NAME}')
     print(f'repo_name={repo_name}')
 
-# -- Version Control -- #
+# -- Source Code Control (SCM) -- #
 
 extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 
