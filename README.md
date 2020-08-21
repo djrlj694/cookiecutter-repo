@@ -134,4 +134,4 @@ Cookiecutter Repo is released under the [MIT License](LICENSE.md).
 
 ## References
 
-API documentation, tutorials, and other online references and made portions of this project possible.  See [REFERENCES.md](REFERENCES.md) for a list of some.
+See [REFERENCES.md](REFERENCES.md) for a list of these.
