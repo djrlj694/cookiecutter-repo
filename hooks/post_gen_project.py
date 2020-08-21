@@ -247,6 +247,8 @@ def main():
     Run the main set of functions that define the program.
     """
 
+    # Initialize project platforms.
+
     # Create repositories.
     create_gh_repo(REPO_NAME)
     create_git_repo(REPO_NAME)
@@ -292,6 +294,7 @@ extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 #    print(f'swift_package_type={swift_package_type}')
 #    make(f'init-xcode SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
+make('init')
 rm('.boilerplate')
 
 # -- Main Execution -- #
