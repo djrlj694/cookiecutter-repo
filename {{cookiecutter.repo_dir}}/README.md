@@ -4,21 +4,29 @@
 
 {{cookiecutter.repo_description}}
 
-## Usage
+## Introduction
 
-___PENDING___
+TODO: *Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.*
 
-## Options
+## Getting Started
 
-___PENDING___
+TODO: *Guide users through getting your code up and running on their own system. In this section you can talk about:*
 
 ## System Requirements
 
-___PENDING___
+TODO: *List software dependencies and any other prerequisites.*
 
-## Installation
+### Installation
 
-___PENDING___
+TODO: *Step through the installation process.*
+
+### Usage
+
+TODO: *Using the latest API, Demo one or more examples of syntax and associated output, if any.*
+
+## Builds and Testing
+
+TODO: *Describe and show how to build artifacts and run tests.*
 
 ## Documentation
 
