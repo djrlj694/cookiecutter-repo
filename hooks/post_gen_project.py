@@ -218,15 +218,15 @@ def create_gh_repo(repo_name):
         auth=(GH_USER, gh_password)
         )
 
-#def create_git_repo(repo_name):
+def create_git_repo(repo_name):
 #def create_git_repo():
-#    """
-#    Create a Git repo with a single file.
-#    """
-#
-#    git = sh.git
-#    git.init()
-#    git.remote.add.origin(f'{GH_HOME_URL}/{GH_USER}/{repo_name}.git')
+    """
+    Create a Git repo with a single file.
+    """
+
+    git = sh.git
+    git.init()
+    git.remote.add.origin(f'{GH_HOME_URL}/{GH_USER}/{repo_name}.git')
 
 def add(cookiecutter_suffix, extra_context):
     """
@@ -248,20 +248,20 @@ def main():
     """
 
     # Create repositories.
-    #create_gh_repo(REPO_NAME)
-    #create_git_repo(REPO_NAME)
+    create_gh_repo(REPO_NAME)
+    create_git_repo(REPO_NAME)
 
     # Download files to local repository.
-    #sh.git.pull('origin', 'master')
+    sh.git.pull('origin', 'master')
 
     # Add files to local repository.
-    #create_file('README.md')
-    #create_file('.gitignore')
+    create_file('README.md')
+    create_file('.gitignore')
 
     # Upload (updated) files to remote repository.
-    #sh.git.push('-u', 'origin', 'master')
+    sh.git.push('-u', 'origin', 'master')
 
-    pass
+    #pass
 
 
 # ============================================================================ #
@@ -292,7 +292,7 @@ extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 #    print(f'swift_package_type={swift_package_type}')
 #    make(f'init-xcode SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
-#rm('.boilerplate')
+rm('.boilerplate')
 
 # -- Main Execution -- #
 
