@@ -30,7 +30,7 @@ import sys
 
 # -- Debugging -- #
 
-DEBUG = True
+DEBUG = False
 
 # -- Input -- #
 
