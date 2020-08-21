@@ -14,7 +14,7 @@
         "script",
         "template"
     ],
-    "repo_name": "{{[cookiecutter.project_platform, cookiecutter.project_type, cookiecutter.project_name] | select('!=', 'Unspecified') | join('-') | replace('command-line interface', 'cli') | replace('data science', 'datasci') | replace('library', 'lib') | replace(' ', '-') | replace('_', '-') | lower}}",
+    "repo_name": "{{[cookiecutter.project_platform, cookiecutter.project_type, cookiecutter.project_name] | select('!=', 'unspecified') | join('-') | replace('command-line interface', 'cli') | replace('data science', 'datasci') | replace('library', 'lib') | replace(' ', '-') | replace('_', '-') | lower}}",
     "repo_dir": "./{{cookiecutter.repo_name}}",
     "repo_description": "___REPO_DESCRIPTION___",
     "repo_license": [
@@ -53,7 +53,7 @@
         "The Unlicense",
         "zLib License"
     ],
-    "__license_keywords": {
+    "_license_keywords": {
         "private / not open source": "",
         "Academic Free License v3.0": "afl-3.0",
         "Apache license 2.0": "apache-2.0",
@@ -89,7 +89,7 @@
         "The Unlicense": "unlicense",
         "zLib License": "zlib"
     },
-    "__license_keyword": "{{cookiecutter.__license_keyword[cookiecutter.repo_license]}}",
+    "__license_keyword": "{{cookiecutter._license_keyword[cookiecutter.repo_license]}}",
     "lead_name": "{{default_context.lead_name or '___LEAD_NAME___'}}",
     "lead_email": "{{default_context.lead_email or '___USER@DOMAIN.TLD___'}}",
     "github_user": "{{default_context.github_user or '___GITHUB_USER___'}}",
