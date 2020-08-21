@@ -10,7 +10,7 @@ __credits__ = ['Robert (Bob) L. Jones']
 __license__ = 'MIT'
 
 __created_date__= 'Aug 25, 2019'
-__modified_date__= 'Aug 19, 2019'
+__modified_date__= 'Aug 20, 2020'
 
 
 # ============================================================================ #
@@ -118,4 +118,5 @@ if __name__ == "__main__":
 
 # -- Housekeeping -- #
 
+# Exit the program normally.
 sys.exit(0)
