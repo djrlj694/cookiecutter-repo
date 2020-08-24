@@ -62,10 +62,10 @@ init-github:
 
 ifeq ($(LICENSE),)
 	@curl -u $(GITHUB_USER) $(gh_api_url) \
-	-d '{"name": "$(PROJECT)", "description": "TBD", "private": $(IS_PRIVATE), "license_template": "$(LICENSE)"}'; \
+	-d '{"name": "$(PROJECT)", "private": $(IS_PRIVATE), "license_template": "$(LICENSE_TEMPLATE)"}'; \
 	$(status_result)
 else
 	@curl -u $(GITHUB_USER) $(gh_api_url) \
-	-d '{"name": "$(PROJECT)", "description": "TBD", "private": $(IS_PRIVATE)}'; \
+	-d '{"name": "$(PROJECT)", "private": $(IS_PRIVATE)}'; \
 	$(status_result)
 endif

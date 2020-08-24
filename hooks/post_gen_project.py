@@ -295,7 +295,7 @@ extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
 #    make(f'init-xcode SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
 #create_gh_repo(REPO_NAME)
-make(f'init USER={GH_USER}')
+make(f'init USER={GH_USER} IS_PRIVATE={IS_PRIVATE}' LICENSE_TEMPLATE={LICENSE_TEMPLATE})
 rm('.boilerplate')
 
 # -- Main Execution -- #
