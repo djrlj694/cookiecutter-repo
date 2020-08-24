@@ -67,7 +67,6 @@ docs: docs-swift
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
-#init: init-git
 init: init-github init-git
 
 ## test: Completes all test activities.

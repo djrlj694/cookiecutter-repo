@@ -54,7 +54,10 @@ init-github:
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" $(gh_api_url) \
 #	-d '{"name": "'"${PROJECT}"'", "name": "'"${PROJECT}"'"}' >$(LOG) 2>&1; \
 
-	@curl -u $(GITHUB_USER) $(gh_api_url) -d '{"name": "$(PROJECT)", "private": true, "license_template": "mit"}'; \
+#	@curl -u $(GITHUB_USER) $(gh_api_url) -d '{"name": "$(PROJECT)", "private": true, "license_template": "mit"}'; \
+
+	@curl -u $(GITHUB_USER) $(gh_api_url) \
+	-d '{"name": "$(PROJECT)", "private": $(IS_PRIVATE), "license_template": "$(LICENSE)"}'; \
 	$(status_result)
 
 # GitHub API v3
