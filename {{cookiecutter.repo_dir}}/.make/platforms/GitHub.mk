@@ -59,8 +59,6 @@ init-github:
 	$(eval ORIGIN_URL = https://github.com/$(PROJECT_REPO).git)
 #	@cookiecutter gh:$(TEMPLATES_REPO) email=$(EMAIL) project_name=$(PROJECT)
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${NEW_REPO_NAME}"'"}'
-#	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" $(gh_api_url) \
-#	-d '{"name": "'"${PROJECT}"'", "name": "'"${PROJECT}"'"}' >$(LOG) 2>&1; \
 
 ifeq ($(LICENSE),)
 	@curl -u $(GITHUB_USER) $(gh_api_url) \
