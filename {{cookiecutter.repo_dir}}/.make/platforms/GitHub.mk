@@ -11,6 +11,14 @@
 
 
 # ============================================================================ #
+# EXTERNAL CONSTANTS
+# ============================================================================ #
+
+# GitHub API v3
+IS_PRIVATE ?= true
+
+
+# ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
@@ -54,34 +62,10 @@ init-github:
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" $(gh_api_url) \
 #	-d '{"name": "'"${PROJECT}"'", "name": "'"${PROJECT}"'"}' >$(LOG) 2>&1; \
 
-#	@curl -u $(GITHUB_USER) $(gh_api_url) -d '{"name": "$(PROJECT)", "private": true, "license_template": "mit"}'; \
-
 	@curl -u $(GITHUB_USER) $(gh_api_url) \
-	-d '{"name": "$(PROJECT)", "private": $(IS_PRIVATE), "license_template": "$(LICENSE)"}'; \
+ifeq ($(LICENSE),)
+	-d '{"name": "$(PROJECT)", "description": "TBD", "private": $(IS_PRIVATE), "license_template": "$(LICENSE)"}'; \
+else
+	-d '{"name": "$(PROJECT)", "description": "TBD", "private": $(IS_PRIVATE)}'; \
+endif
 	$(status_result)
-
-# GitHub API v3
-#GH_API_URL = 'https://api.github.com/user/repos'
-#GH_HOME_URL = 'https://github.com'
-
-#def create_gh_repo(repo_name):
-#def create_gh_repo():
-#    """
-#    Create a GitHub repo.
-#    """
-#
-#    gh_data_dict = {
-#        'name': repo_name,
-#        'description': REPO_DESCRIPTION,
-#        'private': IS_PRIVATE,
-#        'license_template': LICENSE_TEMPLATE
-#        }
-#    gh_data = json.dumps(gh_data_dict)
-#    gh_password = getpass('github_password: ')
-
-#    requests.post(
-#        GH_API_URL,
-#        data=gh_data,
-#        auth=(GH_USER, gh_password)
-#        )
-
