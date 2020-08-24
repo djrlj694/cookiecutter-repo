@@ -62,10 +62,12 @@ init-github:
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" $(gh_api_url) \
 #	-d '{"name": "'"${PROJECT}"'", "name": "'"${PROJECT}"'"}' >$(LOG) 2>&1; \
 
-	@curl -u $(GITHUB_USER) $(gh_api_url) \
 ifeq ($(LICENSE),)
+	@curl -u $(GITHUB_USER) $(gh_api_url) \
 	-d '{"name": "$(PROJECT)", "description": "TBD", "private": $(IS_PRIVATE), "license_template": "$(LICENSE)"}'; \
-else
-	-d '{"name": "$(PROJECT)", "description": "TBD", "private": $(IS_PRIVATE)}'; \
-endif
 	$(status_result)
+else
+	@curl -u $(GITHUB_USER) $(gh_api_url) \
+	-d '{"name": "$(PROJECT)", "description": "TBD", "private": $(IS_PRIVATE)}'; \
+	$(status_result)
+endif
