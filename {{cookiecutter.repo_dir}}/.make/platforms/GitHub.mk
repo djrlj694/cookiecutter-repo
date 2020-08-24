@@ -53,7 +53,9 @@ init-github:
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${NEW_REPO_NAME}"'"}'
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" $(gh_api_url) \
 #	-d '{"name": "'"${PROJECT}"'", "name": "'"${PROJECT}"'"}' >$(LOG) 2>&1; \
-#	$(status_result)
+
+	@curl -u $(GITHUB_USER) $(gh_api_url) -d '{"name": "$(PROJECT)", "private": true, "license_template": "mit"}'; \
+	$(status_result)
 
 # GitHub API v3
 #GH_API_URL = 'https://api.github.com/user/repos'
