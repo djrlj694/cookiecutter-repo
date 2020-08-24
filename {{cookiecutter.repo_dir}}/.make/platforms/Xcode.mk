@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 18AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -14,7 +14,7 @@
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-# -- Directories -- #
+# -- Filesystem -- #
 
 XCODE_RESOURCES := Data Fonts Localization Media UserInterfaces
 XCODE_RESOURCES_DIRS := $(addprefix $(PACKAGE)/Resources/,$(XCODE_RESOURCES))
@@ -25,7 +25,7 @@ XCODE_SOURCES_DIRS := $(addprefix $(PACKAGE)/Sources/,$(XCODE_SOURCES))
 XCODE_DIRS := $(addsuffix /.,$(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS))
 #XCODE_DIRS := $(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS)
 
-# -- Help strings -- #
+# -- Help Strings -- #
 
 # Argument syntax for the "make" command when used with this makefile.
 MAKE_ARGS += [PACKAGE=$(FG_CYAN)<package>$(RESET)]
@@ -37,7 +37,7 @@ MAKE_ARGS += [USER=$(FG_CYAN)<user>$(RESET)]
 # MACROS
 # ============================================================================ #
 
-# -- Test strings -- #
+# -- Test Strings -- #
 
 define XCODE_DIRS_TEST
 .
@@ -86,7 +86,7 @@ export XCODE_FILES_TEST
 # PHONY TARGETS
 # ============================================================================ #
 
-# -- Prerequisite phony targets for the "clean" target -- #
+# -- Prerequisites for "clean" Target -- #
 
 #.PHONY: clean-xcode clean-xcode-dirs clean-docs-xcode
 .PHONY: clean-xcode clean-xcode-dirs
@@ -97,7 +97,7 @@ clean-xcode: clean-carthage clean-cocoapods clean-xcode-dirs
 	@rm -rf $(PACKAGE) >$(LOG) 2>&1; \
 	$(status_result)
 
-# -- Prerequisite phony targets for the "init" target -- #
+# -- Prerequisites for "init" Target -- #
 
 .PHONY: init-xcode init-xcode-dirs init-xcode-vars
 
@@ -117,7 +117,7 @@ init-xcode-vars:
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/Cookiecutter-Xcode)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 
-# -- Prerequisite phony targets for the "test" target -- #
+# -- Prerequisites for "test" Target -- #
 
 .PHONY: test-xcode test-xcode-dirs test-xcode-files
 

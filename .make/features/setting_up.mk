@@ -4,52 +4,37 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 16MAR2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
 
 # ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Commands
-#------------------------------------------------------------------------------#
+# -- Commands -- #
 
 # A shortcut representing the "mkdir" command with the "-p" option.
 MKDIR := mkdir -p
+
 
 # ============================================================================ #
 # INTERNAL VARIABLES
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Directories
-#------------------------------------------------------------------------------#
+# -- Filesystem -- #
 
 # Name of the subdirectory, represented by the current Makefile target being
 # run. The shell command "basename" removes the parent directory, $(@D)), from
 # the absolute path of the makefile target.
 subdir = $(shell basename $(@D))
 
-#------------------------------------------------------------------------------#
-# Files
-#------------------------------------------------------------------------------#
+# -- Files -- #
 
 file = $(basename $@)
 
-#------------------------------------------------------------------------------#
-# Path strings
-#------------------------------------------------------------------------------#
-
-dir_var = $(FG_CYAN)$(@D)$(RESET)
-###file_var = $(FG_CYAN)$(file)$(RESET) # RLJ: Commented out. 23FEEB2019, RRLJ
-file_var = $(FG_CYAN)$(@F)$(RESET)
-subdir_var = $(FG_CYAN)$(subdir)$(RESET)
-
-# Color-formatted name of the current makefile target being run.
-target_var = $(FG_CYAN)$@$(RESET)
 
 # ============================================================================ #
 # DIRECTORY TARGETS

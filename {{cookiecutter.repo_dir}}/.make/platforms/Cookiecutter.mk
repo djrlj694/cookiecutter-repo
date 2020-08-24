@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 10MAR2019
-# REVISED: 18AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -14,7 +14,7 @@
 # EXTERNAL CONSTANTS
 # ============================================================================ #
 
-# -- Command output -- #
+# -- Command Output -- #
 
 COOKIECUTTER ?= $(shell which cookiecutter)
 
@@ -23,11 +23,11 @@ COOKIECUTTER ?= $(shell which cookiecutter)
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-# -- Debugging & error capture -- #
+# -- Debugging & Error Capture -- #
 
 VARIABLES_TO_SHOW += COOKIECUTTER
 
-# -- Help strings -- #
+# -- Help Strings -- #
 
 MAKE_ARGS += [COOKIECUTTER=]
 

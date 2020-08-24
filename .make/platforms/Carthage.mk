@@ -4,28 +4,26 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
 
 # ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Files
-#------------------------------------------------------------------------------#
+# -- Filesystem -- #
 
 CARTHAGE_FILES := Cartfile Cartfile.private
+
 
 # ============================================================================ #
 # PHONY TARGETS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "clean" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "clean" Target -- #
 
 .PHONY: clean-carthage
 
@@ -34,14 +32,13 @@ clean-carthage: | $(LOG) ## Completes all Carthage cleanup activities.
 	@rm -rf $(CARTHAGE_FILES) >$(LOG) 2>&1; \
 	$(status_result)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "init" Target -- #
 
 .PHONY: init-carthage
 
 ## init-carthage: Completes all initial Carthage setup activities.
 init-carthage: $(CARTHAGE_FILES)
+
 
 # ============================================================================ #
 # FILE TARGETS

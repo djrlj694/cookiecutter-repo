@@ -4,24 +4,23 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 16MAR2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
 
 # ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-# -- Debugging & error capture -- #
-
+# -- Debugging & Error Capture -- #
 
 # A list of makefile variables to show when testing/debugging.
-VARIABLES_TO_SHOW += PREFIX
+VARIABLES_TO_SHOW := MAKEFILE MAKEFILE_DIR MAKEFILE_LIST
+VARIABLES_TO_SHOW += PREFIX PWD USER
 
-#------------------------------------------------------------------------------#
-# Files
-#------------------------------------------------------------------------------#
+# -- Files -- #
 
 #LOG = $(shell mktemp /tmp/log.XXXXXXXXXX)
 #LOG = `mktemp /tmp/log.XXXXXXXXXX`
@@ -30,9 +29,7 @@ VARIABLES_TO_SHOW += PREFIX
 #LOG = /tmp/make.$$$$.log
 LOG := make.log
 
-#------------------------------------------------------------------------------#
-# Result strings
-#------------------------------------------------------------------------------#
+# -- Result Strings -- #
 
 # Color-formatted outcome statuses, each of which is based on the return code
 # ($$?) of having run a shell command.
@@ -41,24 +38,22 @@ FAILED := $(FG_RED)failed$(RESET).\n
 IGNORE := $(FG_YELLOW)ignore$(RESET).\n
 PASSED := $(FG_GREEN)passed$(RESET).\n
 
+
 # ============================================================================ #
 # INTERNAL VARIABLES
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Debugging & error capture
-#------------------------------------------------------------------------------#
+# -- Debugging & Error Capture -- #
 
 status_result = $(call result,$(DONE))
 test_result = $(call result,$(PASSED))
+
 
 # ============================================================================ #
 # USER-DEFINED FUNCTIONS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Debugging & error capture
-#------------------------------------------------------------------------------#
+# -- Debugging & Error Capture -- #
 
 # $(call result,formatted-string)
 # Prints a success string ($DONE or $PASSED) if the most recent return code
@@ -69,15 +64,17 @@ define result
 	(printf "$(FAILED)\n" && cat $(LOG) && echo)
 endef
 
+
 # ============================================================================ #
 # PHONY TARGETS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Main phony targets
-#------------------------------------------------------------------------------#
+# -- Main Targets -- #
 
-.PHONY: log
+.PHONY: debug log
+
+## debug: Completes all debugging activities.
+debug: debug-vars-some debug-dirs-tree
 
 ## log: Shows the most recently generated log for a specified release.
 log:
@@ -91,9 +88,7 @@ log:
 	@echo
 	@cat $(LOG_FILE)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "debug" target
-#------------------------------------------------------------------------------#
+# -- Prerequisites for "debug" Target -- #
 
 .PHONY: debug-dirs-ll debug-dirs-tree debug-vars-all debug-vars-some
 
@@ -114,6 +109,7 @@ debug-vars-all:
 debug-vars-some:
 	@echo
 	$(foreach v, $(VARIABLES_TO_SHOW), $(info $(v) = $($(v))))
+
 
 # ============================================================================ #
 # INTERMEDIATE TARGETS

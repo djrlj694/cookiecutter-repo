@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 16MAR2019
-# REVISED: 18AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -14,6 +14,8 @@
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
+# -- Help Strings -- #
+
 # Argument syntax for the "make" command.
 MAKE_ARGS := [$(FG_CYAN)<target>$(RESET)]
 
@@ -22,6 +24,8 @@ MAKE_ARGS := [$(FG_CYAN)<target>$(RESET)]
 # INTERNAL VARIABLES
 # ============================================================================ #
 
+# -- Help Strings -- #
+
 # "Targets" section line item of the "make" command's online help.
 target_help = $(FG_CYAN)%-17s$(RESET) %s
 
@@ -29,6 +33,8 @@ target_help = $(FG_CYAN)%-17s$(RESET) %s
 # ============================================================================ #
 # MACROS
 # ============================================================================ #
+
+# -- Help Strings -- #
 
 # "Targets" section header of the "make" command's online help.
 define targets_help
@@ -60,7 +66,7 @@ export usage_help
 help:
 	@printf "$$usage_help"
 	@printf "$$targets_help"
-# Use the makefile set as a data source for displaying a lexicographically
+# Use the makefile project as a data source for displaying a lexicographically
 # sorted, color-formatted list of targets.
 #
 # Note:
@@ -69,11 +75,8 @@ help:
 # 2. "egrep" filters for makefile lines with:
 #    a. "## " starting at column 1;
 #    b. The name of of the target preceding a colon, followed by a space.
-#	@cat $(MAKEFILE_LIST) | \
-#	egrep '^[a-zA-Z_-]+:.*?##' | \
-#	sed -e 's/:.* ##/: ##/' | sort -d | \
-#	awk 'BEGIN {FS = ":.*?## "}; {printf "  $(target_help)\n", $$1, $$2}'
 	@cat $(MAKEFILE_LIST) | \
-	egrep '^## [a-zA-Z_-]+: ' | sed -e 's/## //' | sort -d | \
+	egrep '^## [a-zA-Z_-]+: ' | \
+	sed -e 's/## //' | sort -d | \
 	awk 'BEGIN {FS = ": "}; {printf "  $(target_help)\n", $$1, $$2}'
 	@echo ""

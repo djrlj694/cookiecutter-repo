@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -22,9 +22,7 @@ TOOLCHAIN ?= "dropbox,vim,visualstudiocode"
 # PHONY TARGETS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "clean" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "clean" Target -- #
 
 .PHONY: clean-git
 
@@ -34,9 +32,7 @@ clean-git: | $(LOG)
 	@rm -rf .git .gitignore >$(LOG) 2>&1; \
 	$(status_result)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "init" Target -- #
 
 .PHONY: init-git
 
@@ -56,6 +52,7 @@ endif
 	git push -u origin master >$(LOG) 2>&1; \
 	$(status_result)
 
+
 # ============================================================================ #
 # DIRECTORY TARGETS
 # ============================================================================ #
@@ -66,12 +63,12 @@ endif
 	@git init >$(LOG) 2>&1; \
 	$(status_result)
 
+
 # ============================================================================ #
 # FILE TARGETS
 # ============================================================================ #
 
 ## .gitignore: Makes a .gitignore file.
-#.gitignore: .gitignore.download
 .gitignore: | $(LOG)
 	$(eval toolchain = "macos,swift,swiftpackagemanager,vim,visualstudiocode")
 	@printf "Downloading file $@..."
@@ -83,7 +80,7 @@ endif
 %/.gitkeep:
 	@printf "Making directory tree for marker file $(target_var)..."
 	@printf "Making marker file $(target_var) and its directory tree..."
-	@mkdir -p $(@D); $(status_result)
+	@MKDIR $(@D); $(status_result)
 	@printf "Making marker file $(target_var)..."
 	@touch $@; $(status_result)
 
@@ -94,8 +91,9 @@ endif
 
 .INTERMEDIATE: .gitignore.download
 
+
 # ============================================================================ #
-# Second Expansion Targets
+# SECOND EXPANSION TARGETS
 # ============================================================================ #
 
 .SECONDEXPANSION:

@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 18AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -13,6 +13,8 @@
 # ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
+
+# -- Filesystem -- #
 
 CARTHAGE_FILES := Cartfile Cartfile.private
 

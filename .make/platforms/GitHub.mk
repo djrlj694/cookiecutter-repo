@@ -4,37 +4,30 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 23FEB2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
 
 # ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Accounts
-#------------------------------------------------------------------------------#
+# -- Accounts -- #
 
 GITHUB_USER := $(USER)
 TRAVIS_USER := $(USER)
 
 EMAIL := $(USER)@gmail.com
 
-#------------------------------------------------------------------------------#
-# Directories
-#------------------------------------------------------------------------------#
+# -- Filesystem -- #
 
 GITHUB_DIR1 := .github
 GITHUB_DIR2 := $(GITHUB_DIR1)/ISSUE_TEMPLATE
 GITHUB_DIR3 := $(GITHUB_DIR1)/PULL_REQUEST_TEMPLATE
 
 GITHUB_DIRS := $(addsuffix /.,$(GITHUB_DIR2) $(GITHUB_DIR3))
-
-#------------------------------------------------------------------------------#
-# Files
-#------------------------------------------------------------------------------#
 
 GITHUB_DOCS0 := CHANGELOG CODE_OF_CONDUCT CONTRIBUTING SUPPORT
 #GITHUB_DOCS1 := $(addprefix $(GITHUB_DIR1)/,CODE_OF_CONDUCT CONTRIBUTING) 
@@ -49,11 +42,9 @@ GITHUB_DOWNLOADED_FILES := $(addsuffix .download,$(GITHUB_FILES))
 # PHONY TARGETS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "clean" target
-#------------------------------------------------------------------------------#
+# -- Prerequisites for "clean" Target -- #
 
-.PHONY: clean-docs-github
+.PHONY: clean-github clean-docs-github
 
 ## clean-github: Completes all GitHub cleanup activities.
 clean-github: clean-docs-github
@@ -64,18 +55,15 @@ clean-docs-github: | $(LOG)
 	@rm -rf $(GITHUB_FILES) $(GITHUB_DIR1) >$(LOG) 2>&1; \
 	$(status_result)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "docs" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "docs" Target
 
 .PHONY: docs-github 
 
 ## docs-github: Completes all GitHub document generation activites.
 docs-github: $(GITHUB_FILES)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+
+# -- Prerequisites for "init" Target -- ##
 
 .PHONY: init-github init-github-dirs init-github-vars
 
@@ -96,6 +84,7 @@ init-github-vars:
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-github)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 	$(eval ORIGIN_URL = https://github.com/$(PROJECT_REPO).git)
+
 
 # ============================================================================ #
 # FILE TARGETS
@@ -139,6 +128,7 @@ CONTRIBUTING.sed:
 
 # Makes a SUPPORT.md file.
 SUPPORT.md: SUPPORT.md.download
+
 
 # ============================================================================ #
 # INTERMEDIATE TARGETS

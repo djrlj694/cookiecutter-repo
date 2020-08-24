@@ -4,36 +4,33 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 10MAR2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
 
 # ============================================================================ #
 # EXTERNAL CONSTANTS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Command output
-#------------------------------------------------------------------------------#
+# -- Command Output -- #
 
 COOKIECUTTER ?= $(shell which cookiecutter)
+
 
 # ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Debugging & error capture
-#------------------------------------------------------------------------------#
+# -- Debugging & Error Capture -- #
 
 VARIABLES_TO_SHOW += COOKIECUTTER
 
-#------------------------------------------------------------------------------#
-# Help strings
-#------------------------------------------------------------------------------#
+# -- Help Strings -- #
 
 MAKE_ARGS += [COOKIECUTTER=]
+
 
 # ============================================================================ #
 # USER-DEFINED FUNCTIONS
@@ -46,23 +43,6 @@ MAKE_ARGS += [COOKIECUTTER=]
 # FIXME: the execution of Cookiecutter:
 # FIXME: jinja2.exceptions.TemplateSyntaxError: unexpected char '$' at 1953
 # FIXME:   File "./.make/platforms/Cookiecutter.mk", line 48
-ifeq ($(COOKIECUTTER),)
-cc-sed-cmd = s/\{\{ cookiecutter.$1 \}\}/$2/g
-endif
-
-# ============================================================================ #
-# UTILITY DEPENDENCIES
-# ============================================================================ #
-
-ifeq ($(COOKIECUTTER),)
-include $(MAKEFILE_DIR)/utilities/sed.mk
-endif
-
-# ============================================================================ #
-# FEATURE DEPENDENCIES
-# ============================================================================ #
-
-ifeq ($(COOKIECUTTER),)
-include $(MAKEFILE_DIR)/features/downloading.mk
-include $(MAKEFILE_DIR)/features/setting_up.mk
-endif
+#ifeq ($(COOKIECUTTER),)
+#cc-sed-cmd = s/\{\{ cookiecutter.$1 \}\}/$2/g
+#endif

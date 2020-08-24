@@ -4,18 +4,17 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 03MAR2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
 
 # ============================================================================ #
 # PHONY TARGETS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "docs" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "docs" Target -- #
 
 .PHONY: docs-swift
 
@@ -32,9 +31,7 @@ docs-swift: | $(LOG)
 	$(status_result)
 	@rm -rf ./build
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "init" Target -- #
 
 .PHONY: init-swift init-swift-dirs init-swift-vars
 

@@ -4,28 +4,26 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 19AUG2020
+# REVISED: 22AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
 
 # ============================================================================ #
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Files
-#------------------------------------------------------------------------------#
+# -- Filesystem -- #
 
 COCOAPODS_FILES := Framework.podspec
+
 
 # ============================================================================ #
 # PHONY TARGETS
 # ============================================================================ #
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "clean" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "clean" Target -- #
 
 .PHONY: clean-cocoapods
 
@@ -35,14 +33,13 @@ clean-cocoapods: | $(LOG)
 	@rm -rf $(COCOAPODS_FILES) >$(LOG) 2>&1; \
 	$(status_result)
 
-#------------------------------------------------------------------------------#
-# Prerequisite phony targets for the "init" target
-#------------------------------------------------------------------------------#
+# -- Prerequisite for "init" Target -- #
 
 .PHONY: init-cocoapods 
 
 ## init-cocoapods: Completes all initial CocoaPods setup activities.
 init-cocoapods: $(COCOAPODS_FILES)
+
 
 # ============================================================================ #
 # FILE TARGETS
@@ -50,6 +47,7 @@ init-cocoapods: $(COCOAPODS_FILES)
 
 # Makes a Framework.podspec file.
 Framework.podspec: Framework.podspec.download
+
 
 # ============================================================================ #
 # INTERMEDIATE TARGETS
