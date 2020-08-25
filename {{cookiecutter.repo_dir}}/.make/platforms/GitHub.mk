@@ -80,6 +80,6 @@ ifeq ($(LICENSE_TEMPLATE),)
 	$(status_result)
 else
 	@curl -u $(GH_USER) $(GH_API_URL) \
-	-d '{$(name_kv),$(description_kv),$(private_kv)'; \
+	-d '{$(name_kv),$(description_kv),$(private_kv)'}; \
 	$(status_result)
 endif
