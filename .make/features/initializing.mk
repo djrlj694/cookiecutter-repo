@@ -1,10 +1,10 @@
 # Copyright © 2020 djrlj694.dev. All rights reserved.
 # ============================================================================ #
-# PROGRAM: setting_up.mk
+# PROGRAM: initializing.mk
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 16MAR2019
-# REVISED: 22AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -30,8 +30,6 @@ MKDIR := mkdir -p
 # run. The shell command "basename" removes the parent directory, $(@D)), from
 # the absolute path of the makefile target.
 subdir = $(shell basename $(@D))
-
-# -- Files -- #
 
 file = $(basename $@)
 

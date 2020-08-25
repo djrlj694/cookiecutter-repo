@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 21AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -36,13 +36,20 @@ endef
 # PHONY TARGETS
 # ============================================================================ #
 
-.PHONY: clean-git init-git release-git
+# -- Prerequisite for "clean" Target -- #
+
+#.PHONY: clean-git release-git
+.PHONY: clean-git
 
 ## clean-git: Completes all git cleanup activities.
 clean-git: | $(LOG)
 	@printf "Removing git setup..."
 	@rm -rf .git .gitignore >$(LOG) 2>&1; \
 	$(status_result)
+
+# -- Prerequisite for "init" Target -- #
+
+.PHONY: init-git
 
 ## init-git: Completes all initial git setup activities.
 init-git: .gitignore .git | $(LOG)

@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 22AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -16,6 +16,20 @@
 
 # OSes, IDEs, or programming languagses
 TOOLCHAIN ?= "dropbox,vim,visualstudiocode"
+
+
+# ============================================================================ #
+# USER-DEFINED FUNCTIONS
+# ============================================================================ #
+
+# $(call download-gitignore,toolchain)
+# Downloads a .gitignore file.
+define download-gitignore
+	$(eval base_url = "https://www.toptal.com")
+	$(eval path = "/developers/gitignore/api/")
+	$(eval url = "$(base_url)$(path)$(TOOLCHAIN)")
+	@$(call download-file,.gitignore,$(url))
+endef
 
 
 # ============================================================================ #
@@ -37,11 +51,7 @@ clean-git: | $(LOG)
 .PHONY: init-git
 
 ## init-git: Completes all initial git setup activities.
-ifeq ($(COOKIECUTTER),)
 init-git: .gitignore .git | $(LOG)
-else
-init-git: .git | $(LOG)
-endif
 	@printf "Committing the initial project to the master branch..."
 	@git checkout -b master >$(LOG) 2>&1; \
 	git add . >>$(LOG) 2>&1; \
@@ -70,7 +80,6 @@ endif
 
 ## .gitignore: Makes a .gitignore file.
 .gitignore: | $(LOG)
-	$(eval toolchain = "macos,swift,swiftpackagemanager,vim,visualstudiocode")
 	@printf "Downloading file $@..."
 	@$(call download-gitignore) >$(LOG) 2>&1; \
 	$(status_result)

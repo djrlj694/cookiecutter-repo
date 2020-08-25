@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 16MAR2019
-# REVISED: 22AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -18,7 +18,7 @@
 
 # A list of makefile variables to show when testing/debugging.
 VARIABLES_TO_SHOW := MAKEFILE MAKEFILE_DIR MAKEFILE_LIST
-VARIABLES_TO_SHOW += PACKAGE PREFIX PROJECT PWD USER
+VARIABLES_TO_SHOW += PACKAGE PREFIX PWD REPO_NAME USER
 
 # -- Files -- #
 

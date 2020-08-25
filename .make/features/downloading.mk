@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 10MAR2019
-# REVISED: 22AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -28,10 +28,7 @@ endef
 # Downloads a file.
 # https://stackoverflow.com/questions/32672222/how-to-download-a-file-only-if-more-recently-changed-in-makefile
 %.download: | $(LOG) 
-#	$(eval FILE = $(basename $@))
 	@printf "Downloading file $(file_var)..."
-#	@curl -s -S -L -f $(FILE_URL)/$(file) -z $(file) -o $@ >$(LOG) 2>&1; \
-
 	@$(call download-file,$(file),$(FILE_URL)) $@ >$(LOG) 2>&1; \
 	mv -n $@ $(file) >>$(LOG) 2>&1; \
 	$(status_result)

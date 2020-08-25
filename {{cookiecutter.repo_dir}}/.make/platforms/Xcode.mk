@@ -106,7 +106,7 @@ ifeq ($(COOKIECUTTER),)
 init-xcode: init-xcode-vars init-xcode-dirs init-carthage init-cocoapods
 else
 init-xcode: init-xcode-vars
-	@cookiecutter gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
+	@cookiecutter gh:$(TEMPLATES_REPO) project_name=$(REPO_NAME)
 endif
 
 ## init-xcode-dirs: Completes all initial Xcode directory setup activites.

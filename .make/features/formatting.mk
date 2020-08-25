@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 16MAR2019
-# REVISED: 22AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -19,17 +19,18 @@
 # C-style octal code representing an ASCII escape character.
 ESC := \033
 
+# Whitespace.
 EMPTY :=
 SPACE := $(EMPTY) $(EMPTY)
 
 # -- ANSI Escape Sequences -- #
 
-# Setting the text intensity/emphasis of STDOUT.
+# Text intensity/emphasis of STDOUT.
 RESET := $(ESC)[0m
 BOLD := $(ESC)[1m
 DIM := $(ESC)[2m
 
-# Setting the text color of STDOUT.
+# Text color of STDOUT.
 FG_CYAN := $(ESC)[0;36m
 FG_GREEN := $(ESC)[0;32m
 FG_RED := $(ESC)[0;31m
@@ -39,6 +40,8 @@ FG_YELLOW := $(ESC)[1;33m
 # ============================================================================ #
 # INTERNAL VARIABLES
 # ============================================================================ #
+
+# -- Formatted Strings -- #
 
 # Color-formatted names of filesystem paths.
 dir_var = $(FG_CYAN)$(@D)$(RESET)

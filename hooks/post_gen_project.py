@@ -50,19 +50,18 @@ SCRIPT_NAME = 'post_gen_project.py'
 # Filesystem
 LICENSE = '{{cookiecutter.repo_license}}'
 
-#PROJECT_PLATFORM = '{{cookiecutter.project_platform}}'
-#print(f'PROJECT_PLATFORM={PROJECT_PLATFORM}')
+#PLATFORM = '{{cookiecutter.project_platform}}'
+#print('PLATFORM =', {PLATFORM})
 
 # GitHub API v3
 DESCRIPTION = '{{cookiecutter.repo_description}}'
 GH_USER = '{{cookiecutter.github_user}}'
 PRIVATE = '{{cookiecutter.repo_private}}'
-REPO_NAME = '{{cookiecutter.repo_name}}'
 
 # -- Input Mappings -- #
 
 LICENSE_TEMPLATES = {
-    'private / not open source': '',
+    'unspecified': '',
     'Academic Free License v3.0': 'afl-3.0',
     'Apache license 2.0': 'apache-2.0',
     'Artistic license 2.0': 'artistic-2.0',
@@ -156,20 +155,6 @@ def setup_logging(is_verbose: bool):
     else:
         log.basicConfig(format=format, datefmt=datefmt, level=log.WARNING)
 
-# -- Source Code Control (SCM) -- #
-
-def add(cookiecutter_suffix, extra_context):
-    """
-    Create a repo from a cookiecutter.
-    """
-
-    cookiecutter(
-        'gh:djrlj694/cookiecutter-%s' % cookiecutter_suffix,
-        extra_context=extra_context,
-        no_input=True,
-        output_dir='..',
-        overwrite_if_exists=True)   
-
 # -- Main Program -- #
 
 def main():
@@ -179,7 +164,20 @@ def main():
 
     # Initialize project platforms.
 
-    pass
+    #if PLATFORM == 'Swift':
+    #    print(f'swift_package_type={swift_package_type}')
+    #    make(f'init-swift SWIFT_PROJECT_TYPE="{PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+    #elif PLATFORM == 'Xcode':
+    #    cmd('open -a Xcode')
+    #    print(f'swift_package_type={swift_package_type}')
+    #    make(f'init-xcode SWIFT_PROJECT_TYPE="{PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+
+    make(
+        'init',
+        f'USER={GH_USER} DESCRIPTION={DESCRIPTION}',
+        f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={LICENSE_TEMPLATE}'
+        )
+    rm('.boilerplate')
 
 
 # ============================================================================ #
@@ -194,26 +192,8 @@ if DEBUG:
     cmd('python --version')
     cmd('conda list')
     cmd('pip list')
-    print(f'REPO_NAME={REPO_NAME}')
 
 # -- Source Code Control (SCM) -- #
-
-extra_context = {'project_name': REPO_NAME}
-
-#if PROJECT_PLATFORM == 'Swift':
-#    print(f'swift_package_type={swift_package_type}')
-#    make(f'init-swift SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
-#elif PROJECT_PLATFORM == 'Xcode':
-#    cmd('open -a Xcode')
-#    print(f'swift_package_type={swift_package_type}')
-#    make(f'init-xcode SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
-
-#create_gh_repo(REPO_NAME)
-make(
-    'init',
-    f'USER={GH_USER} DESCRIPTION={DESCRIPTION} PRIVATE={PRIVATE} LICENSE_TEMPLATE={LICENSE_TEMPLATE}'
-    )
-rm('.boilerplate')
 
 # -- Main Execution -- #
 

@@ -4,10 +4,26 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 23FEB2019
-# REVISED: 22AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
+
+
+# ============================================================================ #
+# EXTERNAL CONSTANTS
+# ============================================================================ #
+
+# -- Accounts -- #
+
+GH_USER ?= $(USER)
+TRAVIS_USER ?= $(USER)
+
+# -- Source Code Control (SCM) -- #
+
+# GitHub API v3
+LICENSE_TEMPLATE ?=
+PRIVATE ?= true
 
 
 # ============================================================================ #
@@ -15,9 +31,6 @@
 # ============================================================================ #
 
 # -- Accounts -- #
-
-GITHUB_USER := $(USER)
-TRAVIS_USER := $(USER)
 
 EMAIL := $(USER)@gmail.com
 
@@ -38,6 +51,16 @@ GITHUB_DOCS := $(GITHUB_DOCS0) $(GITHUB_DOCS2) $(GITHUB_DOCS3)
 GITHUB_FILES := $(addsuffix .md,$(GITHUB_DOCS))
 GITHUB_DOWNLOADED_FILES := $(addsuffix .download,$(GITHUB_FILES))
 
+# -- Source Code Control (SCM) -- #
+
+# GitHub
+GH_REPO_PATH = $(GH_USER)/$(REPO_NAME)
+GH_ORIGIN_URL = https://github.com/$(GH_REPO_PATH).git
+
+# GitHub API v3
+GH_API_URL = https://api.github.com/user/repos
+
+
 # ============================================================================ #
 # PHONY TARGETS
 # ============================================================================ #
@@ -55,7 +78,7 @@ clean-docs-github: | $(LOG)
 	@rm -rf $(GITHUB_FILES) $(GITHUB_DIR1) >$(LOG) 2>&1; \
 	$(status_result)
 
-# -- Prerequisite for "docs" Target
+# -- Prerequisite for "docs" Target -- #
 
 .PHONY: docs-github 
 
@@ -63,7 +86,7 @@ clean-docs-github: | $(LOG)
 docs-github: $(GITHUB_FILES)
 
 
-# -- Prerequisites for "init" Target -- ##
+# -- Prerequisites for "init" Target -- #
 
 .PHONY: init-github init-github-dirs init-github-vars
 
@@ -80,10 +103,10 @@ init-github-dirs: $(GITHUB_DIRS)
 
 ## init-github-vars: Completes all GitHub variable setup activites.
 init-github-vars:
-	$(eval PROJECT_REPO = $(GITHUB_USER)/$(PROJECT))
+	$(eval PROJECT_PATH = $(GITHUB_USER)/$(PROJECT))
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-github)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
-	$(eval ORIGIN_URL = https://github.com/$(PROJECT_REPO).git)
+	$(eval ORIGIN_URL = https://github.com/$(PROJECT_PATH).git)
 
 
 # ============================================================================ #
