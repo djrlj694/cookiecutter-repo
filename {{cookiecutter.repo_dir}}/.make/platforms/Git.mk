@@ -54,7 +54,7 @@ clean-git: | $(LOG)
 ## init-git: Completes all initial git setup activities.
 init-git: .gitignore .git | $(LOG)
 	@printf "Syncing the initial project with the origin..."
-	@git remote add origin $(ORIGIN_URL) >$(LOG) 2>&1; \
+	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	git pull origin master >$(LOG) 2>&1; \
 	git add . >>$(LOG) 2>&1; \
 	git commit -m "Initial project setup" >>$(LOG) 2>&1; \
@@ -66,7 +66,7 @@ init-git: .gitignore .git | $(LOG)
 #	@git checkout -b master >$(LOG) 2>&1; \
 #	$(status_result)
 #	@printf "Syncing the initial project with the origin..."
-#	@git remote add origin $(ORIGIN_URL) >$(LOG) 2>&1; \
+#	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 #	git pull origin master >$(LOG) 2>&1; \
 #	git push -u origin master >$(LOG) 2>&1; \
 #	$(status_result)

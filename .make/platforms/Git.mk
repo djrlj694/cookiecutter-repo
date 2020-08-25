@@ -58,7 +58,7 @@ init-git: .gitignore .git | $(LOG)
 	git commit -m "Initial project setup" >>$(LOG) 2>&1; \
 	$(status_result)
 	@printf "Syncing the initial project with the origin..."
-	@git remote add origin $(ORIGIN_URL) >$(LOG) 2>&1; \
+	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	git push -u origin master >$(LOG) 2>&1; \
 	$(status_result)
 
