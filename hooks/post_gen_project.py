@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Aug 20, 2020'
+__modified_date__= 'Aug 24, 2020'
 
 
 # ============================================================================ #
@@ -27,13 +27,7 @@ import sys
 # -- 3rd-Party -- #
 
 from cookiecutter.main import cookiecutter
-from getpass import getpass
-#from git import Repo
-#from github import Github
-
-#import pygit2
-import requests
-import sh
+#from getpass import getpass
 
 # ============================================================================ #
 # CONSTANTS
@@ -55,13 +49,11 @@ SCRIPT_NAME = 'post_gen_project.py'
 
 # Filesystem
 LICENSE = '{{cookiecutter.repo_license}}'
-REPO_DIR = '{{cookiecutter.repo_dir}}'
 
 #PROJECT_PLATFORM = '{{cookiecutter.project_platform}}'
 #print(f'PROJECT_PLATFORM={PROJECT_PLATFORM}')
 
 # GitHub API v3
-REPO_DESCRIPTION = '{{cookiecutter.repo_description}}'
 REPO_NAME = '{{cookiecutter.repo_name}}'
 
 GH_USER = '{{cookiecutter.github_user}}'
@@ -107,19 +99,9 @@ LICENSE_TEMPLATES = {
 
 # -- Processed Input -- #
 
-# Filesystem
-repo_subdir = os.path.basename(REPO_DIR)
-
 # GitHub API v3
 IS_PRIVATE = True if LICENSE == 'Not open source' else False
 LICENSE_TEMPLATE = LICENSE_TEMPLATES[LICENSE]
-repo_name = repo_subdir.replace(' ', '-').replace('_', '-')
-
-# -- Source Code Control (SCM) -- #
-
-# GitHub API v3
-GH_API_URL = 'https://api.github.com/user/repos'
-GH_HOME_URL = 'https://github.com'
 
 
 # ============================================================================ #
@@ -176,58 +158,6 @@ def setup_logging(is_verbose: bool):
 
 # -- Source Code Control (SCM) -- #
 
-def add_gh_repo(origin_url):
-    """
-    Add a GitHub repo to the local git repo, then syncs the two.
-    """
-
-    git = sh.git
-
-    git.remote.add.origin(origin_url)
-    git.push('-u', 'origin', 'master')
-
-def create_file(file_path):
-    """
-    Create a file (from a repo's perspective).
-    """
-
-    git = sh.git
-    filename = os.path.basename(file_path)
-
-    git.add(file_path)
-    git.commit(f'-m Create {filename}')
-
-def create_gh_repo(repo_name):
-#def create_gh_repo():
-    """
-    Create a GitHub repo.
-    """
-
-    gh_data_dict = {
-        'name': repo_name,
-        'description': REPO_DESCRIPTION,
-        'private': IS_PRIVATE,
-        'license_template': LICENSE_TEMPLATE
-        }
-    gh_data = json.dumps(gh_data_dict)
-    gh_password = getpass('github_password: ')
-
-    requests.post(
-        GH_API_URL,
-        data=gh_data,
-        auth=(GH_USER, gh_password)
-        )
-
-def create_git_repo(repo_name):
-#def create_git_repo():
-    """
-    Create a Git repo with a single file.
-    """
-
-    git = sh.git
-    git.init()
-    git.remote.add.origin(f'{GH_HOME_URL}/{GH_USER}/{repo_name}.git')
-
 def add(cookiecutter_suffix, extra_context):
     """
     Create a repo from a cookiecutter.
@@ -249,21 +179,7 @@ def main():
 
     # Initialize project platforms.
 
-    # Create repositories.
-    create_gh_repo(REPO_NAME)
-    create_git_repo(REPO_NAME)
-
-    # Download files to local repository.
-    sh.git.pull('origin', 'master')
-
-    # Add files to local repository.
-    create_file('README.md')
-    create_file('.gitignore')
-
-    # Upload (updated) files to remote repository.
-    sh.git.push('-u', 'origin', 'master')
-
-    #pass
+    pass
 
 
 # ============================================================================ #
@@ -278,13 +194,11 @@ if DEBUG:
     cmd('python --version')
     cmd('conda list')
     cmd('pip list')
-    print(f'REPO_DIR={REPO_DIR}')
     print(f'REPO_NAME={REPO_NAME}')
-    print(f'repo_name={repo_name}')
 
 # -- Source Code Control (SCM) -- #
 
-extra_context = {'project_name': '{{cookiecutter.repo_name}}'}
+extra_context = {'project_name': REPO_NAME}
 
 #if PROJECT_PLATFORM == 'Swift':
 #    print(f'swift_package_type={swift_package_type}')
@@ -301,8 +215,8 @@ rm('.boilerplate')
 # -- Main Execution -- #
 
 # If this module is in the main module, call the main() function.
-#if __name__ == "__main__":
-#    main()
+if __name__ == "__main__":
+    main()
 
 # -- Housekeeping -- #
 

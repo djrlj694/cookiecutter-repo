@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 23FEB2019
-# REVISED: 18AUG2020
+# REVISED: 24AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -14,6 +14,13 @@
 # EXTERNAL CONSTANTS
 # ============================================================================ #
 
+# -- Accounts -- #
+
+GITHUB_USER ?= $(USER)
+TRAVIS_USER ?= $(USER)
+
+# -- Source Code Control (SCM) -- #
+
 # GitHub API v3
 IS_PRIVATE ?= true
 
@@ -22,8 +29,7 @@ IS_PRIVATE ?= true
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-GITHUB_USER := $(USER)
-TRAVIS_USER := $(USER)
+# -- Accounts -- #
 
 EMAIL := $(USER)@gmail.com
 
@@ -55,7 +61,6 @@ init-github:
 	$(eval gh_api_url = https://api.github.com/user/repos)
 	$(eval PROJECT_REPO = $(GITHUB_USER)/$(PROJECT))
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-github)
-	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 	$(eval ORIGIN_URL = https://github.com/$(PROJECT_REPO).git)
 #	@cookiecutter gh:$(TEMPLATES_REPO) email=$(EMAIL) project_name=$(PROJECT)
 #	@curl -H "Authorization: token $(GITHUB_API_TOKEN)" https://api.github.com/user/repos -d '{"name": "'"${NEW_REPO_NAME}"'"}'
