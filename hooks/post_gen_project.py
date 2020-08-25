@@ -54,9 +54,10 @@ LICENSE = '{{cookiecutter.repo_license}}'
 #print(f'PROJECT_PLATFORM={PROJECT_PLATFORM}')
 
 # GitHub API v3
-REPO_NAME = '{{cookiecutter.repo_name}}'
-
+DESCRIPTION = '{{cookiecutter.repo_description}}'
 GH_USER = '{{cookiecutter.github_user}}'
+PRIVATE = '{{cookiecutter.repo_private}}'
+REPO_NAME = '{{cookiecutter.repo_name}}'
 
 # -- Input Mappings -- #
 
@@ -100,7 +101,6 @@ LICENSE_TEMPLATES = {
 # -- Processed Input -- #
 
 # GitHub API v3
-IS_PRIVATE = True if LICENSE == 'Not open source' else False
 LICENSE_TEMPLATE = LICENSE_TEMPLATES[LICENSE]
 
 
@@ -209,7 +209,10 @@ extra_context = {'project_name': REPO_NAME}
 #    make(f'init-xcode SWIFT_PROJECT_TYPE="{PROJECT_PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
 #create_gh_repo(REPO_NAME)
-make(f'init USER={GH_USER} IS_PRIVATE={IS_PRIVATE} LICENSE_TEMPLATE={LICENSE_TEMPLATE}')
+make(
+    'init',
+    f'USER={GH_USER} DESCRIPTION={DESCRIPTION} PRIVATE={PRIVATE} LICENSE_TEMPLATE={LICENSE_TEMPLATE}'
+    )
 rm('.boilerplate')
 
 # -- Main Execution -- #

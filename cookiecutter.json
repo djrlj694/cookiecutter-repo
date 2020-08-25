@@ -53,7 +53,7 @@
         "The Unlicense",
         "zLib License"
     ],
-    "is_private": [true, false],
+    "repo_private": [true, false],
     "lead_name": "{{default_context.lead_name or '___LEAD_NAME___'}}",
     "lead_email": "{{default_context.lead_email or '___USER@DOMAIN.TLD___'}}",
     "github_user": "{{default_context.github_user or '___GITHUB_USER___'}}",
