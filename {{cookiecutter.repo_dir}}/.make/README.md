@@ -41,7 +41,7 @@ The subsections that follow focus on 2 makefile library groups: [**feature libra
 | [downloading.mk](features/downloading.mk) | Downloading files. |
 | [formatting.mk](features/formatting.mk) | Formatting standard output (STDOUT). |
 | [helping.mk](features/helping.mk) | Generating and displaying a makefile project's online help. |
-| [setting_up.mk](features/setting_up.mk) | Setting up a software project. |
+| [initializing.mk](features/initializing.mk) | Setting up a software project. |
 
 ### Platform Libraries
 

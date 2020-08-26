@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 03MAR2019
-# REVISED: 22AUG2020
+# REVISED: 25AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -15,7 +15,7 @@
 # ============================================================================ #
 
 # OSes, IDEs, or programming languages
-SWIFT_PROJECT_TYPE ?= "Swift library package"
+PROJECT_TYPE ?= "lib"
 
 
 # ============================================================================ #
@@ -47,8 +47,7 @@ docs-swift: | $(LOG)
 init-swift:
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
-	$(eval SWIFT_PACKAGE_TYPE = $(word 2,$(SWIFT_PROJECT_TYPE)))
 	@swift package init --type $(SWIFT_PACKAGE_TYPE)
 	@swift package generate-xcodeproj
-	@echo PROJECT=$(PROJECT) SWIFT_PROJECT_TYPE=$(SWIFT_PROJECT_TYPE) SWIFT_PACKAGE_TYPE=$(SWIFT_PACKAGE_TYPE)
-	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name='$(PROJECT)' project_type='$(SWIFT_PROJECT_TYPE)'
+	@echo PROJECT=$(PROJECT) PROJECT_TYPE=$(PROJECT_TYPE) SWIFT_PACKAGE_TYPE=$(SWIFT_PACKAGE_TYPE)
+	@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name='$(PROJECT)' project_type='$(PROJECT_TYPE)'

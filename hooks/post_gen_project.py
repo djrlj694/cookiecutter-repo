@@ -97,6 +97,19 @@ LICENSE_TEMPLATES = {
     'zLib License': 'zlib'
 }
 
+PROJECT_TYPES = {
+    'Python': {
+        'command-line interface': '',
+        'data science': '',
+        'library': '',
+        'script': ''
+    },
+    'Swift': {
+        'command-line interface': 'executable',
+        'library': 'library'
+    }
+}
+
 # -- Processed Input -- #
 
 # GitHub API v3
@@ -162,20 +175,23 @@ def main():
     Run the main set of functions that define the program.
     """
 
+    # Process input.
+    license_template = LICENSE_TEMPLATE[LICENSE]
+
     # Initialize project platforms.
 
     #if PLATFORM == 'Swift':
     #    print(f'swift_package_type={swift_package_type}')
-    #    make(f'init-swift SWIFT_PROJECT_TYPE="{PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+    #    make(f'init-swift PROJECT_TYPE="{PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
     #elif PLATFORM == 'Xcode':
     #    cmd('open -a Xcode')
     #    print(f'swift_package_type={swift_package_type}')
-    #    make(f'init-xcode SWIFT_PROJECT_TYPE="{PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
+    #    make(f'init-xcode PROJECT_TYPE="{PLATFORM}" SWIFT_PACKAGE_TYPE="{swift_package_type}"')
 
     make(
         'init',
         f'USER={GH_USER} DESCRIPTION={DESCRIPTION}',
-        f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={LICENSE_TEMPLATE}'
+        f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={license_template}'
         )
     rm('.boilerplate')
 
