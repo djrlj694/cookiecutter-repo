@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Aug 24, 2020'
+__modified_date__= 'Aug 28, 2020'
 
 
 # ============================================================================ #
@@ -208,8 +208,6 @@ if DEBUG:
     cmd('python --version')
     cmd('conda list')
     cmd('pip list')
-
-# -- Source Code Control (SCM) -- #
 
 # -- Main Execution -- #
 

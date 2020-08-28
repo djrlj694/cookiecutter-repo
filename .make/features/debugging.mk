@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 16MAR2019
-# REVISED: 25AUG2020
+# REVISED: 26AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -20,7 +20,7 @@
 VARIABLES_TO_SHOW := MAKEFILE MAKEFILE_DIR MAKEFILE_LIST
 VARIABLES_TO_SHOW += PREFIX PWD REPO_NAME USER
 
-# -- Files -- #
+# -- Filesystem -- #
 
 #LOG = $(shell mktemp /tmp/log.XXXXXXXXXX)
 #LOG = `mktemp /tmp/log.XXXXXXXXXX`

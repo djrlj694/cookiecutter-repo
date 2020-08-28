@@ -44,7 +44,9 @@ docs-swift: | $(LOG)
 .PHONY: init-swift
 
 ## init-swift: Completes all initial Swift setup activites.
+#init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 init-swift:
+	#@cookiecutter -f -o '..' gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
 	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
 	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 	@swift package init --type $(SWIFT_PACKAGE_TYPE)

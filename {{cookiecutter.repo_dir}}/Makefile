@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 18AUG2020
+# REVISED: 26AUG2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -21,7 +21,7 @@
 
 USER ?= $(shell whoami)
 
-# -- Directories -- #
+# -- Filesystem -- #
 
 PREFIX ?= $(PWD)
 REPO_NAME ?= $(shell basename $(PREFIX))
