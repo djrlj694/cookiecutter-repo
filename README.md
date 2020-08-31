@@ -1,9 +1,9 @@
 # Cookiecutter Repo
 
-[Cookiecutter](https://github.com/audreyr/cookiecutter) is a cross-platform software tool that generates [**boilerplate**](https://en.wikipedia.org/wiki/Boilerplate_code) for [**software projects**](https://en.wikipedia.org/wiki/Software_project_management) from templates.  These templates, called **cookiecutters**, can be used to define:
+[Cookiecutter](https://github.com/audreyr/cookiecutter) is a cross-platform software tool that generates [**boilerplate**](https://en.wikipedia.org/wiki/Boilerplate_code) for [**software projects**](https://en.wikipedia.org/wiki/Software_project_management) from special templates.  These templates, called **cookiecutters**, can be used to define:
 
 * How a project's directories and files are named and organized;
-* The content of a project's files.
+* The content of each of a project's starter files.
 
 They can also facilitate, both manually and automatically, the run-time customization of the generated names and content.
 
@@ -11,13 +11,28 @@ The cookiecutter presented here, Cookiecutter Repo, defines a boilerplate templa
 
 * Makefiles defining build automation rules for software projects;
 * Skeletal source code targeting a particular software project platform;
-* Rules for code and codeless contributions;
+* [**community health files**](https://blog.tidelift.com/improve-collaboration-through-community-health-files) documenting rules for safe, meaningful, and effective code and codeless contributions;
 * Other supporting artifacts (`README.md`, software license, references, etc.).
+
+---
+
+Included in the boilerplate are:
+
+| File | Description |
+| ---- | ----------- |
+| [`CODE_OF_CONDUCT.md`](https://help.github.com/en/github/building-a-strong-community/adding-a-code-of-conduct-to-your-project)| Defines community standards, signal a welcoming and inclusive project, and outline procedures for handling abuse. |
+| [`CONTRIBUTING.md`](https://help.github.com/en/github/building-a-strong-community/setting-guidelines-for-repository-contributors) | Defines rules for code and codeless contributions to a repository |
+| [`FUNDING.yml`](https://help.github.com/en/github/building-a-strong-community/displaying-a-sponsor-button-in-your-repository) | Displays a sponsor button in your repository to increase the visibility of funding options for your open source project. |
+| [`SECURITY.md`](https://help.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository) | Gives instructions for how to responsibly report a security vulnerability in your project. |
+| [`SUPPORT.md`](https://help.github.com/en/github/building-a-strong-community/adding-support-resources-to-your-project) | Lets people know about ways to get help with your project|
+| [Issue templates](https://help.github.com/en/github/building-a-strong-community/about-issue-and-pull-request-templates) | Define how to create an issue |
+| [Pull request templates](https://help.github.com/en/github/building-a-strong-community/about-issue-and-pull-request-templates) | Define how to open a pull request |
+
+---
 
 It should be noted that, colloquially speaking in the context of software project management, "repository" and "project" are interchangeable.  In contrast, Cookiecutter Repo treats these terms as technically distinct.  The reasons why are twofold:
 
-1. To align with [GitHub's definition](https://help.github.com/en/articles/github-glossary#repository) of what a repository is: its "most basic element" for containing "all of the project files (including documentation)" and storing "each file's revision history";
-help.github.com/en/articles/github-glossary#repository)
+1. To align with [GitHub's definition](https://docs.github.com/en/github/getting-started-with-github/github-glossary#repository) of what a repository is: its "most basic element" for containing "all of the project files (including documentation)" and storing "each file's revision history";
 2. To reinforce that a single repository may contain both deliverables (e.g., source code) and supporting artifacts (e.g., documentation) for multiple software projects.
 
 ## Usage

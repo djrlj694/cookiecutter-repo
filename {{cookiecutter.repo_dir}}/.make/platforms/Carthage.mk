@@ -38,6 +38,12 @@ clean-carthage: | $(LOG) ## Completes all Carthage cleanup activities.
 
 ## init-carthage: Completes all initial Carthage setup activities.
 init-carthage: $(CARTHAGE_FILES)
+	@if ! command -v carthage > /dev/null; then \
+	echo 'Carthage is not installed.' \
+	echo 'See https://github.com/Carthage/Carthage for install instructions.' \
+	exit 1 \
+	fi
+	@carthage update --platform iOS --use-submodules --no-use-binaries
 
 
 # ============================================================================ #

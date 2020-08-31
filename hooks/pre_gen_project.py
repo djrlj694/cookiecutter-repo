@@ -10,11 +10,11 @@ __credits__ = ['Robert (Bob) L. Jones']
 __license__ = 'MIT'
 
 __created_date__= 'Aug 25, 2019'
-__modified_date__= 'Aug 20, 2020'
+__modified_date__= 'Aug 29, 2020'
 
 
 # ============================================================================ #
-# LIBRARIES
+# IMPORTS
 # ============================================================================ #
 
 # -- Python Standard Library -- #

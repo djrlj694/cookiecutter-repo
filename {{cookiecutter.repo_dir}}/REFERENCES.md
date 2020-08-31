@@ -57,6 +57,12 @@ API documentation, tutorials, and other online references and made portions of t
 
 1. https://lab.github.com/githubtraining/introduction-to-github
 
+## iOS
+
+TODO: *Add iOS references as follows:*
+1. __SWIFT_REFERENCE1__
+1. __SWIFT_REFERENCE2__
+
 ## Makefile
 
 1. https://www.cl.cam.ac.uk/teaching/0910/UnixTools/make.pdf
@@ -102,3 +108,21 @@ API documentation, tutorials, and other online references and made portions of t
 ### Licensing
 
 1. https://choosealicense.com
+
+## Python
+
+TODO: *Add Python references as follows:*
+1. __PYTHON_REFERENCE1__
+1. __PYTHON_REFERENCE2__
+
+## Swift
+
+TODO: *Add Swift references as follows:*
+1. __SWIFT_REFERENCE1__
+1. __SWIFT_REFERENCE2__
+
+## Xcode
+
+TODO: *Add Xcode references as follows:*
+1. __XCODE_REFERENCE1__
+1. __XCODE_REFERENCE2__

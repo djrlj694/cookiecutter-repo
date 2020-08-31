@@ -1,9 +1,9 @@
 # Contributing Guidelines
 
-Contributions toward improving [Cookiecutter Repo](README.md) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) process.  By submitting a pull request, you acknowledge and agree to the following:
+Version-controllable contributions toward improving [this open source project](README.md) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) process.  By submitting a pull request, you acknowledge and agree to the following:
 
-1. You have the right to license your contribution to Cookiecutter Repo's project leader (djrlj694@gmail.com) and the Cookiecutter Repo community;
-2. Your contributions are licensed under the [MIT License](LICENSE.md).
+1. You have the right to license your contribution to [{{cookiecutter.repo_owner}}]({{cookiecutter.email}}) and the project community;
+2. Your contributions are licensed under the [{{cookiecutter.repo_license}}](LICENSE) license.
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
 email, or any other method with the owners of this repository before making a change.
