@@ -14,7 +14,7 @@
         "script",
         "template"
     ],
-    "project_email": "{{default_context.lead_email or '___USER@DOMAIN.TLD___'}}",
+    "project_email": "{{default_context.lead_email|default('___USER@DOMAIN.TLD___')}}",
     "repo_name": "{{[cookiecutter.project_platform, cookiecutter.project_type, cookiecutter.project_name] | select('!=', 'unspecified') | join('-') | replace('command-line interface', 'cli') | replace('data science', 'datasci') | replace('library', 'lib') | replace(' ', '-') | replace('_', '-') | lower}}",
     "repo_dir": "./{{cookiecutter.repo_name}}",
     "repo_description": "___REPO_DESCRIPTION___",
