@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Aug 29, 2020'
+__modified_date__= 'Sep 01, 2020'
 
 
 # ============================================================================ #
@@ -39,6 +39,10 @@ DEBUG = False
 
 # -- Filesystem -- #
 
+# Directories
+BP_DIR = '.boilerplate'
+TARGET_DIR = f'Sources/{target_name}'
+
 # Calling os.path.basename(__file__) generates filename (e.g.,tmp69w3m_kf.py).
 # This is due to how Cookiecutter processes a template's hooks (i.e., Python
 # scripts for handling any pre- or post-boilerplate generation.  So, hard-code
@@ -57,6 +61,13 @@ LICENSE = '{{cookiecutter.repo_license}}'
 DESCRIPTION = '{{cookiecutter.repo_description}}'
 GH_USER = '{{cookiecutter.github_user}}'
 PRIVATE = '{{cookiecutter.repo_private}}'
+
+# Project
+TYPE = '{{cookiecutter.project_type}}'
+PLATFORM = '{{cookiecutter.project_platform}}'
+#project_platform_version = '{{cookiecutter.project_platform_version}}'
+#target_name = '{{cookiecutter.target_name}}'
+
 
 # -- Input Mappings -- #
 
@@ -132,11 +143,64 @@ def cmd(*args):
 
     os.system(' '.join(args))
 
+def cat(*args):
+    cmd('cat', *args)
+
+def cp(*args):
+    cmd('cp -R', *args)
+
 def make(*args):
     cmd('make', *args)
 
 def rm(*args):
     cmd('rm -rf', *args)
+
+# -- Filesystem -- #
+
+def add_header_to_body(paths):
+    process_files(paths, make_body_file)
+    copy_boilerplate(TYPE)
+    process_files(paths, make_header_file)
+    process_files(paths, make_source_file)
+    process_files(paths, remove_files)
+
+def bp_type_dir(bp_type):
+    return f'{BP_DIR}/{bp_type}/*'
+
+def copy_boilerplate(bp_type):
+    cp(bp_type_dir(bp_type), '.')
+    cp(bp_type_dir('package'), '.')
+
+def make_header_file(source_path):
+    os.rename(source_path, source_path + '.header')
+
+def make_body_file(source_path):
+    os.rename(source_path, source_path + '.body')
+
+def list_files(root_dir, file_extention):
+    files = []
+    for dir_path, dir_names, file_names in os.walk(root_dir):
+        for file_name in file_names:
+            if file_extention in file_name:
+                files += [os.path.join(dir_path, file_name)]
+    return files
+
+def make_source_file(target_path):
+    cat(target_path + '.header', target_path + '.body', '>', target_path)
+
+def process_files(paths, function):
+    for path in paths:
+        function(path)   
+
+def remove_files(common_path):
+    rm(common_path + '.*')
+
+def update_file(path, old_str, new_str):
+    s = open(path).read()
+    s = s.replace(old_str, new_str)
+    f = open(path, 'w')
+    f.write(s)
+    f.close()
 
 # -- Logging -- #
 
@@ -193,7 +257,30 @@ def main():
         f'USER={GH_USER} DESCRIPTION={DESCRIPTION}',
         f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={license_template}'
         )
-    rm('.boilerplate')
+
+    if TYPE in ['executable', 'library']:
+        source_files = list_files(root_dir='Sources', file_extention='.swift')
+        test_files = list_files(root_dir='Tests', file_extention='.swift')
+        files = ['Package.swift'] + source_files + test_files
+        add_header_to_body(files)
+
+        if TYPE == 'library' and PLATFORM == 'iOS':
+
+            name = f'\"{target_name}\"'
+            name_arg = f'name: {name}'
+        
+            platform = f'.{PLATFORM}(.{project_platform_version})'
+            platforms = f'[{platform},]'
+            platforms_arg = f'platforms: {platforms}'
+
+            old_str = f'    {name_arg},\n'
+            new_str = old_str + f'    {platforms_arg},\n'
+
+            update_file('Package.swift', old_str, new_str)
+    else:
+        copy_boilerplate(TYPE)
+
+    rm(BP_DIR)
 
 
 # ============================================================================ #
