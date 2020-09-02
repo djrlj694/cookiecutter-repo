@@ -14,7 +14,6 @@
         "script",
         "template"
     ],
-    "project_email": "___USER@DOMAIN.TLD___",
     "repo_name": "{{[cookiecutter.project_platform, cookiecutter.project_type, cookiecutter.project_name] | select('!=', 'unspecified') | join('-') | replace('command-line interface', 'cli') | replace('data science', 'datasci') | replace('library', 'lib') | replace(' ', '-') | replace('_', '-') | lower}}",
     "repo_dir": "./{{cookiecutter.repo_name}}",
     "repo_description": "___REPO_DESCRIPTION___",
@@ -55,7 +54,8 @@
         "zLib License"
     ],
     "repo_private": [true, false],
-    "lead_name": "{{default_context.full_name or '___LEAD_NAME___'}}",
-    "github_user": "{{default_context.github_user or '___GITHUB_USER___'}}",
-    "travis_user": "{{default_context.travis_user or '___TRAVIS_USER___'}}"
+    "lead_name": "___LEAD_NAME___",
+    "team_email": "___USER@DOMAIN.TLD___",
+    "github_user": "___GITHUB_USER___",
+    "travis_user": "___TRAVIS_USER___"
 }

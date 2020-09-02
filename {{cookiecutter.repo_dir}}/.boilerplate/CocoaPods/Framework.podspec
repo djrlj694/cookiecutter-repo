@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
     spec.summary = "{{cookiecutter.project_short_description}}"
     spec.homepage = "https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}"
     spec.license = { type: '{{cookiecutter.repo_license}}', file: 'LICENSE' }
-    spec.authors = { "{{cookiecutter.lead_name}}" => '{{cookiecutter.project_email}}' }
+    spec.authors = { "{{cookiecutter.lead_name}}" => '{{cookiecutter.team_email}}' }
     spec.social_media_url = "http://twitter.com/{{cookiecutter.github_user}}"
   
     spec.platform = :ios, "12.1"
