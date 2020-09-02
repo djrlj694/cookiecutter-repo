@@ -55,6 +55,7 @@
     ],
     "repo_private": [true, false],
     "lead_name": "___LEAD_NAME___",
+    "team_name": "___TEAM_NAME___",
     "team_email": "___USER@DOMAIN.TLD___",
     "github_user": "___GITHUB_USER___",
     "travis_user": "___TRAVIS_USER___"
