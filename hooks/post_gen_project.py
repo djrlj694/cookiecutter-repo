@@ -41,7 +41,6 @@ DEBUG = False
 
 # Directories
 BP_DIR = '.boilerplate'
-TARGET_DIR = f'Sources/{target_name}'
 
 # Calling os.path.basename(__file__) generates filename (e.g.,tmp69w3m_kf.py).
 # This is due to how Cookiecutter processes a template's hooks (i.e., Python

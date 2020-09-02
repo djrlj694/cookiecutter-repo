@@ -1,2 +1,2 @@
 {% extends ".boilerplate/template.swift" %}
-{% block file_name %}{{cookiecutter.target_name}}.swift{% endblock %}
+{% block file_name %}{{cookiecutter.project_name}}.swift{% endblock %}
