@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Sep 01, 2020'
+__modified_date__= 'Sep 02, 2020'
 
 
 # ============================================================================ #
@@ -47,7 +47,7 @@ TARGET_DIR = f'Sources/{target_name}'
 # This is due to how Cookiecutter processes a template's hooks (i.e., Python
 # scripts for handling any pre- or post-boilerplate generation.  So, hard-code
 # the name of of the hook instead.
-SCRIPT_NAME = 'post_gen_project.py'
+SCRIPT = 'post_gen_project.py'
 
 # -- Input -- #
 
@@ -63,11 +63,11 @@ GH_USER = '{{cookiecutter.github_user}}'
 PRIVATE = '{{cookiecutter.repo_private}}'
 
 # Project
+NAME = '{{cookiecutter.project_name}}'
 TYPE = '{{cookiecutter.project_type}}'
 PLATFORM = '{{cookiecutter.project_platform}}'
 #project_platform_version = '{{cookiecutter.project_platform_version}}'
-#target_name = '{{cookiecutter.target_name}}'
-
+project_platform_version = '___VERSION___'
 
 # -- Input Mappings -- #
 
@@ -219,7 +219,7 @@ def setup_logging(is_verbose: bool):
         '%(asctime)s',
         '%(module)s',
         '%(funcName)s',
-        f'{SCRIPT_NAME}:%(lineno)d',
+        f'{SCRIPT}:%(lineno)d',
         '%(message)s'
     ]
     format = ' | '.join(log_parts)
@@ -266,7 +266,7 @@ def main():
 
         if TYPE == 'library' and PLATFORM == 'iOS':
 
-            name = f'\"{target_name}\"'
+            name = f'\"{NAME}\"'
             name_arg = f'name: {name}'
         
             platform = f'.{PLATFORM}(.{project_platform_version})'
