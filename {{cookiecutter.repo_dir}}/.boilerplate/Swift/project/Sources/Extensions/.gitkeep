@@ -1,4 +1,4 @@
-{% extends ".boilerplate/swift/template.swift" %}
+{% extends ".boilerplate/Swift/template.swift" %}
 {% block body %}
 import Foundation
 
