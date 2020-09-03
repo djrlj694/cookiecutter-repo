@@ -239,6 +239,7 @@ def main():
     """
 
     # Process input.
+    print('LICENSE =', LICENSE)
     license_template = LICENSE_TEMPLATE[LICENSE]
 
     # Initialize project platforms.
