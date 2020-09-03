@@ -275,7 +275,7 @@ def main():
             old_str = f'    {name_arg},\n'
             new_str = old_str + f'    {platforms_arg},\n'
 
-            update_file('Package.swift', old_str, new_str)
+            #update_file('Package.swift', old_str, new_str)
     #else:
     #    copy_boilerplate(TYPE)
 
