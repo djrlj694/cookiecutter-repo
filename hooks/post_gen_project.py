@@ -65,8 +65,8 @@ PRIVATE = '{{cookiecutter.repo_private}}'
 NAME = '{{cookiecutter.project_name}}'
 TYPE = '{{cookiecutter.project_type}}'
 PLATFORM = '{{cookiecutter.project_platform}}'
-#project_platform_version = '{{cookiecutter.project_platform_version}}'
-project_platform_version = '___VERSION___'
+#project_version = '{cookiecutter.project_version}'
+project_version = '___VERSION___'
 
 # -- Input Mappings -- #
 
@@ -268,7 +268,7 @@ def main():
             name = f'\"{NAME}\"'
             name_arg = f'name: {name}'
         
-            platform = f'.{PLATFORM}(.{project_platform_version})'
+            platform = f'.{PLATFORM}(.{project_version})'
             platforms = f'[{platform},]'
             platforms_arg = f'platforms: {platforms}'
 
