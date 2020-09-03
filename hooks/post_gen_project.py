@@ -276,8 +276,8 @@ def main():
             new_str = old_str + f'    {platforms_arg},\n'
 
             update_file('Package.swift', old_str, new_str)
-    else:
-        copy_boilerplate(TYPE)
+    #else:
+    #    copy_boilerplate(TYPE)
 
     rm(BP_DIR)
 
