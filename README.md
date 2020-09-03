@@ -101,7 +101,7 @@ Customization options defined in Cookiecutter Repo's `cookiecutter.json` are as 
 | `repo_license` | The repository's optional (but highly recommended) open-source software licence | `unspecified`, `Apache Software License 2.0`, `BSD-3`, `GNU GPL v3.0`, `MIT`  | `unspecified` |
 | `repo_private` | A boolean specifying whether to create a private (`true`) or public (`false`) repository | `true`, `false`  | true |
 | `lead_name` | The name of the repository's lead author | N/A | `___LEAD_NAME___` |
-| `team_email` | The email address of the repository's team | N/A | `___USER@DOMAIN.TLD___` |
+| `team_email` | The repository's email account | N/A | `___USER@DOMAIN.TLD___` |
 | `github_user` | The repository's GitHub account | N/A | `___GITHUB_USER___` |
 | `travis_user` | The repository's Travis CI account | N/A | `___TRAVIS_USER___` |
 
