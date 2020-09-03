@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/{{cookiecutter.travis_user}}/TravisCIBlog.svg?branch=master)](https://travis-ci.org/{{cookiecutter.travis_user}}/{{cookiecutter.repo_name}})
 
-{{cookiecutter.repo_description}}
+{{cookiecutter.project_description}}
 
 ## Introduction
 

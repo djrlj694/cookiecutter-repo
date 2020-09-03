@@ -1,5 +1,6 @@
 {
     "project_name": "___PROJECT_NAME___",
+    "project_description": "___PROJECT_DESCRIPTION___",
     "project_platform": [
         "unspecified",
         "Cookiecutter",
@@ -16,7 +17,6 @@
     ],
     "repo_name": "{{[cookiecutter.project_platform, cookiecutter.project_type, cookiecutter.project_name] | select('!=', 'unspecified') | join('-') | replace('command-line interface', 'cli') | replace('data science', 'datasci') | replace('library', 'lib') | replace(' ', '-') | replace('_', '-') | lower}}",
     "repo_dir": "./{{cookiecutter.repo_name}}",
-    "repo_description": "___REPO_DESCRIPTION___",
     "repo_license": [
         "unspecified",
         "Academic Free License v3.0",

@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Sep 02, 2020'
+__modified_date__= 'Sep 03, 2020'
 
 
 # ============================================================================ #
@@ -57,7 +57,7 @@ LICENSE = '{{cookiecutter.repo_license}}'
 #print('PLATFORM =', {PLATFORM})
 
 # GitHub API v3
-DESCRIPTION = '{{cookiecutter.repo_description}}'
+DESCRIPTION = '{{cookiecutter.project_description}}'
 GH_USER = '{{cookiecutter.github_user}}'
 PRIVATE = '{{cookiecutter.repo_private}}'
 
