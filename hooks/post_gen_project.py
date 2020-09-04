@@ -35,7 +35,7 @@ from cookiecutter.main import cookiecutter
 
 # -- Debugging -- #
 
-DEBUG = False
+DEBUG = True
 
 # -- Filesystem -- #
 
@@ -157,6 +157,7 @@ def rm(*args):
 # -- Filesystem -- #
 
 def add_header_to_body(paths):
+    DEBUG and print(f'add_header_to_body: paths = {paths}')
     process_files(paths, make_body_file)
     copy_boilerplate(TYPE)
     process_files(paths, make_header_file)
@@ -171,12 +172,15 @@ def copy_boilerplate(bp_type):
     cp(bp_type_dir('package'), '.')
 
 def make_header_file(source_path):
+    DEBUG and print(f'make_header_file: source_path = {source_path}')
     os.rename(source_path, source_path + '.header')
 
 def make_body_file(source_path):
+    DEBUG and print(f'make_body_file: source_path = {source_path}')
     os.rename(source_path, source_path + '.body')
 
 def list_files(root_dir, file_extention):
+    DEBUG and print(f'list_files: root_dir = {root_dir}, file_extention = {file_extention}')
     files = []
     for dir_path, dir_names, file_names in os.walk(root_dir):
         for file_name in file_names:
@@ -188,6 +192,7 @@ def make_source_file(target_path):
     cat(target_path + '.header', target_path + '.body', '>', target_path)
 
 def process_files(paths, function):
+    DEBUG and print(f'process_files: paths = {paths}')
     for path in paths:
         function(path)   
 
