@@ -102,12 +102,12 @@ clean-xcode: clean-carthage clean-cocoapods clean-xcode-dirs
 .PHONY: init-xcode init-xcode-dirs init-xcode-vars
 
 ## init-xcode: Completes all initial Xcode setup activites.
-ifeq ($(COOKIECUTTER),)
-init-xcode: init-xcode-vars init-xcode-dirs init-carthage init-cocoapods
-else
+#ifeq ($(COOKIECUTTER),)
+#init-xcode: init-xcode-vars init-xcode-dirs init-carthage init-cocoapods
+#else
 init-xcode: init-xcode-vars
 	@cookiecutter gh:$(TEMPLATES_REPO) project_name=$(REPO_NAME)
-endif
+#endif
 
 ## init-xcode-dirs: Completes all initial Xcode directory setup activites.
 init-xcode-dirs: $(XCODE_DIRS)

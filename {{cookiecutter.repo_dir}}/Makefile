@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 26AUG2020
+# REVISED: 03SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -70,7 +70,8 @@ docs: docs-swift
 init: init-github init-git
 
 ## test: Completes all test activities.
-test: test-xcode test-swift
+#test: test-xcode test-swift
+test: test-swift
 
 
 # ============================================================================ #
