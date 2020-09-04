@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 25AUG2020
+# REVISED: 04SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -105,8 +105,8 @@ clean-xcode: clean-carthage clean-cocoapods clean-xcode-dirs
 #ifeq ($(COOKIECUTTER),)
 #init-xcode: init-xcode-vars init-xcode-dirs init-carthage init-cocoapods
 #else
-init-xcode: init-xcode-vars
-	@cookiecutter gh:$(TEMPLATES_REPO) project_name=$(REPO_NAME)
+#init-xcode: init-xcode-vars
+#	@cookiecutter gh:$(TEMPLATES_REPO) project_name=$(REPO_NAME)
 #endif
 
 ## init-xcode-dirs: Completes all initial Xcode directory setup activites.
