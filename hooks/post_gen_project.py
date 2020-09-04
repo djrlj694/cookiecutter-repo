@@ -284,7 +284,8 @@ def main():
     #else:
     #    copy_boilerplate(TYPE)
 
-    rm(BP_DIR)
+    # TODO: Uncomment this line.
+    ###rm(BP_DIR)
 
 
 # ============================================================================ #
