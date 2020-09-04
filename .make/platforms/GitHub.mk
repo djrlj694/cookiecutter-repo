@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 23FEB2019
-# REVISED: 28AUG2020
+# REVISED: 04SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -85,16 +85,16 @@ docs-github: $(GITHUB_FILES)
 
 # -- Prerequisites for "init" Target -- #
 
-.PHONY: init-github init-github-dirs
+#.PHONY: init-github init-github-dirs
 
 ## init-github: Completes all initial Github setup activites.
-init-github:
-	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-github)
-	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
-	@cookiecutter gh:$(TEMPLATES_REPO) email=$(EMAIL) project_name=$(PROJECT)
+#init-github:
+#	$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-github)
+#	$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
+#	@cookiecutter gh:$(TEMPLATES_REPO) email=$(EMAIL) project_name=$(PROJECT)
 
 ## init-github-dirs: Completes all initial Github directory setup activites.
-init-github-dirs: $(GITHUB_DIRS)
+#init-github-dirs: $(GITHUB_DIRS)
 
 
 # ============================================================================ #
