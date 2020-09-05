@@ -284,7 +284,7 @@ def main():
     #else:
     #    copy_boilerplate(TYPE)
 
-    #cp(f'{BP_DIR}/{PLATFORM}/{TYPE}/*', '.')
+    cp(f'{BP_DIR}/{PLATFORM}/{TYPE}/*', '.')
 
     # TODO: Uncomment this line.
     rm(BP_DIR)
