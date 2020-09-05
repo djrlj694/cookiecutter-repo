@@ -125,6 +125,9 @@ PROJECT_TYPES = {
 # GitHub API v3
 LICENSE_TEMPLATE = LICENSE_TEMPLATES[LICENSE]
 
+# Make
+PROJECT_TYPE = PROJECT_TYPES[PLATFORM][TYPE]
+
 
 # ============================================================================ #
 # FUNCTIONS
@@ -259,7 +262,8 @@ def main():
     make(
         'init',
         f'USER={GH_USER} DESCRIPTION={DESCRIPTION}',
-        f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={license_template}'
+        f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={license_template}',
+        f'PROJECT_TYPE={PROJECT_TYPE}'
         )
 
     #if TYPE in ['executable', 'library']:
