@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Sep 04, 2020'
+__modified_date__= 'Sep 05, 2020'
 
 
 # ============================================================================ #
@@ -284,8 +284,10 @@ def main():
     #else:
     #    copy_boilerplate(TYPE)
 
+    cp(f'{BP_DIR}/{PLATFORM}/{TYPE}/*', '.')
+
     # TODO: Uncomment this line.
-    ###rm(BP_DIR)
+    rm(BP_DIR)
 
 
 # ============================================================================ #
