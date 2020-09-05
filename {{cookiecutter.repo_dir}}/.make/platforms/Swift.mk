@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 03MAR2019
-# REVISED: 25AUG2020
+# REVISED: 05SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -44,12 +44,12 @@ docs-swift: | $(LOG)
 .PHONY: init-swift
 
 ## init-swift: Completes all initial Swift setup activites.
-#init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
+# init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 init-swift:
-	#@cookiecutter -f -o '..' gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
-	#$(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
-	#$(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
+	# @cookiecutter -f -o '..' gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
+	# $(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
+	# $(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 	@swift package init --type $(SWIFT_PACKAGE_TYPE)
 	@swift package generate-xcodeproj
 	@echo PROJECT=$(PROJECT) PROJECT_TYPE=$(PROJECT_TYPE) SWIFT_PACKAGE_TYPE=$(SWIFT_PACKAGE_TYPE)
-	#@cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name='$(PROJECT)' project_type='$(PROJECT_TYPE)'
+	# @cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name='$(PROJECT)' project_type='$(PROJECT_TYPE)'

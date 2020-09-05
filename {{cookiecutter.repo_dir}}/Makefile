@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 03SEP2020
+# REVISED: 05SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -67,7 +67,7 @@ docs: docs-swift
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
-init: init-github init-git
+init: init-github init-swift init-git
 
 ## test: Completes all test activities.
 #test: test-xcode test-swift
@@ -94,4 +94,4 @@ include $(MAKEFILE_DIR)/features/helping.mk
 include $(MAKEFILE_DIR)/platforms/Git.mk
 include $(MAKEFILE_DIR)/platforms/GitHub.mk
 include $(MAKEFILE_DIR)/platforms/Swift.mk
-include $(MAKEFILE_DIR)/platforms/Xcode.mk
+#include $(MAKEFILE_DIR)/platforms/Xcode.mk
