@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 03MAR2019
-# REVISED: 05SEP2020
+# REVISED: 06SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -49,7 +49,7 @@ init-swift:
 	# @cookiecutter -f -o '..' gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
 	# $(eval TEMPLATES_REPO = $(GITHUB_USER)/cookiecutter-swift)
 	# $(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
-	@swift package init --type $(PROJECT_TYPE)
+	@swift package init --name $(PACKAGE) --type $(PROJECT_TYPE)
 	@swift package generate-xcodeproj
-	@echo PROJECT=$(PROJECT) PROJECT_TYPE=$(PROJECT_TYPE)
+	@echo PACKAGE=$(PACKAGE) PROJECT_TYPE=$(PROJECT_TYPE)
 	# @cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name='$(PROJECT)' project_type='$(PROJECT_TYPE)'

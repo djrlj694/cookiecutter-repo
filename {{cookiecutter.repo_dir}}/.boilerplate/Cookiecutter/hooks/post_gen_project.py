@@ -6,7 +6,7 @@ __version__ = '0.0.0'
 __author__ = '{{cookiecutter.lead_name}}'
 __credits__ = ['{{cookiecutter.lead_name}}']
 
-__copyright__ = 'Copyright {% now 'local', '%Y' %}, {{cookiecutter.repo_name}}'
+__copyright__ = 'Copyright {% now 'local', '%Y' %}, {{cookiecutter.project_name}}'
 __license__ = '{{cookiecutter.repo_license}}'
 
 __created_date__= '{% now 'local', '%b %d, %Y' %}'

@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Sep 05, 2020'
+__modified_date__= 'Sep 06, 2020'
 
 
 # ============================================================================ #
@@ -119,14 +119,6 @@ PROJECT_TYPES = {
         'library': 'library'
     }
 }
-
-# -- Processed Input -- #
-
-# GitHub API v3
-LICENSE_TEMPLATE = LICENSE_TEMPLATES[LICENSE]
-
-# Make
-PROJECT_TYPE = PROJECT_TYPES[PLATFORM][TYPE]
 
 
 # ============================================================================ #
@@ -248,6 +240,7 @@ def main():
 
     # Process input.
     license_template = LICENSE_TEMPLATES[LICENSE]
+    project_type = PROJECT_TYPES[PLATFORM][TYPE]
 
     # Initialize project platforms.
 
@@ -263,7 +256,7 @@ def main():
         'init',
         f'USER={GH_USER} DESCRIPTION={DESCRIPTION}',
         f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={license_template}',
-        f'PROJECT_TYPE={PROJECT_TYPE}'
+        f'PACKAGE={NAME} PROJECT_TYPE={project_type}'
         )
 
     #if TYPE in ['executable', 'library']:

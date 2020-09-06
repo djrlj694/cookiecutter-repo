@@ -25,7 +25,6 @@ USER ?= $(shell whoami)
 
 PREFIX ?= $(PWD)
 REPO_NAME ?= $(shell basename $(PREFIX))
-PACKAGE ?= $(REPO_NAME)
 
 
 # ============================================================================ #
@@ -57,7 +56,7 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
 
 all: help
 
-ifneq ($(REPO_NAME),Makefile-Xcode)
+ifeq ($(PROJECT_PLATFORM),Xcode)
 ## clean: Completes all cleaning activities.
 clean: clean-git clean-xcode clean-github
 endif
