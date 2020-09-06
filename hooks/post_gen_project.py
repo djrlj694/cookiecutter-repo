@@ -260,13 +260,12 @@ def main():
         )
 
     if TYPE in ['executable', 'library']:
-        source_files = list_files(root_dir='Sources', file_extention='.swift')
-        test_files = list_files(root_dir='Tests', file_extention='.swift')
-        files = ['Package.swift'] + source_files + test_files
-        print('os. getcwd =', os. getcwd())
-        for file in files:
-            print('file =', file)
-        #add_header_to_body(files)
+        #source_files = list_files(root_dir='Sources', file_extention='.swift')
+        #test_files = list_files(root_dir='Tests', file_extention='.swift')
+        #files = ['Package.swift'] + source_files + test_files
+        files = list_files(root_dir=os.getcwd(), file_extention='.swift')
+        #print('os.getcwd =', os.getcwd())
+        add_header_to_body(files)
 
         #name = f'\"{NAME}\"'
         #name_arg = f'name: {name}'
