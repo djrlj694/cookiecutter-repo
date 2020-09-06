@@ -160,7 +160,7 @@ def add_header_to_body(paths):
     process_files(paths, remove_files)
 
 def bp_type_dir(bp_type):
-    return f'{BP_DIR}/{bp_type}/*'
+    return f'{BP_DIR}/{PLATFORM}/{bp_type}/*'
 
 def copy_boilerplate(bp_type):
     cp(bp_type_dir(bp_type), '.')
