@@ -259,29 +259,27 @@ def main():
         f'PACKAGE={NAME} PROJECT_TYPE={project_type}'
         )
 
-    #if TYPE in ['executable', 'library']:
-    #    source_files = list_files(root_dir='Sources', file_extention='.swift')
-    #    test_files = list_files(root_dir='Tests', file_extention='.swift')
-    #    files = ['Package.swift'] + source_files + test_files
-    #    add_header_to_body(files)
+    if TYPE in ['executable', 'library']:
+        source_files = list_files(root_dir='Sources', file_extention='.swift')
+        test_files = list_files(root_dir='Tests', file_extention='.swift')
+        files = ['Package.swift'] + source_files + test_files
+        add_header_to_body(files)
 
-    #    if TYPE == 'library' and PLATFORM == 'iOS':
+        #name = f'\"{NAME}\"'
+        #name_arg = f'name: {name}'
+    
+        #platform = f'.{PLATFORM}(.{project_version})'
+        #platforms = f'[{platform},]'
+        #platforms_arg = f'platforms: {platforms}'
 
-    #        name = f'\"{NAME}\"'
-    #        name_arg = f'name: {name}'
-        
-    #        platform = f'.{PLATFORM}(.{project_version})'
-    #        platforms = f'[{platform},]'
-    #        platforms_arg = f'platforms: {platforms}'
+        #old_str = f'    {name_arg},\n'
+        #new_str = old_str + f'    {platforms_arg},\n'
 
-    #        old_str = f'    {name_arg},\n'
-    #        new_str = old_str + f'    {platforms_arg},\n'
-
-    #        update_file('Package.swift', old_str, new_str)
+        #update_file('Package.swift', old_str, new_str)
     #else:
     #    copy_boilerplate(TYPE)
 
-    cp(f'{BP_DIR}/{PLATFORM}/{TYPE}/*', '.')
+    ###cp(f'{BP_DIR}/{PLATFORM}/{TYPE}/*', '.') # Commented out. 06SEP2020
 
     # TODO: Uncomment this line.
     rm(BP_DIR)
