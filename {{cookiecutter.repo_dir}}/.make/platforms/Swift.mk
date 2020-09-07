@@ -80,9 +80,7 @@ init-swift: init-swift-package init-swift-files
 #@find . -name '*.swift' -exec mv {} {}.body \;
 init-swift-files:
 	@echo "Initializing Swfit files."
-	#$(eval files = shell find . -name '*.swift')
 	@for file in $$(find . -type f -name '*.swift' ! -path './.boilerplate/*' ); do \
-		echo file = $$file; \
 		mv $$file $$file.body; \
 		mv .boilerplate/Swift/package/$$file $$file.header; \
 		cat $$file.header $$file.body >$$file; \

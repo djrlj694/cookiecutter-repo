@@ -149,8 +149,6 @@ def make(*args):
 def rm(*args):
     cmd('rm -rf', *args)
 
-# -- Filesystem -- #
-
 # -- Logging -- #
 
 def setup_logging(is_verbose: bool):
