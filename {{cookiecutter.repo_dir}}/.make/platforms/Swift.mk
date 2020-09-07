@@ -77,10 +77,10 @@ docs-swift: | $(LOG)
 init-swift: init-swift-package init-swift-files
 
 ## init-swift-files: Adds headers to all Swift files.
+#@find . -name '*.swift' -exec mv {} {}.body \;
 init-swift-files:
 	@echo "Initializing Swfit files."
 	#$(eval files = shell find . -name '*.swift')
-	#@find . -name '*.swift' -exec mv {} {}.body \;
 	@for file in $(find . -name '*.swift'); do \
 		echo file = $$file; \
 		mv $$file $$file.body; \
