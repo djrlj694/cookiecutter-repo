@@ -54,7 +54,7 @@ docs-swift: | $(LOG)
 
 ## init-swift: Completes all initial Swift setup activites.
 # init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
-init-swift: init-swift-package $(SWIFT_BODY_FILES)
+init-swift: init-swift-package %.swift.body
 	@echo SWIFT_BODY_FILES = $(SWIFT_BODY_FILES)
 
 ## init-swift-package: Initalizes Swift package.
@@ -70,6 +70,9 @@ init-swift-package:
 # ============================================================================ #
 # FILE TARGETS
 # ============================================================================ #
+
+%.swift.body:
+	mv $(basename $@) $@
 
 $(SWIFT_BODY_FILES):
 	mv $(basename $@) $@
