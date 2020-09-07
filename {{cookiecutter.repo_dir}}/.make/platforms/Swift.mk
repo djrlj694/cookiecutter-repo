@@ -60,8 +60,8 @@ init-swift: init-swift-package init-swift-files
 ## init-swift-files: Adds headers to all Swift files.
 init-swift-files:
 	@for file in $(find . -name "*.swift"); do \
-		echo "Moving file ${file} to ${file}.body."; \
-		mv ${file} ${file}.body; \
+		echo "Moving file $$file to $$file.body."; \
+		mv $$file $$file.body; \
 	done
 
 
