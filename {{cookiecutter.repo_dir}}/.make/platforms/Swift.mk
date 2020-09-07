@@ -22,8 +22,8 @@ PROJECT_TYPE ?= "lib"
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
-SWIFT_FILES = $(wildcard **/*.swift)
-SWIFT_BODY_FILES = $(addsuffix .body,$(SWIFT_FILES))
+SWIFT_FILES := $(wildcard **/*.swift)
+SWIFT_BODY_FILES := $(addsuffix .body,$(SWIFT_FILES))
 
 
 # ============================================================================ #
@@ -62,7 +62,6 @@ init-swift-package:
 	# $(eval FILE_URL = https://raw.githubusercontent.com/$(TEMPLATES_REPO)/master/%7B%7Bcookiecutter.project_name%7D%7D)
 	@swift package init --name $(PACKAGE) --type $(PROJECT_TYPE)
 	@swift package generate-xcodeproj
-	@echo PACKAGE=$(PACKAGE) PROJECT_TYPE=$(PROJECT_TYPE)
 	# @cookiecutter -f -o '..' --no-input gh:$(TEMPLATES_REPO) project_name='$(PROJECT)' project_type='$(PROJECT_TYPE)'
 
 
