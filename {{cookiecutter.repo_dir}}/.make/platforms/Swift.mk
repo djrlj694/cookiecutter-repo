@@ -82,6 +82,7 @@ init-swift-files:
 	#$(eval files = shell find . -name '*.swift')
 	#@find . -name '*.swift' -exec mv {} {}.body \;
 	@for file in $(find . -name '*.swift'); do \
+		echo file = $$file; \
 		mv $$file $$file.body; \
 		cp -p .boilerplate/$$file $$file.header; \
 		cat $$file.header $$file.body $$file; \
