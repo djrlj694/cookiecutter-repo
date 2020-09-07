@@ -72,6 +72,8 @@ init-swift-package:
 # ============================================================================ #
 
 %.swift.body:
+	$(eval files = shell find . -name "*.swift")
+	$(foreach file,$(files),mv $(file) $(file).body)
 	mv $(basename $@) $@
 
 $(SWIFT_BODY_FILES):
