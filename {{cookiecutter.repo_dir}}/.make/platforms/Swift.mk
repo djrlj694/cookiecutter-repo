@@ -23,8 +23,8 @@ PROJECT_TYPE ?= "lib"
 # ============================================================================ #
 
 #SWIFT_FILES := $(wildcard **/*.swift)
-SWIFT_FILES := $(shell find . -name "*.swift")
-SWIFT_BODY_FILES := $(addsuffix .body,$(SWIFT_FILES))
+SWIFT_FILES = $(shell find . -name "*.swift")
+SWIFT_BODY_FILES = $(addsuffix .body,$(SWIFT_FILES))
 
 
 # ============================================================================ #
@@ -72,4 +72,4 @@ init-swift-package:
 # ============================================================================ #
 
 $(SWIFT_BODY_FILES):
-	mv $(basename $@) $@.body
+	mv $(basename $@) $@
