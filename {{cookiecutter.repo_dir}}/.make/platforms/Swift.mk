@@ -84,7 +84,7 @@ init-swift-files:
 	@for file in $$(find . -name '*.swift'); do \
 		echo file = $$file; \
 		mv $$file $$file.body; \
-		cp -p .boilerplate/Swift/$$file $$file.header; \
+		cp -p .boilerplate/Swift/package/$$file $$file.header; \
 		cat $$file.header $$file.body $$file; \
 	done
 
