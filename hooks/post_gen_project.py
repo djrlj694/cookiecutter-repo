@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Sep 06, 2020'
+__modified_date__= 'Sep 07, 2020'
 
 
 # ============================================================================ #
@@ -265,7 +265,7 @@ def main():
         #files = ['Package.swift'] + source_files + test_files
         files = list_files(root_dir=os.getcwd(), file_extention='.swift')
         #print('os.getcwd =', os.getcwd())
-        add_header_to_body(files)
+        #add_header_to_body(files)
 
         #name = f'\"{NAME}\"'
         #name_arg = f'name: {name}'
