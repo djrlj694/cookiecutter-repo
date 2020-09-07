@@ -85,7 +85,7 @@ init-swift-files:
 		echo file = $$file; \
 		mv $$file $$file.body; \
 		cp -p .boilerplate/Swift/package/$$file $$file.header; \
-		cat $$file.header $$file.body $$file; \
+		cat $$file.header $$file.body >$$file; \
 	done
 
 ## init-swift-package: Initalizes Swift package.
