@@ -53,8 +53,8 @@ docs-swift: | $(LOG)
 
 ## init-swift: Completes all initial Swift setup activites.
 # init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
-init-swift: init-swift-package $(addsuffix .body,$(wildcard **/*.swift))
-	@echo SWIFT_BODY_FILES = $(addsuffix .body,$(wildcard **/*.swift))
+init-swift: init-swift-package $(addsuffix .body,$(wildcard *.swift) $(wildcard **/*.swift))
+	@echo SWIFT_BODY_FILES = $(addsuffix .body,$(wildcard *.swift) $(wildcard **/*.swift))
 
 ## init-swift-package: Initalizes Swift package.
 init-swift-package:
