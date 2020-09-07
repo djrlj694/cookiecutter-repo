@@ -73,6 +73,7 @@ init-swift-package:
 
 %.swift.body:
 	@for file in $(find . -name "*.swift"); do \
+		echo "Moving file ${file} to ${file}.body."
 		mv ${file} ${file}.body; \
 	done
 
