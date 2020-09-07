@@ -19,6 +19,14 @@ PROJECT_TYPE ?= "lib"
 
 
 # ============================================================================ #
+# INTERNAL CONSTANTS
+# ============================================================================ #
+
+SWIFT_FILES = $(wildcard **/*.swift)
+SWIFT_BODY_FILES = $(addsuffix .body,$(SWIFT_FILES))
+
+
+# ============================================================================ #
 # PHONY TARGETS
 # ============================================================================ #
 
@@ -45,7 +53,7 @@ docs-swift: | $(LOG)
 
 ## init-swift: Completes all initial Swift setup activites.
 # init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
-init-swift: init-swift-package
+init-swift: init-swift-package Package.swift.body
 
 
 ## init-swift-package: Initalizes Swift package.
@@ -63,5 +71,5 @@ init-swift-package:
 # FILE TARGETS
 # ============================================================================ #
 
-%.swift.body:
-	@mv $@ $@.body
+$(SWIFT_BODY_FILES):
+	@mv $(basename $@) $@.body
