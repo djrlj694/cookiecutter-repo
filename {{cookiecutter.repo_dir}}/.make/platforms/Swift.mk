@@ -55,7 +55,6 @@ docs-swift: | $(LOG)
 # init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 init-swift: init-swift-package $(SWIFT_BODY_FILES)
 
-
 ## init-swift-package: Initalizes Swift package.
 init-swift-package:
 	# @cookiecutter -f -o '..' gh:$(TEMPLATES_REPO) project_name=$(PROJECT)
@@ -72,4 +71,4 @@ init-swift-package:
 # ============================================================================ #
 
 $(SWIFT_BODY_FILES):
-	@mv $(basename $@) $@.body
+	mv $(basename $@) $@.body
