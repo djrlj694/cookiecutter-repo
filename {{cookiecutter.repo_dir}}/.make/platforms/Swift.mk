@@ -22,8 +22,28 @@ PROJECT_TYPE ?= "lib"
 # INTERNAL CONSTANTS
 # ============================================================================ #
 
+# -- Filesystem -- #
+
+XCODE_RESOURCES := Data Fonts Localization Media UserInterfaces
+XCODE_RESOURCES_DIRS := $(addprefix $(PACKAGE)/Resources/,$(XCODE_RESOURCES))
+
+XCODE_SOURCES := Controllers Extensions Models Protocols ViewModels Views
+XCODE_SOURCES_DIRS := $(addprefix $(PACKAGE)/Sources/,$(XCODE_SOURCES))
+
+XCODE_DIRS := $(addsuffix /.,$(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS))
+#XCODE_DIRS := $(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS)
+
+
+# ============================================================================ #
+# INTERNAL CONSTANTS
+# ============================================================================ #
+
+# -- Filesystem -- #
+
 #SWIFT_FILES := $(wildcard **/*.swift)
-SWIFT_FILES = $(shell find . -name "*.swift")
+SWIFT_FILES := Package.swift
+SWIFT_FILES += Sources/$(PACKAGE)/$(PACKAGE).swift
+
 SWIFT_BODY_FILES = $(addsuffix .body,$(SWIFT_FILES))
 
 
@@ -58,8 +78,14 @@ init-swift: init-swift-package init-swift-files
 
 ## init-swift-files: Adds headers to all Swift files.
 init-swift-files:
-	@echo "Initializing Swfit files." 
-	@find . -name '*.swift' -exec mv {} {}.body \;
+	@echo "Initializing Swfit files."
+	$(eval swift_files = shell find . -name '*.swift')
+	#@find . -name '*.swift' -exec mv {} {}.body \;
+	@for file in $$files; do \
+		mv $$file $$file.body; \
+		cp -p .boilerplate/$$file $$file.header; \
+		cat $$file.header $$file.body $$file; \
+	done
 
 ## init-swift-package: Initalizes Swift package.
 init-swift-package:
