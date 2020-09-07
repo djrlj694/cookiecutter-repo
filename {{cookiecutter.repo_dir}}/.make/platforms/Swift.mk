@@ -79,10 +79,10 @@ init-swift: init-swift-package init-swift-files
 ## init-swift-files: Adds headers to all Swift files.
 init-swift-files:
 	@echo "Initializing Swfit files."
-	$(eval files = shell find . -name '*.swift')
+	#$(eval files = shell find . -name '*.swift')
 	@echo $$files
 	#@find . -name '*.swift' -exec mv {} {}.body \;
-	@for file in $$files; do \
+	@for file in find . -name '*.swift'; do \
 		mv $$file $$file.body; \
 		cp -p .boilerplate/$$file $$file.header; \
 		cat $$file.header $$file.body $$file; \
