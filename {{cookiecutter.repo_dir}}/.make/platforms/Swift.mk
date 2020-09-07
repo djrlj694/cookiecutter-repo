@@ -55,15 +55,11 @@ docs-swift: | $(LOG)
 ## init-swift: Completes all initial Swift setup activites.
 # init-swift: init-swift-vars init-swift-dirs init-carthage init-cocoapods
 init-swift: init-swift-package init-swift-files
-	@echo SWIFT_BODY_FILES = $(SWIFT_BODY_FILES)
 
 ## init-swift-files: Adds headers to all Swift files.
 init-swift-files:
-	@for file in $(find . -name "*.swift"); do \
-		echo "Moving file $$file to $$file.body."; \
-		mv $$file $$file.body; \
-	done
-
+	@echo "Initializing Swfit files." 
+	@find . -name '*.swift' -exec mv {} {}.body \;
 
 ## init-swift-package: Initalizes Swift package.
 init-swift-package:
