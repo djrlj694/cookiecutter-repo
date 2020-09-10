@@ -45,7 +45,7 @@ init-cookiecutter: init-cookiecutter-files
 
 ## init-cookiecutter-files: Adds headers to all Swift files.
 init-cookiecutter-files: | $(LOG)
-	@echo "Initializing Cookiecutter files."
+	@printf "Initializing Cookiecutter files..."
 	@mv .boilerplate/Cookiecutter/* . >$(LOG) 2>&1; \
 	$(status_result)
 

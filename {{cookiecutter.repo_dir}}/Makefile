@@ -42,6 +42,7 @@ SHELL := bash
 
 # Software platform target.
 ifneq ($(PLATFORM),unspecified)
+DOCS_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
 INIT_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
 endif
 
@@ -69,7 +70,7 @@ clean: clean-git clean-xcode clean-github
 endif
 
 ## docs: Makes API documentation.
-docs: docs-swift
+docs: $(DOCS_PLATFORM)
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
