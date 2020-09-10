@@ -207,7 +207,8 @@ def main():
         'init',
         f'USER={GH_USER} DESCRIPTION={DESCRIPTION}',
         f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={license_template}',
-        f'PACKAGE={NAME} PROJECT_TYPE={project_type}'
+        f'PLATFORM={PLATFORM} PROJECT_TYPE={project_type}',
+        f'PACKAGE={NAME}
         )
 
     # TODO: Uncomment this line.

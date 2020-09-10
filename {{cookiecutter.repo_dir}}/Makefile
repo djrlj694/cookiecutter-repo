@@ -41,10 +41,10 @@ SHELL := bash
 # -- Makefiles -- #
 
 # Software platform target.
-ifeq ($(PROJECT_PLATFORM),Cookiecutter)
+ifeq ($(PLATFORM),Cookiecutter)
 INIT_PLATFORM :=
-else ifneq ($(PROJECT_PLATFORM),unspecified)
-INIT_PLATFORM := init-$(shell echo $(PROJECT_PLATFORM) | tr A-Z a-z)
+else ifneq ($(PLATFORM),unspecified)
+INIT_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
 endif
 
 # Absolute path of the directory containing files to be included as part of a
@@ -65,7 +65,7 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
 
 all: help
 
-ifeq ($(PROJECT_PLATFORM),Xcode)
+ifeq ($(PLATFORM),Xcode)
 ## clean: Completes all cleaning activities.
 clean: clean-git clean-xcode clean-github
 endif
