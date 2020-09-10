@@ -95,8 +95,7 @@ include $(MAKEFILE_DIR)/features/helping.mk
 # PLATFORM DEPENDENCIES
 # ============================================================================ #
 
-#include $(MAKEFILE_DIR)/platforms/Cookiecutter.mk
-
+include $(MAKEFILE_DIR)/platforms/Cookiecutter.mk
 include $(MAKEFILE_DIR)/platforms/Git.mk
 include $(MAKEFILE_DIR)/platforms/GitHub.mk
 include $(MAKEFILE_DIR)/platforms/Swift.mk
