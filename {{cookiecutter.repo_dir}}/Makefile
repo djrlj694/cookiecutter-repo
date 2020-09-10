@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 05SEP2020
+# REVISED: 10SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -38,11 +38,20 @@ SHELL := bash
 # INTERNAL VARIABLES
 # ============================================================================ #
 
+# -- Makefiles -- #
+
+# Software platform target.
+if=eq ($(PROJECT_PLATFORM),Cookiecutter)
+INIT_PLATFORM :=
+else ($(PROJECT_PLATFORM),unspecified)
+INIT_PLATFORM := init-`echo $(PROJECT_PLATFORM) | tr A-Z a-z`
+endif
+
 # Absolute path of the directory containing files to be included as part of a
 # makefile set.
 MAKEFILE_DIR = $(dir $(realpath $(MAKEFILE)))/.make
 
-# The name of the main makefile.
+# Name of the main makefile.
 MAKEFILE = $(firstword $(MAKEFILE_LIST))
 
 
@@ -66,7 +75,7 @@ docs: docs-swift
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
-init: init-github init-swift init-git
+init: init-github $(INIT_PLATFORM) init-git
 
 ## test: Completes all test activities.
 #test: test-xcode test-swift
