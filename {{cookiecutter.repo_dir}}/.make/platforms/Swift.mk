@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 03MAR2019
-# REVISED: 07SEP2020
+# REVISED: 10SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -34,6 +34,7 @@ SWIFT_FILES += Tests/(PACKAGE)Tests/XCTestManifests.swift
 
 SWIFT_BODY_FILES := $(addsuffix .body,$(SWIFT_FILES))
 SWIFT_BP_FILES := $(addprefix .boilerplate/Swift/package,$(SWIFT_FILES))
+
 
 # ============================================================================ #
 # PHONY TARGETS
@@ -67,7 +68,7 @@ init-swift: init-swift-package init-swift-files
 ## init-swift-files: Adds headers to all Swift files.
 #@find . -name '*.swift' -exec mv {} {}.body \;
 init-swift-files:
-	@echo "Initializing Swfit files."
+	@echo "Initializing Swift files."
 	@for file in $$(find . -type f -name '*.swift' ! -path './.boilerplate/*' ); do \
 		mv $$file $$file.body; \
 		mv .boilerplate/Swift/package/$$file $$file.header; \

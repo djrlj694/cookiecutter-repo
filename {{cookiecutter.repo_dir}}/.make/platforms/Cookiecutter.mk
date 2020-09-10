@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 10MAR2019
-# REVISED: 22AUG2020
+# REVISED: 10SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -30,6 +30,24 @@ VARIABLES_TO_SHOW += COOKIECUTTER
 # -- Help Strings -- #
 
 MAKE_ARGS += [COOKIECUTTER=]
+
+
+# ============================================================================ #
+# PHONY TARGETS
+# ============================================================================ #
+
+# -- Prerequisite for "init" Target -- #
+
+.PHONY: init-cookiecutter init-cookiecutter-files
+
+## init-cookiecutter: Completes all initial Cookiecutter setup activites.
+init-swift: init-cookiecutter-files
+
+## init-cookiecutter-files: Adds headers to all Swift files.
+init-cookiecutter-files: | $(LOG)
+	@echo "Initializing Cookiecutter files."
+	@mv .boilerplate/Cookiecutter/* . >$(LOG) 2>&1; \
+	$(status_result)
 
 
 # ============================================================================ #

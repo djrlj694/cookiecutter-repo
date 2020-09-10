@@ -41,9 +41,7 @@ SHELL := bash
 # -- Makefiles -- #
 
 # Software platform target.
-ifeq ($(PLATFORM),Cookiecutter)
-INIT_PLATFORM :=
-else ($(PLATFORM),unspecified)
+ifneq ($(PLATFORM),unspecified)
 INIT_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
 endif
 
