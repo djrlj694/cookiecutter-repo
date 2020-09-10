@@ -43,8 +43,11 @@ SHELL := bash
 # Software platform target.
 ifeq ($(PLATFORM),Cookiecutter)
 INIT_PLATFORM :=
-else ifneq ($(PLATFORM),unspecified)
+ifneq ($(PLATFORM),unspecified)
 INIT_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
+endif
+ifeq ($(PLATFORM),Cookiecutter)
+INIT_PLATFORM :=
 endif
 
 # Absolute path of the directory containing files to be included as part of a
