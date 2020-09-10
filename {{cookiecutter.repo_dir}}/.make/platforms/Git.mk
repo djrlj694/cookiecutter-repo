@@ -73,7 +73,7 @@ init-git: .gitignore .git init-git-flow | $(LOG)
 #	$(status_result)
 
 ## init-git-flow: Initializes git-flow setup.
-init-git: | $(LOG)
+init-git-flow: | $(LOG)
 	@printf "Initializing git-flow..."
 	@git flow init -d >$(LOG) 2>&1; \
 	$(status_result)

@@ -55,7 +55,7 @@
     ],
     "repo_private": [true, false],
     "lead_name": "___LEAD_NAME___",
-    "team_name": "___LEAD_NAME___",
+    "team_name": "___TEAM_NAME___",
     "team_domain_name": "{{cookiecutter.team_name | replace(' ', '') | lower}}.com",
     "team_email": "support@{{cookiecutter.team_domain_name}}",
     "github_user": "___GITHUB_USER___",
