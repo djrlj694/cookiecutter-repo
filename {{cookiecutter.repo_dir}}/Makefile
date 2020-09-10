@@ -44,7 +44,7 @@ SHELL := bash
 ifeq ($(PROJECT_PLATFORM),Cookiecutter)
 INIT_PLATFORM :=
 else ifneq ($(PROJECT_PLATFORM),unspecified)
-INIT_PLATFORM := init-`echo $(PROJECT_PLATFORM) | tr A-Z a-z`
+INIT_PLATFORM = init-`echo $(PROJECT_PLATFORM) | tr A-Z a-z`
 endif
 
 # Absolute path of the directory containing files to be included as part of a
