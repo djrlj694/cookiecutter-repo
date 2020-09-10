@@ -56,7 +56,7 @@ init-git: .gitignore .git init-git-flow | $(LOG)
 	@printf "Syncing the initial project with the origin..."
 	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	git pull origin master >$(LOG) 2>&1; \
-	git add . >>$(LOG) 2>&1; \
+	git add --all >>$(LOG) 2>&1; \
 	git commit -m "Initial project setup" >>$(LOG) 2>&1; \
 	git push -u origin master >$(LOG) 2>&1; \
 	$(status_result)
