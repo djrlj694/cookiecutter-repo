@@ -24,28 +24,16 @@ PROJECT_TYPE ?= "lib"
 
 # -- Filesystem -- #
 
-XCODE_RESOURCES := Data Fonts Localization Media UserInterfaces
-XCODE_RESOURCES_DIRS := $(addprefix $(PACKAGE)/Resources/,$(XCODE_RESOURCES))
-
-XCODE_SOURCES := Controllers Extensions Models Protocols ViewModels Views
-XCODE_SOURCES_DIRS := $(addprefix $(PACKAGE)/Sources/,$(XCODE_SOURCES))
-
-XCODE_DIRS := $(addsuffix /.,$(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS))
-#XCODE_DIRS := $(XCODE_RESOURCES_DIRS) $(XCODE_SOURCES_DIRS)
-
-
-# ============================================================================ #
-# INTERNAL CONSTANTS
-# ============================================================================ #
-
-# -- Filesystem -- #
-
 #SWIFT_FILES := $(wildcard **/*.swift)
 SWIFT_FILES := Package.swift
+SWIFT_FILES += Sources/main.swift
 SWIFT_FILES += Sources/$(PACKAGE)/$(PACKAGE).swift
+SWIFT_FILES += Tests/LinuxMain.swift
+SWIFT_FILES += Tests/(PACKAGE)Tests/(PACKAGE)Tests.swift
+SWIFT_FILES += Tests/(PACKAGE)Tests/XCTestManifests.swift
 
-SWIFT_BODY_FILES = $(addsuffix .body,$(SWIFT_FILES))
-
+SWIFT_BODY_FILES := $(addsuffix .body,$(SWIFT_FILES))
+SWIFT_BP_FILES := $(addprefix .boilerplate/Swift/package,$(SWIFT_FILES))
 
 # ============================================================================ #
 # PHONY TARGETS
