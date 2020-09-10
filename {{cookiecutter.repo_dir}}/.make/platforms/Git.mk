@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 27AUG2020
+# REVISED: 10SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -49,10 +49,11 @@ clean-git: | $(LOG)
 
 # -- Prerequisite for "init" Target -- #
 
-.PHONY: init-git
+.PHONY: init-git init-git-flow
 
-## init-git: Completes all initial git setup activities.
-init-git: .gitignore .git | $(LOG)
+## init-git: Completes all initial Git setup activities.
+init-git: .gitignore .git init-git-flow | $(LOG)
+	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	@printf "Syncing the initial project with the origin..."
 	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	git pull origin master >$(LOG) 2>&1; \
@@ -71,14 +72,20 @@ init-git: .gitignore .git | $(LOG)
 #	git push -u origin master >$(LOG) 2>&1; \
 #	$(status_result)
 
+## init-git-flow: Initializes git-flow setup.
+init-git: | $(LOG)
+	@printf "Initializing git-flow..."
+	@git flow init -d >$(LOG) 2>&1; \
+	$(status_result)
+
 
 # ============================================================================ #
 # DIRECTORY TARGETS
 # ============================================================================ #
 
-## .git: Makes a git repository.
+## .git: Makes a Git repository.
 .git: | $(LOG)
-	@printf "Initializing git repository..."
+	@printf "Initializing Git repository..."
 	@git init >$(LOG) 2>&1; \
 	$(status_result)
 
