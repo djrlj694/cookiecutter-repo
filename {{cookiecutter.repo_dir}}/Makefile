@@ -42,8 +42,9 @@ SHELL := bash
 
 # Software platform target.
 ifneq ($(PLATFORM),unspecified)
-DOCS_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
+DOCS_PLATFORM := docs-$(shell echo $(PLATFORM) | tr A-Z a-z)
 INIT_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
+TEST_PLATFORM := test-$(shell echo $(PLATFORM) | tr A-Z a-z)
 endif
 
 # Absolute path of the directory containing files to be included as part of a
@@ -74,7 +75,7 @@ docs: $(DOCS_PLATFORM)
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
-init: init-github $(INIT_PLATFORM) init-git
+init: init-github $(INIT_PLATFORM) clean-common init-git
 
 ## test: Completes all test activities.
 #test: test-xcode test-swift
@@ -95,6 +96,8 @@ include $(MAKEFILE_DIR)/features/helping.mk
 # ============================================================================ #
 # PLATFORM DEPENDENCIES
 # ============================================================================ #
+
+include $(MAKEFILE_DIR)/platforms/common.mk
 
 include $(MAKEFILE_DIR)/platforms/Cookiecutter.mk
 include $(MAKEFILE_DIR)/platforms/Git.mk
