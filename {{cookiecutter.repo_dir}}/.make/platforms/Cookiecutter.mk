@@ -41,7 +41,7 @@ MAKE_ARGS += [COOKIECUTTER=]
 .PHONY: init-cookiecutter init-cookiecutter-files
 
 ## init-cookiecutter: Completes all initial Cookiecutter setup activites.
-init-swift: init-cookiecutter-files
+init-cookiecutter: init-cookiecutter-files
 
 ## init-cookiecutter-files: Adds headers to all Swift files.
 init-cookiecutter-files: | $(LOG)
