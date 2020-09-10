@@ -53,7 +53,6 @@ clean-git: | $(LOG)
 
 ## init-git: Completes all initial Git setup activities.
 init-git: .gitignore .git init-git-flow | $(LOG)
-	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	@printf "Syncing the initial project with the origin..."
 	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	git pull origin master >$(LOG) 2>&1; \
