@@ -10,7 +10,7 @@ __copyright__ = 'Copyright 2019, Cookiecutter Repo'
 __license__ = 'MIT'
 
 __created_date__= 'Aug 11, 2019'
-__modified_date__= 'Sep 07, 2020'
+__modified_date__= 'Sep 10, 2020'
 
 
 # ============================================================================ #
@@ -108,6 +108,9 @@ LICENSE_TEMPLATES = {
 }
 
 PROJECT_TYPES = {
+    'Cookiecutter': {
+        'template': ''
+    },
     'Python': {
         'command-line interface': '',
         'data science': '',
