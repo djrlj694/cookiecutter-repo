@@ -205,10 +205,10 @@ def main():
 
     make(
         'init',
-        f'USER={GH_USER} DESCRIPTION={DESCRIPTION}',
-        f'PRIVATE={PRIVATE} LICENSE_TEMPLATE={license_template}',
-        f'PLATFORM={PLATFORM} PROJECT_TYPE={project_type}',
-        f'PACKAGE={NAME}'
+        f'USER="{GH_USER}" DESCRIPTION="{DESCRIPTION}"',
+        f'PRIVATE="{PRIVATE}" LICENSE_TEMPLATE="{license_template}"',
+        f'PLATFORM="{PLATFORM}" PROJECT_TYPE="{project_type}"',
+        f'PACKAGE="{NAME}"'
         )
 
     # TODO: Uncomment this line.

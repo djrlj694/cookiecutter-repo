@@ -41,11 +41,10 @@ SHELL := bash
 # -- Makefiles -- #
 
 # Software platform target.
-ifneq ($(PLATFORM),unspecified)
-INIT_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
-endif
 ifeq ($(PLATFORM),Cookiecutter)
 INIT_PLATFORM :=
+else ($(PLATFORM),unspecified)
+INIT_PLATFORM := init-$(shell echo $(PLATFORM) | tr A-Z a-z)
 endif
 
 # Absolute path of the directory containing files to be included as part of a
@@ -76,8 +75,7 @@ docs: docs-swift
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
-#init: init-github $(INIT_PLATFORM) init-git
-init: init-github init-git
+init: init-github $(INIT_PLATFORM) init-git
 
 ## test: Completes all test activities.
 #test: test-xcode test-swift
