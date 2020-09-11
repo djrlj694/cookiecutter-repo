@@ -75,7 +75,8 @@ docs: $(DOCS_PLATFORM)
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
-init: init-github $(INIT_PLATFORM) clean-common init-git init-git-flow
+#init: init-github $(INIT_PLATFORM) clean-common init-git init-git-flow
+init: init-github $(INIT_PLATFORM) clean-common
 
 ## test: Completes all test activities.
 #test: test-xcode test-swift
