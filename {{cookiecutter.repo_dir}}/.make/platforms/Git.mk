@@ -58,6 +58,7 @@ init-git: .gitignore .git init-git-flow | $(LOG)
 	git pull origin master >$(LOG) 2>&1; \
 	git add --all >>$(LOG) 2>&1; \
 	git commit -m "Initial project setup" >>$(LOG) 2>&1; \
+	 git branch -M master; \
 	git push -u origin master >$(LOG) 2>&1; \
 	$(status_result)
 
