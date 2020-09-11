@@ -1,4 +1,4 @@
 {
-    "repo_name": "REPO_NAME",
+    "repo_name": "___REPO_NAME___",
     "repo_dir": "{% raw %}{{cookiecutter.repo_name | replace(' ', '-') | replace('_', '-') | lower}}{% endraw %}"
 }
