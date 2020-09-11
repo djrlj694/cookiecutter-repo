@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 10SEP2020
+# REVISED: 11SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -75,11 +75,11 @@ docs: $(DOCS_PLATFORM)
 
 ## init: Completes all initial repo setup activities.
 #init: init-github init-xcode init-swift init-git
-init: init-github $(INIT_PLATFORM) clean-common init-git
+init: init-github $(INIT_PLATFORM) clean-common init-git init-git-flow
 
 ## test: Completes all test activities.
 #test: test-xcode test-swift
-test: test-swift
+test: $(TEST_PLATFORM)
 
 
 # ============================================================================ #

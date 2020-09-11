@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 10SEP2020
+# REVISED: 11SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -52,7 +52,7 @@ clean-git: | $(LOG)
 .PHONY: init-git init-git-flow
 
 ## init-git: Completes all initial Git setup activities.
-init-git: .gitignore .git init-git-flow | $(LOG)
+init-git: .gitignore .git | $(LOG)
 	@printf "Syncing the initial project with the origin..."
 	@git remote add origin $(GH_ORIGIN_URL) >$(LOG) 2>&1; \
 	git pull origin master >$(LOG) 2>&1; \
@@ -60,6 +60,7 @@ init-git: .gitignore .git init-git-flow | $(LOG)
 	git commit -m "Initial project setup" >>$(LOG) 2>&1; \
 	git branch -M master; \
 	git tag 0.0.0; \
+	git push origin 0.0.0; \
 	git push -u origin master >$(LOG) 2>&1; \
 	$(status_result)
 
