@@ -4,7 +4,7 @@
 # AUTHORS: Robert (Bob) L. Jones
 # VERSION: 0.0.0
 # CREATED: 04FEB2019
-# REVISED: 11SEP2020
+# REVISED: 12SEP2020
 # ============================================================================ #
 # For info on terminology or style conventions, see ".make/README.md".
 # ============================================================================ #
@@ -15,7 +15,7 @@
 # ============================================================================ #
 
 # OSes, IDEs, or programming languagses
-TOOLCHAIN ?= "dropbox,vim,visualstudiocode"
+TOOLCHAIN ?= "dropbox,macos,vim,visualstudiocode,windows"
 
 
 # ============================================================================ #
