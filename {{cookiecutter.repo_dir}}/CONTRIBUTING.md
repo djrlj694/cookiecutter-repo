@@ -1,8 +1,8 @@
 # Contributing Guidelines
 
-Version-controllable contributions toward improving [this open source project](README.md) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) process.  By submitting a pull request, you acknowledge and agree to the following:
+Version-controllable contributions toward improving [{{cookiecutter.project_name}}](README.md) (its source code, documentation, etc.) are welcome via GitHub's [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) process.  By submitting a pull request, you acknowledge and agree to the following:
 
-1. You have the right to license your contribution to [{{cookiecutter.team_name}}]({{cookiecutter.team_email}}) and the project community;
+1. You have the right to license your contribution to [{{cookiecutter.team_name}}]({{cookiecutter.team_email}}) and the {{cookiecutter.project_name}} project community;
 2. Your contributions are licensed under the [{{cookiecutter.repo_license}}](LICENSE) license.
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
